@@ -1,19 +1,15 @@
 # Huge Styleguide
-####v1.0.1 
+####v1.1.0
 
 Welcome to the Huge Styleguide project! There are several tools to help you create styleguides on the web, but all of them are directed to developers. And even for developers, it might not satisfy the case where you want a beautiful and functional styleguide published fast.
 
 The motivation for this project is to create something easy enough for everyone that might need to use it.
 
-- [Demo](http://brasil.proto.hugeinc.com/huge-styleguide/)
-
-user: huge  
-passw: St*l&GuId3
   
 # How to get started
-The only basic requirement you need to have in order to begin working the Styleguide is to have a Localhost. You can do that very easily with Codekit or Pre-pos. If you are a developer or are not afraid of the command line, just use the built-in Grunt.
+The only basic requirement you need to have in order to begin working the Styleguide is to have a Localhost. If you are using a Mac you can do that just clicking in the start.command file. Or you can do that very easily with Codekit or Pre-pos. If you are a developer or are not afraid of the command line, just use the built-in Grunt.
 
-- [Download the zip of the Styleguide files here](http://brasil.proto.hugeinc.com/huge-styleguide/downloads/styleguide_v1.0.1.zip) (user: huge / passw: St*l&GuId3)
+- Clone this repository
 - Access the folder you downloaded through your localhost. That is it! No installs or configuration needed, you have the Styleguide running.
   
 # Use example
@@ -88,6 +84,7 @@ Every part of the Styleguide is a module. For example: introduction, colors and 
 
 ## I don't have a localhost
 If you don't have a localhost you have a few options:  
+- start.command file for Mac users, it will install everything you need and run
 - [Codekit](https://incident57.com/codekit/)  
 - [Prepos](https://prepros.io/)  
 - [Grunt](http://gruntjs.com/)

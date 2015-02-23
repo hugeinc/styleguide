@@ -1,0 +1,23 @@
+$magenta: #ec008c;
+$black: #000;
+$grey-dark: #232525;
+$grey: #808080;
+$blue: #2fbbf9;
+
+#colors {
+	.bg-magenta {
+		background-color: $magenta;
+	}
+
+	.bg-black {
+		background-color: $black;
+	}
+
+	.bg-grey {
+		background-color: $grey;
+	}
+
+	.bg-blue {
+		background-color: $blue;
+	}
+}

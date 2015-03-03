@@ -1,0 +1,15 @@
+- var data = public.styleguide.modules.typography._data.module
+
+h2.title=data.name
+if data.items.intro
+	each paragraph in data.items.intro
+		p!=paragraph
+.titles
+	each font in data.items.fonts
+		- var heading = '<h' + font.heading + ' class="' + font.className + '">' + font.title + '</h' + font.heading + '>'
+		h4.light #{font.fontName} - #{font.fontSize}
+		!{heading}
+br
+h5.title=data.items.paragraphsName
+each paragraph in data.items.paragraphs
+	p(class=paragraph.className)=paragraph.text

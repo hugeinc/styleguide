@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    title=public.styleguide._data.clientName + " Styleguide"
+    link(href='styleguide/assets/styles/styleguide.css', rel='stylesheet')
+    script(src='//localhost:35729/livereload.js')
+  body#index
+    main.container
+      include styleguide/structure/templates/header.jade
+      include styleguide/structure/templates/sidebar.jade
+      .large-8.columns.last
+        #sg-vp-wrap
+          #sg-cover
+          #sg-gen-container
+            iframe#sg-viewport(name='sg-viewport', src='styleguide/styleguide.html')
+            #sg-rightpull-container
+              #sg-rightpull
+    //- script(src='styleguide/assets/scripts/styleguide.js')

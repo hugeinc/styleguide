@@ -1,0 +1,15 @@
+include modulesData
+.columns.small-4.toggle-menu-out.toggle-menu
+  a(href='#') Menu
+aside
+  .columns.small-4.toggle-menu-in.toggle-menu
+    a(href='#') Menu
+  .clearfix.client
+    h3.columns.small-12
+      img#logo(src='styleguide/assets/images/#{public.styleguide._data.logoImage}')
+  .clearfix.row
+    nav
+      ul
+        each module in modulesData
+          li
+            a(href="##{module.id}", id=module.id, target='sg-viewport')=module.name

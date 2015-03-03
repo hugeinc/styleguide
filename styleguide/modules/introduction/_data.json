@@ -1,7 +1,7 @@
 {
 	"module": {
 		"id": "introduction",
-		"name": "Introdução",
+		"name": "Introduction",
 		"hasScript": "yes",
 		"items" : [
 	        "Hello! Welcome to the version 1.0 of the Styleguide Boilerplate project, made for Designers and Developers. Our goal is that you can create from useful and simple styleguides to very customized ones.",

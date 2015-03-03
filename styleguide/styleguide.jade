@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+	head
+		title="#{clientName} Styleguide"
+		link(href='assets/styles/styleguide.css', rel='stylesheet')
+		//- script(src='//localhost:35729/livereload.js')
+		base(target='_blank')
+	body#styleguide
+		main.container
+			#modules-wrapper.row.last
+				include structure/templates/modules.jade
+		//- script(src='assets/scripts/styleguide.js')

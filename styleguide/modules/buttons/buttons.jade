@@ -1,0 +1,7 @@
+- var data = public.styleguide.modules.buttons._data.module
+
+h2.title=data.name
+ul.no-bullet
+	each button in data.items
+		li
+			a(href='#', class="snippet #{button.className}")=button.buttonName

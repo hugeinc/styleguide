@@ -1,0 +1,20 @@
+- var language = public.styleguide._data.language
+- var small = public.styleguide._data.translations[language].small
+- var medium = public.styleguide._data.translations[language].medium
+- var large = public.styleguide._data.translations[language].large
+- var full = public.styleguide._data.translations[language].full
+
+html
+  body
+    header#header
+      .breadcrumb
+      nav.sizes.right
+        ul
+          li
+            a#sg-size-s(href='#')=small
+          li
+            a#sg-size-m(href='#')=medium
+          li
+            a#sg-size-l(href='#')=large
+          li
+            a#sg-size-full(href='#')=full

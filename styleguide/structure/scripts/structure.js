@@ -1,28 +1,33 @@
 var HSG = HSG || {};
 
+HSG.Config = {
+  init: function() {
+    this.filenameRegex = /[^\/]*$/;
+    this.basePath = window.location.pathname.replace(this.filenameRegex, '').replace('/styleguide', '') + 'styleguide/';
+  }
+};
+
 HSG.Iframe = {
   init: function() {
     var _this = this;
 
     if (!$('body#styleguide').length) return false;
 
-    HSG.Build.iframe(function() {
-      $.getScript(HSG.Build.basePath + '/structure/scripts/vendor/prism.js', function() {
-        Prism.highlightAll();
-      });
-
-      $(document).scroll(function() {
-        _this.highlightMenu();
-      });
-      $(window).load(function() {
-        HSG.Styleguide.resizeToCover();
-      });
-      HSG.Styleguide.checkHash();
-      HSG.Styleguide.resizeToCover();
-
-      _this.highlightMenu();
-      _this.snippet();
+    $.getScript(HSG.Config.basePath + '/structure/scripts/vendor/prism.js', function() {
+      Prism.highlightAll();
     });
+
+    $(document).scroll(function() {
+      _this.highlightMenu();
+    });
+    $(window).load(function() {
+      HSG.Styleguide.resizeToCover();
+    });
+    HSG.Styleguide.checkHash();
+    HSG.Styleguide.resizeToCover();
+
+    _this.highlightMenu();
+    _this.snippet();
   },
   highlightMenu: function() {
     var $anchors = $('.anchor'),
@@ -74,21 +79,19 @@ HSG.Styleguide = {
 
     if ($('body#styleguide').length) return false;
 
-    HSG.Build.styleguide(function() {
-      $.getScript(HSG.Build.basePath + '/structure/scripts/vendor/ish./js/init.js');
+    $.getScript(HSG.Config.basePath + '/structure/scripts/vendor/ish./js/init.js');
 
-      $(window).resize(function() {
-        _this.resizeToCover();
-      });
-      $(window).load(function() {
-        _this.resizeToCover();
-      });
+    $(window).resize(function() {
       _this.resizeToCover();
-
-      _this.menuControl();
-      _this.asideToggleClass();
-      _this.anchorClick();
     });
+    $(window).load(function() {
+      _this.resizeToCover();
+    });
+    _this.resizeToCover();
+
+    _this.menuControl();
+    _this.asideToggleClass();
+    _this.anchorClick();
   },
   checkHash: function() {
     if (!window.parent.location.hash) return false;
@@ -199,6 +202,7 @@ HSG.Styleguide = {
 };
 
 $(document).ready(function() {
+  HSG.Config.init();
   HSG.Styleguide.init();
   HSG.Iframe.init();
 });

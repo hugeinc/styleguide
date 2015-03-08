@@ -12,4 +12,4 @@ aside
       ul
         each module in modulesData
           li
-            a(href="##{module.id}", id=module.id, target='sg-viewport')=module.name
+            a(href="##{module.id}", target='sg-viewport').anchor=module.name

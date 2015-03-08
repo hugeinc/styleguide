@@ -1,38 +1,26 @@
 var HSG = HSG || {};
 
-HSG.Config = {
-  init: function() {
-    this.filenameRegex = /[^\/]*$/;
-    this.basePath = window.location.pathname.replace(this.filenameRegex, '').replace('/styleguide', '') + 'styleguide/';
-  }
-};
-
 HSG.Iframe = {
   init: function() {
     var _this = this;
 
-    if (!$('body#styleguide').length) return false;
+    if(!$('#iframe-module-content').length) return false;
 
-    $.getScript(HSG.Config.basePath + '/structure/scripts/vendor/prism.js', function() {
-      Prism.highlightAll();
-    });
+    Prism.highlightAll();
 
-    $(document).scroll(function() {
+    $(window).scroll(function() {
       _this.highlightMenu();
     });
-    $(window).load(function() {
-      HSG.Styleguide.resizeToCover();
-    });
-    HSG.Styleguide.checkHash();
-    HSG.Styleguide.resizeToCover();
 
-    _this.highlightMenu();
+    // _this.highlightMenu();
     _this.snippet();
   },
   highlightMenu: function() {
     var $anchors = $('.anchor'),
-        scrollTop = $(document).scrollTop(),
+        scrollTop = $(window).scrollTop(),
         lastId;
+    
+    if(window.location.protocol == 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
 
     $anchors.each(function(id, obj) {
       var top = $(obj).offset().top;
@@ -40,16 +28,15 @@ HSG.Iframe = {
       if (top < scrollTop + 100) {
         lastId = $(obj).attr('id');
       }
-
       if (scrollTop + $(window).height() === $(document).height()) {
-        lastId = $('aside ul a', window.parent.document).last().attr('id');
+        lastId = $('aside ul a', window.parent.document).last().attr('href').replace('#', '');
       }
     });
 
     if (!$('body', window.parent.document).hasClass('sideMenuClicked')) {
       $('aside a', window.parent.document).removeClass('active');
-      $('aside a#' + lastId, window.parent.document).addClass('active');
-      window.parent.location.hash = '#' + lastId;
+      $('aside a[href="#' + lastId + '"]', window.parent.document).addClass('active');
+      window.parent.location.hash = '!' + lastId;
     }
     $('body', window.parent.document).removeClass('sideMenuClicked');
   },
@@ -77,32 +64,37 @@ HSG.Styleguide = {
   init: function() {
     var _this = this;
 
-    if ($('body#styleguide').length) return false;
-
-    $.getScript(HSG.Config.basePath + '/structure/scripts/vendor/ish./js/init.js');
-
-    $(window).resize(function() {
-      _this.resizeToCover();
-    });
-    $(window).load(function() {
-      _this.resizeToCover();
-    });
-    _this.resizeToCover();
+    if($('#iframe-module-content').length) return false;
 
     _this.menuControl();
     _this.asideToggleClass();
     _this.anchorClick();
+    _this.checkHash();
+
+    $('nav.sizes a').click(function() {
+      _this.resizeContent($(this));
+    });
+  },
+  resizeContent: function($elem) {
+    var sizeLabel = $elem.data('size-label'),
+      size = sizeLabel === 'full' ? $elem.data('size') : parseInt($elem.data('size').replace('px', ''), 10);
+
+    $('#modules-wrapper iframe').width(size)
   },
   checkHash: function() {
-    if (!window.parent.location.hash) return false;
-    var top = $('section' + window.parent.location.hash).offset().top;
-
-    $('html, body').animate({scrollTop: top}, 0);
+    if(window.location.protocol == 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
+    if(window.location.hash == '#' || window.location.hash == '') return false;
+    var top = $('#modules-wrapper iframe').contents().find('section' + window.location.hash.replace('!', '')).offset().top;
+    if($('#modules-wrapper iframe').contents().find('section' + window.location.hash.replace('!', '')).index() == 0) {
+      $(window).load(function() {
+        $('#modules-wrapper iframe').contents().find('html, body').animate({scrollTop: 0}, 500);
+      });
+    } else {
+      $('#modules-wrapper iframe').contents().find('html, body').animate({scrollTop: top}, 0);
+    }
   },
   anchorClick: function() {
-    var $aside = $('aside'),
-        $nav = $aside.find('nav'),
-        $links = $nav.find('a'),
+    var $links = $('aside a'),
         _this = this;
 
     $links.click(function(e) {
@@ -112,81 +104,45 @@ HSG.Styleguide = {
     });
   },
   navigateToAnchor: function(elem) {
-    var $areaIFrame = $('#sg-vp-wrap, #sg-gen-container, #sg-viewport'),
-      $aside = $('aside'),
-      $nav = $aside.find('nav'),
-      $links = $nav.find('a'),
+    if(window.location.protocol == 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
+    var $modules = $('#modules-wrapper iframe').contents(),
       $elem = $(elem),
-      top = $areaIFrame.contents().find('section' + $(elem).attr('href')).offset().top;
+      top = $modules.find('html, body').scrollTop() + $modules.find('section' + $(elem).attr('href')).offset().top;
 
-    window.location.hash = $(elem).attr('href');
+    window.location.hash = '!' + $(elem).attr('href').replace('#', '');
 
-    $areaIFrame.contents().find('html, body').animate({scrollTop: top}, 500);
-  },
-  resizeToCover: function(animate) {
-    var $areaIFrame = $('#sg-vp-wrap, #sg-gen-container, #sg-viewport'),
-        $header = $('header'),
-        $aside = $('aside'),
-        headerH = $header.height(),
-        asideW = 240,
-        windowW = $(window).width(),
-        windowH = $(window).height(),
-        $nav = $aside.find('nav');
-
-    $header.width(windowW - asideW);
-    $areaIFrame.height(windowH - headerH);
-
-    // $nav.height(windowH - $nav.offset().top);
-
-    if ($aside.hasClass('opened') && windowW > 1200) {
-      $areaIFrame.width(windowW - asideW);
-
-      if (animate) {
-        $areaIFrame.animate({ left: asideW }, 300);
-      } else {
-        $areaIFrame.css({ left: asideW });
-      }
-      $header.width(windowW - asideW);
-      $header.css({ left: asideW });
-    } else {
-      $areaIFrame.width(windowW);
-      if (animate) {
-        $areaIFrame.animate({ left: 0 }, 300);
-      } else {
-        $areaIFrame.css({ left: 0 });
-      }
-      $header.width(windowW - 64);
-      $header.css({ left: 64 });
-    }
+    $modules.find('html, body').animate({scrollTop: top}, 800);
   },
   menuControl: function() {
     var _this = this,
         $btToggle = $('.toggle-menu'),
         $aside = $('aside');
 
+    if(window.location.protocol == 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+      $aside.remove();
+      $btToggle.remove();
+      return false;
+    }
+
     if ($(window).width() >= 1220) {
-      $aside.addClass('opened');
-      _this.resizeToCover(true);
+      $('body').addClass('opened');
     }
 
     $(window).resize(function() {
       if ($(window).width() <= 1220) {
-        if ($aside.hasClass('opened')) {
-          $aside.removeClass('opened');
-          _this.resizeToCover(true);
+        if ($('body').hasClass('opened')) {
+          $('body').removeClass('opened');
         }
       } else {
-        if (!$aside.hasClass('opened')) {
-          $aside.addClass('opened');
-          _this.resizeToCover(true);
+        if (!$('body').hasClass('opened')) {
+          $('body').addClass('opened');
         }
       }
     });
 
     $btToggle.click(function(e) {
       e.preventDefault();
-      $aside.toggleClass('opened');
-      _this.resizeToCover(true);
+      $('body').toggleClass('opened');
     });
   },
   asideToggleClass: function() {
@@ -201,8 +157,7 @@ HSG.Styleguide = {
   }
 };
 
-$(document).ready(function() {
-  HSG.Config.init();
+$(window).load(function() {
   HSG.Styleguide.init();
   HSG.Iframe.init();
 });

@@ -1,9 +1,12 @@
+include structure/templates/modulesData
 doctype html
 html(lang='en')
 	head
 		title="#{clientName} Styleguide"
 		link(href='assets/styles/styleguide.css', rel='stylesheet')
-		//- script(src='//localhost:35729/livereload.js')
+		each module in modulesData
+			- var stylesheet = 'modules/' + module.order + '_' + module.id + '/' + module.id + '.css'
+			link(href=stylesheet, rel='stylesheet')
 		base(target='_blank')
 	body#styleguide
 		main.container
@@ -11,3 +14,8 @@ html(lang='en')
 				include structure/templates/modules.jade
 		script(src='structure/scripts/vendor/jquery-1.11.1.min.js')
 		script(src='structure/scripts/structure.js')
+		each module in modulesData
+			if module.scripts
+				each script in module.scripts
+					- var folder = 'modules/' + module.order + '_' + module.id + '/'
+					script(src='#{folder}#{script}')

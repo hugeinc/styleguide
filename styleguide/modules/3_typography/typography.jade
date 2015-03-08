@@ -1,0 +1,13 @@
+h2.title=name
+if items.intro
+	each paragraph in items.intro
+		p!=paragraph
+.titles
+	each font in items.fonts
+		- var heading = '<h' + font.heading + ' class="' + font.className + '">' + font.title + '</h' + font.heading + '>'
+		h4.light #{font.fontName} - #{font.fontSize}
+		!{heading}
+br
+h5.title=items.paragraphsName
+each paragraph in items.paragraphs
+	p(class=paragraph.className)=paragraph.text

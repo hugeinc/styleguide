@@ -1,0 +1,10 @@
+h2.title=name
+each paragraph in items.intro
+	p!=paragraph
+
+ul.no-bullet.list-colors
+	each color, index in items.colors
+		- var last = index == items.colors.length - 1 ? 'end' : ''
+		li(class="small-12 medium-2 column #{last}")
+			div(class="color #{color.className}")
+				p .#{color.className}

@@ -1,0 +1,14 @@
+{
+    "id": "templates",
+    "name": "Templates",
+    "hasScript": "yes",
+    "items": {
+        "templates": [
+            {
+                "link": "",
+                "templateName": "Home",
+                "thumbnailFile": "template01.svg"
+            }
+        ]
+    }
+}

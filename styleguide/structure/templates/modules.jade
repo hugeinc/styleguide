@@ -1,5 +1,6 @@
 include modulesData
 each module in modulesData
 	section(id=module.id, class="anchor clearfix")
-		- var content = 'modules/' + module.id + '/' + module.id
-		!=partial(content)
+		- var folder = module.order + '_' + module.id
+		- var content = 'modules/' + folder + '/' + module.id
+		!=partial(content, public.styleguide.modules[folder]._data)

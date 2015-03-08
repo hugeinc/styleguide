@@ -1,0 +1,41 @@
+$magenta: #ec008c;
+
+ol, ul {
+	list-style: none;
+	margin: 0 0 2em 0;
+	padding: 0;
+}
+
+ul.list_huge {
+	li {
+		padding-left: 20px;
+		position: relative;
+
+		&::before {
+			content: '▶';
+			font-size: 11px;
+			top: 4px;
+			color: $magenta;
+			position: absolute;
+			left: 0;
+		}
+	}
+}
+
+ol.list_huge {
+	counter-reset: item;
+
+	li {
+		padding-left: 30px;
+		position: relative;
+
+		&::before {
+			content: counters(item,".") " ";
+			counter-increment: item;
+			top: 0;
+			color: $magenta;
+			position: absolute;
+			left: 0;
+		}
+	}
+}

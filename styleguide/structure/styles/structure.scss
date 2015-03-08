@@ -432,6 +432,7 @@ aside {
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       line-height: 1.5;
+      outline: none;
 
       &:hover, &.active {
         background: $aside-hover-color;

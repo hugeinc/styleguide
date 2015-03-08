@@ -1,0 +1,9 @@
+{
+	"id": "lists",
+	"name": "Lists",
+	"hasScript": "yes",
+	"items": {
+		"notOrdenated": "Unordered",
+		"ordenated": "Ordered"
+	}
+}

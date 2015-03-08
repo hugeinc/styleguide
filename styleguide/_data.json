@@ -2,7 +2,6 @@
     "clientName": "Huge",
     "language": "en_US",
     "logoImage": "logo_placeholder.gif",
-    "modules": ["introduction", "colors", "typography", "buttons", "forms", "lists", "tables", "templates"],
     "translations" : {
         "pt_BR": {
             "begining": "Início",

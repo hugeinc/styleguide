@@ -2,23 +2,35 @@
     "clientName": "Huge",
     "language": "en_US",
     "logoImage": "logo_placeholder.gif",
+    "breakpoints": [
+        {
+            "id": "small",
+            "name": "Small",
+            "size": "420px"
+        },
+        {
+            "id": "medium",
+            "name": "Medium",
+            "size": "720px"
+        },
+        {
+            "id": "large",
+            "name": "Large",
+            "size": "1280px"
+        },
+        {
+            "id": "full",
+            "name": "Full",
+            "size": "100%"
+        }
+    ],
     "translations" : {
         "pt_BR": {
             "begining": "Início",
-            "small": "Pequena",
-            "medium": "Média",
-            "large": "Grande",
-            "full": "Completa",
-            "size": "Tamanho",
             "styleguide": "Styleguide"
         },
         "en_US": {
             "begining": "Beginning",
-            "small": "Small",
-            "medium": "Medium",
-            "large": "Large",
-            "full": "Full",
-            "size": "Size",
             "styleguide": "Styleguide"
         }
     }

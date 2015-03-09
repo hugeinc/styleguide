@@ -1,8 +1,4 @@
-- var language = public.styleguide._data.language
-- var small = public.styleguide._data.translations[language].small
-- var medium = public.styleguide._data.translations[language].medium
-- var large = public.styleguide._data.translations[language].large
-- var full = public.styleguide._data.translations[language].full
+- var breakpoints = public.styleguide._data.breakpoints
 
 html
   body
@@ -10,11 +6,6 @@ html
       .breadcrumb
       nav.sizes.right
         ul
-          li
-            a#sg-size-s(data-size="420px", data-size-label="small")=small
-          li
-            a#sg-size-m(data-size="720px", data-size-label="medium")=medium
-          li
-            a#sg-size-l(data-size="1280px", data-size-label="large")=large
-          li
-            a#sg-size-full(data-size="100%", data-size-label="full")=full
+          each breakpoint in breakpoints
+            li
+              a(id=breakpoint.id, data-size=breakpoint.size, data-size-label=breakpoint.id)=breakpoint.name

@@ -210,28 +210,28 @@ header {
         opacity: 0.5;
       }
 
-      &#sg-size-l {
+      &#large {
         padding-left: 4.3rem;
       }
 
-      &#sg-size-full {
+      &#full {
         padding-left: 3.3rem;
       }
 
-      &#sg-size-s:before {
+      &#small:before {
         background-image: url("../../structure/images/icon_small_up.svg");
       }
 
-      &#sg-size-m:before {
+      &#medium:before {
         background-image: url("../../structure/images/icon_medium_up.svg");
       }
 
-      &#sg-size-l:before {
+      &#large:before {
         width: 4rem;
         background-image: url("../../structure/images/icon_large_up.svg");
       }
 
-      &#sg-size-full:before {
+      &#full:before {
         width: 3rem;
         background-image: url("../../structure/images/icon_full.svg");
         opacity: 0.6;
@@ -241,19 +241,19 @@ header {
         }
       }
 
-      &#sg-size-s:hover:before, &#sg-size-s.active:before {
+      &#small:hover:before, &#small.active:before {
         background-image: url("../../structure/images/icon_small_over.svg");
       }
 
-      &#sg-size-m:hover:before, &#sg-size-m.active:before {
+      &#medium:hover:before, &#medium.active:before {
         background-image: url("../../structure/images/icon_medium_over.svg");
       }
 
-      &#sg-size-l:hover:before, &#sg-size-l.active:before {
+      &#large:hover:before, &#large.active:before {
         background-image: url("../../structure/images/icon_large_over.svg");
       }
 
-      &#sg-size-full:hover:before, &#sg-size-full.active:before {
+      &#full:hover:before, &#full.active:before {
         background-image: url("../../structure/images/icon_full.svg");
       }
     }
@@ -646,7 +646,7 @@ main {
 }
 
 #iframe-module-content {
-  width: 90%;
+  width: 80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 0 64px;

@@ -19,7 +19,7 @@ $bp-small: "only screen and (max-width : 40em)";
 $bp-medium: "only screen and (min-width : 40.063em)";
 $bp-large: "only screen and (min-width : 64.063em)";
 
-body {
+body.huge_body {
   font: 16px/2 "Galaxie", Helvetica, Roboto, Arial, sans-serif;
   background-color: #fff;
 
@@ -29,29 +29,30 @@ body {
   }
 }
 
-a {
+a.huge_link {
   color: $magenta;
+
 }
 
-p {
+p.huge_paragraph {
   margin: 0;
   margin-bottom: 1em;
   color: #333;
 }
 
-h2.title, #typography h2.title {
+h2.huge_title {
   font-family: 'HUGEAvantGardeBold', Helvetica, Arial, sans-serif;
   font-size: 2.2em;
   margin: 0;
 }
 
-h5.title, #typography h5.title {
+h5.huge_title {
   font-family: 'HUGEAvantGardeBold', Helvetica, Arial, sans-serif;
   font-size: 1.8em;
   margin-bottom: 0;
 }
 
-footer.row {
+footer.huge_footer.row {
   text-align: center;
   color: #999;
   margin-bottom: 4rem;
@@ -78,7 +79,7 @@ footer.row {
   display: block;
 }
 
-header {
+header.huge_header {
   display: block;
   background: #fff;
   border-bottom: 1px solid $grayscale-light;
@@ -91,7 +92,7 @@ header {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 
-  .breadcrumb {
+  .huge_breadcrumb {
     float: left;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
@@ -100,7 +101,7 @@ header {
     padding-top: 1.2em;
   }
 
-  nav.sizes {
+  nav.huge_sizes {
     margin-right: 2em;
 
     select {
@@ -210,7 +211,7 @@ header {
   }
 }
 
-.toggle-menu-out {
+.huge_toggle-menu-out {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -270,7 +271,7 @@ header {
   }
 }
 
-aside {
+aside.huge_aside {
   border-bottom: 1px solid $grayscale-light;
   padding: 1em 0 0.5em 0;
   z-index: 1;
@@ -289,7 +290,7 @@ aside {
     display: none;
   }
 
-  .client {
+  .huge_client {
     display: none;
     padding-bottom: 0.3rem;
     // border-bottom: 1px solid #444;
@@ -321,7 +322,7 @@ aside {
     position: fixed;
     width: 15em;
 
-    .toggle-menu-in {
+    .huge_toggle-menu-in {
       width: 60px;
       position: fixed;
       left: 10.5em;
@@ -345,7 +346,7 @@ aside {
       }
     }
 
-    .client {
+    .huge_client {
       display: block;
     }
 
@@ -354,7 +355,7 @@ aside {
     }
   }
 
-  .toggle-menu-in {
+  .huge_toggle-menu-in {
     overflow: hidden;
     cursor: pointer;
     text-align: center;
@@ -432,10 +433,18 @@ aside {
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       line-height: 1.5;
+      -webkit-transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out;
 
       &:hover, &.active {
         background: $aside-hover-color;
         color: #FFF;
+      }
+      &:hover {
+        background-color: rgba(236, 0, 140, 0.5);
+      }
+      &:focus {
+        outline: none;
       }
     }
   }

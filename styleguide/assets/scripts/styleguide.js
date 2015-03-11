@@ -3209,7 +3209,7 @@ HSG.Build = {
 
           if (typeof module.jsDependencies !== 'undefined') {
             $.each(module.jsDependencies, function() {
-              $.getScript(HSG.Build.basePath + '/modules/' + module.id + '/' + this);    
+              $.getScript(HSG.Build.basePath + '/modules/' + module.id + '/' + this);
             });
           }
 
@@ -3318,15 +3318,16 @@ HSG.Iframe = {
     if (!$('body', window.parent.document).hasClass('sideMenuClicked')) {
       $('aside a', window.parent.document).removeClass('active');
       $('aside a#' + lastId, window.parent.document).addClass('active');
+      window.parent.location.hash = '#' + lastId;
     }
     $('body', window.parent.document).removeClass('sideMenuClicked');
   },
   snippet: function() {
-    var $snips = $('.snippet');
+    var $snips = $('.huge_snippet');
 
     $snips.each(function(id, obj) {
       var $obj = $(obj),
-          $snippet = $obj.get(0).outerHTML.replace(' snippet', '').replace('snippet', '');
+          $snippet = $obj.get(0).outerHTML.replace(' huge_snippet', '').replace('huge_snippet', '');
 
       $obj.before('<a href="#" class="toggle-code">Show code</a>');
       $obj.after('<pre class="language-markup"><code>' + $('<p/>').text($snippet).html() + '</code></pre>').next().hide();
@@ -3364,18 +3365,18 @@ HSG.Styleguide = {
     });
   },
   checkHash: function() {
-    if(!window.parent.location.hash) return false;
-    var top = $("section"+window.parent.location.hash).offset().top;
+    if (!window.parent.location.hash) return false;
+    var top = $('section' + window.parent.location.hash).offset().top;
 
-    $("html, body").animate({scrollTop: top}, 0);
+    $('html, body').animate({scrollTop: top}, 0);
   },
   anchorClick: function() {
     var $aside = $('aside'),
-        $nav = $aside.find("nav"),
-        $links = $nav.find("a"),
+        $nav = $aside.find('nav'),
+        $links = $nav.find('a'),
         _this = this;
 
-    $links.click(function(e){
+    $links.click(function(e) {
       e.preventDefault();
 
       _this.navigateToAnchor(this);
@@ -3383,16 +3384,15 @@ HSG.Styleguide = {
   },
   navigateToAnchor: function(elem) {
     var $areaIFrame = $('#sg-vp-wrap, #sg-gen-container, #sg-viewport'),
-        $aside = $('aside'),
-        $nav = $aside.find("nav"),
-        $links = $nav.find("a");
-        $elem = $(elem);
+      $aside = $('aside'),
+      $nav = $aside.find('nav'),
+      $links = $nav.find('a'),
+      $elem = $(elem),
+      top = $areaIFrame.contents().find('section' + $(elem).attr('href')).offset().top;
 
-    window.location.hash = $(elem).attr("href");
+    window.location.hash = $(elem).attr('href');
 
-    var top = $areaIFrame.contents().find("section"+$(elem).attr("href")).offset().top;
-
-    $areaIFrame.contents().find("html, body").animate({scrollTop: top}, 500);
+    $areaIFrame.contents().find('html, body').animate({scrollTop: top}, 500);
   },
   resizeToCover: function(animate) {
     var $areaIFrame = $('#sg-vp-wrap, #sg-gen-container, #sg-viewport'),
@@ -3402,7 +3402,7 @@ HSG.Styleguide = {
         asideW = 240,
         windowW = $(window).width(),
         windowH = $(window).height(),
-        $nav = $aside.find("nav");
+        $nav = $aside.find('nav');
 
     $header.width(windowW - asideW);
     $areaIFrame.height(windowH - headerH);
@@ -3432,22 +3432,22 @@ HSG.Styleguide = {
   },
   menuControl: function() {
     var _this = this,
-        $btToggle = $('.toggle-menu'),
+        $btToggle = $('.huge_toggle-menu'),
         $aside = $('aside');
 
-    if($(window).width() >= 1220) {
+    if ($(window).width() >= 1220) {
       $aside.addClass('opened');
       _this.resizeToCover(true);
     }
 
     $(window).resize(function() {
-      if($(window).width() <= 1220) {
-        if($aside.hasClass('opened')) {
+      if ($(window).width() <= 1220) {
+        if ($aside.hasClass('opened')) {
           $aside.removeClass('opened');
           _this.resizeToCover(true);
         }
       } else {
-        if(!$aside.hasClass('opened')) {
+        if (!$aside.hasClass('opened')) {
           $aside.addClass('opened');
           _this.resizeToCover(true);
         }
@@ -3475,7 +3475,8 @@ HSG.Styleguide = {
 $(document).ready(function() {
   HSG.Styleguide.init();
   HSG.Iframe.init();
-});;Handlebars.getTemplate = function(name, path) {
+});
+;Handlebars.getTemplate = function(name, path) {
   if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
     $.ajax({
       url: path + name + '.handlebars',

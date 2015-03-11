@@ -1,8 +1,8 @@
-<h2 class="title">{{name}}</h2>
+<h2 class="huge_title">{{name}}</h2>
 {{#each items.intro}}
-    <p>{{this}}</p>
+    <p class="huge_paragraph">{{this}}</p>
 {{/each}}
-<ul class="no-bullet list-colors">
+<ul class="huge_no-bullet huge_list-colors">
     {{#each items.colors}}
         <li class="small-12 medium-2 column {{#if @last}}end{{/if}}">
             <div class="color {{className}}">

@@ -33,7 +33,8 @@ module.exports = (grunt) ->
           style: 'expanded'
 
         files:
-          '../assets/styles/styleguide.css' : '../styleguide.scss'
+          '../assets/styles/styleguide.css' : '../styleguide.scss',
+          '../assets/styles/structure.css' : 'styles/structure.scss'
 
       concat:
         options:

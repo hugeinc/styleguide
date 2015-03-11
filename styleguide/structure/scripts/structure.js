@@ -49,11 +49,11 @@ HSG.Iframe = {
     $('body', window.parent.document).removeClass('sideMenuClicked');
   },
   snippet: function() {
-    var $snips = $('.snippet');
+    var $snips = $('.huge_snippet');
 
     $snips.each(function(id, obj) {
       var $obj = $(obj),
-          $snippet = $obj.get(0).outerHTML.replace(' snippet', '').replace('snippet', '');
+          $snippet = $obj.get(0).outerHTML.replace(' huge_snippet', '').replace('huge_snippet', '');
 
       $obj.before('<a href="#" class="toggle-code">Show code</a>');
       $obj.after('<pre class="language-markup"><code>' + $('<p/>').text($snippet).html() + '</code></pre>').next().hide();
@@ -158,7 +158,7 @@ HSG.Styleguide = {
   },
   menuControl: function() {
     var _this = this,
-        $btToggle = $('.toggle-menu'),
+        $btToggle = $('.huge_toggle-menu'),
         $aside = $('aside');
 
     if ($(window).width() >= 1220) {

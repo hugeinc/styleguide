@@ -1,25 +1,26 @@
+
+.button {
+	cursor: pointer;
+	text-decoration: none !important;
+	display: inline-block;
+	font-family: Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	-webkit-transition: background-color 0.3s,opacity 0.3s;
+	-moz-transition: background-color 0.3s,opacity 0.3s;
+	-o-transition: background-color 0.3s,opacity 0.3s;
+	transition: background-color 0.3s,opacity 0.3s;
+}
+
+.button.load {
+	-webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+	-moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+	-o-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+
 #buttons {
-	.button {
-		cursor: pointer;
-		text-decoration: none !important;
-		display: inline-block;
-		font-family: Arial,sans-serif;
-		font-weight: bold;
-		text-align: center;
-		color: #fff;
-		-webkit-transition: background-color 0.3s,opacity 0.3s;
-		-moz-transition: background-color 0.3s,opacity 0.3s;
-		-o-transition: background-color 0.3s,opacity 0.3s;
-		transition: background-color 0.3s,opacity 0.3s;
-	}
-
-	.button.load {
-		-webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-		-moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-		-o-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-		transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-	}
-
 	.button.black {
 		background: $black;
 		width: 160px;

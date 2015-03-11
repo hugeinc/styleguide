@@ -1,13 +1,13 @@
-<h2 class="title">{{name}}</h2>
+<h2 class="huge_title">{{name}}</h2>
 {{#each items.intro}}
     <p>{{this}}</p>
 {{/each}}
-<ul class="templates-group">
+<ul class="huge_templates-group">
   {{#each items.templates}}
     <li>
       {{#if link}}<a href="{{link}}">{{/if}}
         <img src="assets/images/{{thumbnailFile}}" width="200" alt="{{templateName}}"/>
-        <div class="template-name">{{templateName}}</div>
+        <p class="template-name huge_paragraph">{{templateName}}</p>
       {{#if link}}</a>{{/if}}
     </li>
   {{/each}}

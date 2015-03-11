@@ -1,4 +1,30 @@
+
+ol, ul {
+	list-style: none;
+	padding: 0;
+}
+
+ul li {
+	position: relative;
+}
+
+ol {
+	counter-reset: item;
+
+	li {
+		position: relative;
+		&::before {
+			content: counters(item,".") " ";
+			counter-increment: item;
+			top: 0;
+			position: absolute;
+			left: 0;
+		}
+	}
+}
+
 #lists {
+
 	ol, ul {
 		list-style: none;
 		margin: 0 0 2em 0;

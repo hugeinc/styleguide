@@ -1,0 +1,35 @@
+a {
+  color: #333;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1em;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+}
+
+.huge-module__title {
+  font-size: 30px;
+  line-height: 75px;
+  margin: 0;
+  font-weight: normal;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+
+.huge-module__title--light {
+  color: #bbb;
+  text-transform: none;
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+h5.title, #typography h5.title {
+  font-size: 1.8em;
+  margin-bottom: 0;
+  font-weight: normal;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}

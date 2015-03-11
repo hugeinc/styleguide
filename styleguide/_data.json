@@ -1,5 +1,7 @@
 {
     "clientName": "Huge",
+    "version": "1",
+    "date": "11/03/2015",
     "language": "en_US",
     "logoImage": "logo_placeholder.gif",
     "breakpoints": [

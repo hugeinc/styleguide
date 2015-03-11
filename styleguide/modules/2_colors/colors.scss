@@ -19,3 +19,29 @@ $blue: #2fbbf9;
 .bg-blue {
 	background-color: $blue;
 }
+
+#colors {
+  li {
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.9375em;
+
+    p {
+      position: absolute;
+      padding: 3px 13px;
+      color: #666;
+      background-color: #fff;
+      font-size: 12px;
+      bottom: 0;
+      left: 0.9375em;
+    }
+    .color {
+      height: 120px;
+      margin-right: 0.9375em;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

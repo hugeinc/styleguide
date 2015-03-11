@@ -1,7 +1,6 @@
 {
     "id": "colors",
     "name": "Colors",
-    "hasScript": "yes",
     "items": {
         "intro": ["Huge have two main colors: Magenta and Black. Additional Blue might be found on slides or t-shirts."],
         "colors": [

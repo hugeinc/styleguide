@@ -40,3 +40,9 @@ table tr:nth-child(2n-1) td {
 table td {
 	border-bottom: 1px solid #cbcbcb
 }
+
+#tables {
+  table {
+    width: 90%;
+  }
+}

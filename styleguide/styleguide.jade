@@ -1,12 +1,12 @@
-extends structure/templates/_layout
+extends structure/_includes/_layout
 block styles
+	link(href='assets/styles/structure.css', rel='stylesheet')
 	each module in modulesData
-		- var stylesheet = 'modules/' + module.order + '_' + module.id + '/' + module.id + '.css'
-		link(href=stylesheet, rel='stylesheet')
-	link(href='assets/styles/styleguide.css', rel='stylesheet')
+			- var stylesheet = 'modules/' + module.order + '_' + module.id + '/' + module.id + '.css'
+			link(href=stylesheet, rel='stylesheet')
 
 block content
-	#iframe-module-content
+	.huge-iframe-content
 		include structure/templates/modules.jade
 
 block scripts

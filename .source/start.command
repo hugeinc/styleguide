@@ -13,21 +13,17 @@ installNode() {
 }
 
 installDependencies() {
+	cd "$PROJECT_PATH"
 	printf "\nChecking dependencies...\n\n"
 	printf "You might need to type your password\n"
 	printf "don't be afraid!\n"
 	type harp >/dev/null 2>&1
 	if [ $? -eq 1 ]
 	then
-	    sudo npm install -g harp
+	    sudo npm install harp -g
 	fi
-}
-
-increaseUlimit() {
-	cd ~ &&
-	touch .bash_profile &&
-	echo "ulimit -n 2048" >> .bash_profile &&
-	source ~/.bash_profile
+	cd ../../../styleguide/structure/node-files
+	sudo npm install
 }
 
 createLockFile() {
@@ -39,17 +35,10 @@ createLockFile() {
 run() {
 	cd "$PROJECT_PATH"
 	printf "\nLet's start this thing...\n"
-	cd ../../..
-	echo "PROGRESS:100"
-	open "http://localhost:9000"
-	harp server
+	cd ../../../styleguide/structure/node-files
+	node watch.js
 }
-echo ""
-echo "|  |  |  |  |   __|   __|"
-echo "|     |  |  |  |  |   __|"
-echo "|__|__|_____|_____|_____|"
-echo ""
-echo ""
+echo "Huge Styleguide. Welcome!"
 cd ../../..                      
 if [ ! -f .install.lock ]; then
 	echo "PROGRESS:0"
@@ -65,7 +54,6 @@ if [ ! -f .install.lock ]; then
 	        echo "PROGRESS:50"
 	        installDependencies
 	        echo "PROGRESS:80"
-	        increaseUlimit
 	        createLockFile
 	        echo "PROGRESS:90"
 	        run
@@ -74,19 +62,16 @@ if [ ! -f .install.lock ]; then
 	        echo "PROGRESS:50"
 	        installDependencies
 	        echo "PROGRESS:80"
-	        increaseUlimit
 	        createLockFile
 	        echo "PROGRESS:90"
 	        run
 	    fi
 	else
 	    installDependencies
-	    increaseUlimit
 	    createLockFile
 	    run
 	fi
 else
-	echo "PROGRESS:90"
+	echo "PROGRESS:70"
 	run
 fi
-

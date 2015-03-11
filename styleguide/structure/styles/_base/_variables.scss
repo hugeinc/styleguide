@@ -1,0 +1,17 @@
+// Colors
+$magenta: #ec008c;
+
+// Functional Colors
+$sidebarLinkHoverColor: $magenta;
+$sidebarBackgroundColor: #fff;
+$structureBorderColor: #eee;
+
+
+// Configuration
+$sidebarOpenedWidth: 240px;
+
+
+// Breakpoints
+$bp-small: "only screen and (max-width : 40em)";
+$bp-medium: "only screen and (min-width : 40.063em)";
+$bp-large: "only screen and (min-width : 64.063em)";

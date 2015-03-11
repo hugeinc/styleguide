@@ -9,11 +9,7 @@ compile() {
 	echo "PROGRESS:100"
 }
 
-echo ""
-echo "|  |  |  |  |   __|   __|"
-echo "|     |  |  |  |  |   __|"
-echo "|__|__|_____|_____|_____|"
-echo ""
+echo "Compiling Styleguide..."
 echo ""
 echo "PROGRESS:0"
 type harp >/dev/null 2>&1

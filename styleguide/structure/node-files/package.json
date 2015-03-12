@@ -1,5 +1,5 @@
 {
-  "name": "HugeStyleguide",
+  "name": "HugeStyleguideNodeRunner",
   "version": "2.0.0",
   "description": "",
   "main": "watch.js",
@@ -14,6 +14,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Huge",
   "license": "ISC"
 }

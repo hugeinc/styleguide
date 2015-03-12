@@ -1,8 +1,8 @@
 h2.huge-module__title=name
 if items.intro
 	each paragraph in items.intro
-		p!=paragraph
-ul.templates-group
+		p.huge-module__paragraph!=paragraph
+ul.huge-list--unstyled.templates-group
 	each template in items.templates
 		li
 			if template.link

@@ -7,12 +7,13 @@ body.opened {
 }
 
 .huge-module {
+  width: 80%;
+  margin: 0 auto;
   clear: both;
-  padding: 50px 0 80px 0;
-  border-bottom: 1px solid #eee;
+  padding: 75px 0;
+  border-bottom: 1px solid $structureBorderColor;
 
   &:last-child {
-    padding-bottom: 0;
     border-bottom: none;
   }
 }
@@ -29,7 +30,7 @@ body.opened {
   max-width: initial;
   -webkit-transition: left .2s ease-in-out, width .2s ease-in-out;
   transition: left .2s ease-in-out, width .2s ease-in-out;
-  background-color: #eee;
+  background-color: $structureBorderColor;
   position: relative;
 
   iframe {
@@ -39,11 +40,11 @@ body.opened {
     overflow:hidden;
     overflow-x:hidden;
     overflow-y:hidden;
-    height:100%;
+    height:calc(100% - #{$headerHeight}) !important;
     width:100%;
     max-width: 100%;
     position:absolute;
-    top:64px;
+    top:$headerHeight;
     left:0px;
     right:0px;
     bottom:0px;
@@ -54,9 +55,8 @@ body.opened {
 }
 
 .huge-iframe-content {
-  width: 80%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 0 64px;
+  padding: 15px 0 0;
   background-color: #fff;
 }

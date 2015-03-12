@@ -2,20 +2,27 @@ a {
   color: #333;
 }
 
-p {
+p.huge-module__paragraph {
   margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 25px;
   color: #666;
   -webkit-font-smoothing: antialiased;
 }
 
 .huge-module__title {
   font-size: 30px;
-  line-height: 75px;
-  margin: 0;
+  line-height: 30px;
+  margin: 0 0 45px;
   font-weight: normal;
   color: #555;
   -webkit-font-smoothing: antialiased;
+}
+
+.huge-module__title--small {
+  @extend .huge-module__title;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 25px;
 }
 
 .huge-module__title--light {
@@ -23,13 +30,7 @@ p {
   text-transform: none;
   margin: 0;
   font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 25px;
   font-weight: normal;
-}
-
-h5.title, #typography h5.title {
-  font-size: 1.8em;
-  margin-bottom: 0;
-  font-weight: normal;
-  color: #333;
-  -webkit-font-smoothing: antialiased;
 }

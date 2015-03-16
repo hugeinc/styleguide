@@ -8,13 +8,13 @@
   padding: 0;
   height: 35px;
   background-color: $sidebarBackgroundColor;
-  padding: 1em 0 0.5em 0;
+  padding: 15px 0 10px 0;
   z-index: 10;
 
   a {
     display: inline-block;
     float: none;
-    text-indent: -2000em;
+    text-indent: -99999px;
     position: relative;
     width: 22px;
     height: 2px;
@@ -65,17 +65,17 @@
   text-align: center;
   width: 100%;
   text-align: center;
-  height: 4em;
-  width: 4em;
+  height: 50px;
+  width: 50px;
   background-color: $sidebarBackgroundColor;
-  padding: 1em 0 0.5em 0;
+  padding: 15px 0 10px 0;
   z-index: 10;
   position: absolute;
 
   a {
     display: inline-block;
     float: none;
-    text-indent: -2000em;
+    text-indent: -99999px;
     position: relative;
     width: 22px;
     height: 2px;
@@ -160,7 +160,7 @@ body.opened {
   .huge-sidebar__toggle--in {
     width: 60px;
     position: fixed;
-    left: 10.5em;
+    left: 150px;
     padding: 0;
     height: 35px;
     background: none;

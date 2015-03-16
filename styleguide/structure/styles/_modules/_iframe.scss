@@ -60,3 +60,18 @@ body.opened {
   padding: 15px 0 0;
   background-color: #fff;
 }
+
+.huge-module__toggle-code {
+  display: block;
+  text-indent: -9999999px;
+  background: url("../../structure/images/icon_code.svg") right center no-repeat;
+  height: 1.5em;
+  opacity: .5;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 9;
+}
+
+pre[class*='language-'] > code[data-language] {
+  overflow: auto;
+}

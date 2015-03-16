@@ -1,1 +1,0 @@
-module.exports = require("github:PrismJS/prism@gh-pages/prism");

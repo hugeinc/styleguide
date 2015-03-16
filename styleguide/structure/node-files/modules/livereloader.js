@@ -4,9 +4,10 @@ var livereload = require('livereload'),
 module.exports = {
 	start: function() {
 		server = livereload.createServer({
-			exts: ['js', 'jade', 'json', 'css', 'less', 'sass', 'scss', 'styl', 'svg', 'png', 'jpg', 'gif'],
-			exclusions: ['styleguide.scss', 'styleguide.less', 'styleguide.sass', 'styleguide.styl', 'styleguide.js']
+			exts: ['js', 'jade', 'json', 'css', 'less', 'sass', 'scss', 'styl', 'svg', 'png', 'jpg', 'gif']
 		});
 		server.watch(basePath);
 	}
 }
+
+// exclusions: ['styleguide.scss', 'styleguide.less', 'styleguide.sass', 'styleguide.styl', 'styleguide.js']

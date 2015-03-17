@@ -1,9 +1,0 @@
-{
-	"id": "introduction",
-	"name": "Introduction",
-	"scripts": ["introduction.js"],
-	"items" : [
-        "Hello! Welcome to the version 1.0 of the Styleguide Boilerplate project, made for Designers and Developers. Our goal is that you can create from useful and simple styleguides to very customized ones.",
-        "Please feel free to ask and collaborate with the project! <a href='http://hugeinc.com'>test</a>"
-    ]
-}

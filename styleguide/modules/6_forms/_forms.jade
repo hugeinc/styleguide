@@ -1,0 +1,45 @@
+h2.huge-module__title=name
+form.snippet
+  fieldset
+    .row
+      .medium-6.column
+        input.g-wide--full(type='text', placeholder='Placeholder')
+      .medium-6.column
+        input.g-wide--full(type='text', value=items.disabled, disabled='')
+    .row
+      .medium-6.column
+        label Email input
+        input(type='email')
+      .medium-6.column
+        label Password input
+        input(type='password', value='password')
+    .row
+      .medium-6.column
+        label Textarea
+        textarea(cols='30', rows='5') Textarea text
+      .medium-6.column
+        label Select field
+        select
+          option Option 01
+          option Option 02
+      .medium-6.column
+        label File input
+        input(type='file')
+    .row
+      .medium-6.column
+        label
+          input(type='radio', name='rad')
+          | Radio input
+        label
+          input(type='checkbox')
+          | Checkbox input
+      .medium-6.column
+        label Number input
+        input(type='number', value='5', min='0', max='10')
+    .row
+      .medium-6.column
+        label Date input
+        input(type='date')
+      .medium-6.column
+        label Time input
+        input(type='time')

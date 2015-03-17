@@ -1,0 +1,28 @@
+.huge-footer {
+	background-color: #eeeeee;
+	height: $footerHeight;
+	text-align: center;
+	padding: 40px 0 0;
+
+	.h {
+		display: inline-block;
+		width: 46px;
+		height: 54px;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAgUlEQVRIS2N8w9DznwEvYNwowlAcgE/JG4beDQwM//3xqWEctQhb8IwGHY5EM5rqsAfMaD7CGi5UyUf/GRiPMjD8q8FfHjK1MDL8t6awrMNvBbGyRCQGYo0iUAcQLr1HLSI7w44GHZlBR8cMO1ofkRlHDAyjQTcadPAQGE0MA5wYAEQy1fHPRACvAAAAAElFTkSuQmCC") 50% 50% no-repeat;
+		text-decoration: none;
+	}
+
+	p {
+		font-family: "HUGEAvantGardeBold", Helvetica, Arial, sans;
+		letter-spacing: -1px;
+		font-size: 15px;
+		color: #999;
+		margin-top: 16px;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	sup {
+		font-size: 7px;
+		vertical-align: super;
+	}
+}

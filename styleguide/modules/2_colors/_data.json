@@ -1,0 +1,21 @@
+{
+    "id": "colors",
+    "name": "Colors",
+    "items": {
+        "intro": ["Huge have two main colors: Magenta and Black. Additional Blue might be found on slides or t-shirts."],
+        "colors": [
+            {
+                "className": "bg-magenta"
+            },
+            {
+                "className": "bg-black"
+            },
+            {
+                "className": "bg-grey"
+            },
+            {
+                "className": "bg-blue"
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+@import "vendor/foundation-form.scss";
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+select {
+	width: 100%;
+}
+
+#forms {
+  fieldset {
+    margin-top: 0;
+  }
+}

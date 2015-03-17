@@ -1,0 +1,11 @@
+include modulesData
+doctype html
+html(lang='en')
+  head
+    title=public.styleguide._data.clientName + " Styleguide"
+    link(rel="icon", type="image/png", href="styleguide/structure/images/favicon.png")
+    block styles
+  body
+    main.container
+      block content
+    block scripts

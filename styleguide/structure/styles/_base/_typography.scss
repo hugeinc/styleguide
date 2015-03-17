@@ -1,0 +1,36 @@
+a {
+  color: #333;
+}
+
+p.huge-module__paragraph {
+  margin: 0;
+  margin-bottom: 25px;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+}
+
+.huge-module__title {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 45px;
+  font-weight: normal;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+
+.huge-module__title--small {
+  @extend .huge-module__title;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 25px;
+}
+
+.huge-module__title--light {
+  color: #bbb;
+  text-transform: none;
+  margin: 0;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 25px;
+  font-weight: normal;
+}

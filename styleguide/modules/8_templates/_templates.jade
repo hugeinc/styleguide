@@ -1,0 +1,14 @@
+h2.huge-module__title=name
+if items.intro
+	each paragraph in items.intro
+		p.huge-module__paragraph!=paragraph
+ul.huge-list--unstyled.templates-group
+	each template in items.templates
+		li
+			if template.link
+				a(href=template.link)
+					img(src='assets/images/#{template.thumbnailFile}', width='200', alt='#{template.templateName}')
+					.template-name=template.templateName
+			else
+				img(src='assets/images/#{template.thumbnailFile}', width='200', alt='#{template.templateName}')
+				.template-name=template.templateName

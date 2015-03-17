@@ -1,0 +1,21 @@
+extends structure/_includes/_layout
+block styles
+	link(href='assets/styles/structure.css', rel='stylesheet')
+	each module in modulesData
+			- var stylesheet = 'modules/' + module.order + '_' + module.id + '/' + module.id + '.css'
+			link(href=stylesheet, rel='stylesheet')
+
+block content
+	.huge-iframe-content
+		include structure/templates/modules.jade
+		include structure/templates/footer.jade
+
+block scripts
+	script(src="structure/scripts/vendor/jquery-1.11.1.min.js")
+	script(src="structure/scripts/vendor/prism.js")
+	script(src="structure/scripts/iframe.js")
+	each module in modulesData
+		if module.scripts
+			each script in module.scripts
+				- var folder = 'modules/' + module.order + '_' + module.id + '/'
+				script(src='#{folder}#{script}')

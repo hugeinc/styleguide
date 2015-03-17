@@ -1,0 +1,19 @@
+{
+  "name": "HugeStyleguideNodeRunner",
+  "version": "2.0.0",
+  "description": "",
+  "main": "watch.js",
+  "dependencies": {
+    "livereload": "^0.3.6",
+    "watch": "^0.14.0"
+  },
+  "devDependencies": {
+    "livereload": "^0.3.6",
+    "watch": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Huge",
+  "license": "ISC"
+}

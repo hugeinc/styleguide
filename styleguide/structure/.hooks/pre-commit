@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# Pre-commit hooks
-
-cd styleguide/structure &&
-grunt jsonlint &&
-grunt jshint &&
-grunt jscs

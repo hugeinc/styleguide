@@ -1,0 +1,37 @@
+{
+    "id": "tables",
+    "name": "Tables",
+    "hasScript": "yes",
+    "items": {
+        "tables": [
+            {
+                "tableClass": "",
+                "head" : ["Offices", "Job Openings in Technology"],
+                "body": [
+                    {
+                        "td": ["Atlanta", "6"]
+                    },
+                    {
+                        "td": ["Brooklyn", "12"]
+                    },
+                    {
+                        "td": ["London", "1"]
+                    },
+                    {
+                        "td": ["Rio de Janeiro", "3"]
+                    },
+                    {
+                        "td": ["San Francisco", "3"]
+                    },
+                    {
+                        "td": ["Singapore", "2"]
+                    },
+                    {
+                        "td": ["Washington DC", "2"]
+                    }
+                ],
+                "footer": []
+            }
+        ]
+    }
+}

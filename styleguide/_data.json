@@ -1,0 +1,39 @@
+{
+    "clientName": "Huge",
+    "version": "1",
+    "date": "11/03/2015",
+    "language": "en_US",
+    "logoImage": "logo_placeholder.gif",
+    "breakpoints": [
+        {
+            "id": "small",
+            "name": "Small",
+            "size": "420px"
+        },
+        {
+            "id": "medium",
+            "name": "Medium",
+            "size": "720px"
+        },
+        {
+            "id": "large",
+            "name": "Large",
+            "size": "1280px"
+        },
+        {
+            "id": "full",
+            "name": "Full",
+            "size": "100%"
+        }
+    ],
+    "translations" : {
+        "pt_BR": {
+            "begining": "Início",
+            "styleguide": "Styleguide"
+        },
+        "en_US": {
+            "begining": "Beginning",
+            "styleguide": "Styleguide"
+        }
+    }
+}

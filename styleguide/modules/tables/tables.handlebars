@@ -1,0 +1,36 @@
+<h2 class="title">{{name}}</h2>
+{{#each items.tables}}
+  <table class="{{table.tableClass}} snippet">
+    {{#if table.head}}
+      <thead>
+        <tr>
+          {{#each table.head}}
+            <th>{{this}}</th>
+          {{/each}}
+        </tr>
+      </thead>
+    {{/if}}
+    {{#if table.body}}
+      <tbody>
+        {{#each table.body}}
+          <tr>
+            {{#each td}}
+              <td>
+                {{this}}
+              </td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </thead>
+    {{/if}}
+    {{#if table.footer}}
+      <tfooter>
+        <tr>
+          {{#each table.footer}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+      </tfooter>
+    {{/if}}
+  </table>
+{{/each}}

@@ -1,0 +1,468 @@
+#forms {
+  /* Standard Forms */
+  form {
+    margin: 0 0 1rem; }
+
+  /* Using forms within rows, we need to set some defaults */
+  form .row .row {
+    margin: 0 -0.5rem; }
+    form .row .row .column,
+    form .row .row .columns {
+      padding: 0 0.5rem; }
+    form .row .row.collapse {
+      margin: 0; }
+      form .row .row.collapse .column,
+      form .row .row.collapse .columns {
+        padding: 0; }
+      form .row .row.collapse input {
+        -webkit-border-bottom-right-radius: 0;
+        -webkit-border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0; }
+  form .row input.column,
+  form .row input.columns,
+  form .row textarea.column,
+  form .row textarea.columns {
+    padding-left: 0.5rem; }
+
+  /* Label Styles */
+  label {
+    font-size: 0.875rem;
+    color: #4d4d4d;
+    cursor: pointer;
+    display: block;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 0;
+    /* Styles for required inputs */ }
+    label.right {
+      float: none !important;
+      text-align: right; }
+    label.inline {
+      margin: 0 0 1rem 0;
+      padding: 0.5625rem 0; }
+    label small {
+      text-transform: capitalize;
+      color: #676767; }
+
+  /* Attach elements to the beginning or end of an input */
+  .prefix,
+  .postfix {
+    display: block;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    font-size: 0.875rem;
+    height: 2.3125rem;
+    line-height: 2.3125rem; }
+
+  /* Adjust padding, alignment and radius if pre/post element is a button */
+  .postfix.button {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    line-height: 2.125rem;
+    border: none; }
+
+  .prefix.button {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    line-height: 2.125rem;
+    border: none; }
+
+  .prefix.button.radius {
+    border-radius: 0;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px; }
+
+  .postfix.button.radius {
+    border-radius: 0;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px; }
+
+  .prefix.button.round {
+    border-radius: 0;
+    -webkit-border-bottom-left-radius: 1000px;
+    -webkit-border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    border-top-left-radius: 1000px; }
+
+  .postfix.button.round {
+    border-radius: 0;
+    -webkit-border-bottom-right-radius: 1000px;
+    -webkit-border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    border-top-right-radius: 1000px; }
+
+  /* Separate prefix and postfix styles when on span or label so buttons keep their own */
+  span.prefix, label.prefix {
+    background: #f2f2f2;
+    border-right: none;
+    color: #333333;
+    border-color: #cccccc; }
+
+  span.postfix, label.postfix {
+    background: #f2f2f2;
+    border-left: none;
+    color: #333333;
+    border-color: #cccccc; }
+
+  /* We use this to get basic styling on all basic form elements */
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="color"],
+  textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    background-color: white;
+    font-family: inherit;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 0.875rem;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+    height: 2.3125rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="date"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="month"]:focus,
+    input[type="week"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="time"]:focus,
+    input[type="url"]:focus,
+    input[type="color"]:focus,
+    textarea:focus {
+      box-shadow: 0 0 5px #999999;
+      border-color: #999999; }
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="date"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="month"]:focus,
+    input[type="week"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="time"]:focus,
+    input[type="url"]:focus,
+    input[type="color"]:focus,
+    textarea:focus {
+      background: #fafafa;
+      border-color: #999999;
+      outline: none; }
+    input[type="text"]:disabled,
+    input[type="password"]:disabled,
+    input[type="date"]:disabled,
+    input[type="datetime"]:disabled,
+    input[type="datetime-local"]:disabled,
+    input[type="month"]:disabled,
+    input[type="week"]:disabled,
+    input[type="email"]:disabled,
+    input[type="number"]:disabled,
+    input[type="search"]:disabled,
+    input[type="tel"]:disabled,
+    input[type="time"]:disabled,
+    input[type="url"]:disabled,
+    input[type="color"]:disabled,
+    textarea:disabled {
+      background-color: #dddddd;
+      cursor: default; }
+    input[type="text"][disabled], input[type="text"][readonly], fieldset[disabled] input[type="text"],
+    input[type="password"][disabled],
+    input[type="password"][readonly], fieldset[disabled]
+    input[type="password"],
+    input[type="date"][disabled],
+    input[type="date"][readonly], fieldset[disabled]
+    input[type="date"],
+    input[type="datetime"][disabled],
+    input[type="datetime"][readonly], fieldset[disabled]
+    input[type="datetime"],
+    input[type="datetime-local"][disabled],
+    input[type="datetime-local"][readonly], fieldset[disabled]
+    input[type="datetime-local"],
+    input[type="month"][disabled],
+    input[type="month"][readonly], fieldset[disabled]
+    input[type="month"],
+    input[type="week"][disabled],
+    input[type="week"][readonly], fieldset[disabled]
+    input[type="week"],
+    input[type="email"][disabled],
+    input[type="email"][readonly], fieldset[disabled]
+    input[type="email"],
+    input[type="number"][disabled],
+    input[type="number"][readonly], fieldset[disabled]
+    input[type="number"],
+    input[type="search"][disabled],
+    input[type="search"][readonly], fieldset[disabled]
+    input[type="search"],
+    input[type="tel"][disabled],
+    input[type="tel"][readonly], fieldset[disabled]
+    input[type="tel"],
+    input[type="time"][disabled],
+    input[type="time"][readonly], fieldset[disabled]
+    input[type="time"],
+    input[type="url"][disabled],
+    input[type="url"][readonly], fieldset[disabled]
+    input[type="url"],
+    input[type="color"][disabled],
+    input[type="color"][readonly], fieldset[disabled]
+    input[type="color"],
+    textarea[disabled],
+    textarea[readonly], fieldset[disabled]
+    textarea {
+      background-color: #dddddd;
+      cursor: default; }
+    input[type="text"].radius,
+    input[type="password"].radius,
+    input[type="date"].radius,
+    input[type="datetime"].radius,
+    input[type="datetime-local"].radius,
+    input[type="month"].radius,
+    input[type="week"].radius,
+    input[type="email"].radius,
+    input[type="number"].radius,
+    input[type="search"].radius,
+    input[type="tel"].radius,
+    input[type="time"].radius,
+    input[type="url"].radius,
+    input[type="color"].radius,
+    textarea.radius {
+      border-radius: 3px; }
+
+  form .row .prefix-radius.row.collapse input,
+  form .row .prefix-radius.row.collapse textarea,
+  form .row .prefix-radius.row.collapse select {
+    border-radius: 0;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px; }
+  form .row .prefix-radius.row.collapse .prefix {
+    border-radius: 0;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px; }
+  form .row .postfix-radius.row.collapse input,
+  form .row .postfix-radius.row.collapse textarea,
+  form .row .postfix-radius.row.collapse select {
+    border-radius: 0;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px; }
+  form .row .postfix-radius.row.collapse .postfix {
+    border-radius: 0;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px; }
+  form .row .prefix-round.row.collapse input,
+  form .row .prefix-round.row.collapse textarea,
+  form .row .prefix-round.row.collapse select {
+    border-radius: 0;
+    -webkit-border-bottom-right-radius: 1000px;
+    -webkit-border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    border-top-right-radius: 1000px; }
+  form .row .prefix-round.row.collapse .prefix {
+    border-radius: 0;
+    -webkit-border-bottom-left-radius: 1000px;
+    -webkit-border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    border-top-left-radius: 1000px; }
+  form .row .postfix-round.row.collapse input,
+  form .row .postfix-round.row.collapse textarea,
+  form .row .postfix-round.row.collapse select {
+    border-radius: 0;
+    -webkit-border-bottom-left-radius: 1000px;
+    -webkit-border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    border-top-left-radius: 1000px; }
+  form .row .postfix-round.row.collapse .postfix {
+    border-radius: 0;
+    -webkit-border-bottom-right-radius: 1000px;
+    -webkit-border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    border-top-right-radius: 1000px; }
+
+  input[type="submit"] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px; }
+
+  /* Respect enforced amount of rows for textarea */
+  textarea[rows] {
+    height: auto; }
+
+  /* Not allow resize out of parent */
+  textarea {
+    max-width: 100%; }
+
+  /* Add height value for select elements to match text input height */
+  select {
+    -webkit-appearance: none !important;
+    -webkit-border-radius: 0px;
+    background-color: #fafafa;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.75);
+    line-height: normal;
+    border-radius: 0;
+    height: 2.3125rem; }
+    select::-ms-expand {
+      display: none; }
+    select.radius {
+      border-radius: 3px; }
+    select:hover {
+      background-color: #f3f3f3;
+      border-color: #999999; }
+    select:disabled {
+      background-color: #dddddd;
+      cursor: default; }
+
+  /* Adjust margin for form elements below */
+  input[type="file"],
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
+    margin: 0 0 1rem 0; }
+
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    vertical-align: baseline; }
+
+  /* Normalize file input width */
+  input[type="file"] {
+    width: 100%; }
+
+  /* HTML5 Number spinners settings */
+  /* We add basic fieldset styling */
+  fieldset {
+    border: 1px solid #dddddd;
+    padding: 1.25rem;
+    margin: 1.125rem 0; }
+    fieldset legend {
+      font-weight: bold;
+      background: white;
+      padding: 0 0.1875rem;
+      margin: 0;
+      margin-left: -0.1875rem; }
+
+  /* Error Handling */
+  [data-abide] .error small.error, [data-abide] .error span.error, [data-abide] span.error, [data-abide] small.error {
+    display: block;
+    padding: 0.375rem 0.5625rem 0.5625rem;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+    background: #c60f13;
+    color: white; }
+  [data-abide] span.error, [data-abide] small.error {
+    display: none; }
+
+  span.error, small.error {
+    display: block;
+    padding: 0.375rem 0.5625rem 0.5625rem;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+    background: #c60f13;
+    color: white; }
+
+  .error input,
+  .error textarea,
+  .error select {
+    margin-bottom: 0; }
+  .error input[type="checkbox"],
+  .error input[type="radio"] {
+    margin-bottom: 1rem; }
+  .error label,
+  .error label.error {
+    color: #c60f13; }
+  .error small.error {
+    display: block;
+    padding: 0.375rem 0.5625rem 0.5625rem;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+    background: #c60f13;
+    color: white; }
+  .error > label > small {
+    color: #676767;
+    background: transparent;
+    padding: 0;
+    text-transform: capitalize;
+    font-style: normal;
+    font-size: 60%;
+    margin: 0;
+    display: inline; }
+  .error span.error-message {
+    display: block; }
+
+  input.error,
+  textarea.error,
+  select.error {
+    margin-bottom: 0; }
+
+  label.error {
+    color: #c60f13; }
+}

@@ -1,0 +1,10 @@
+{
+	"module": {
+		"id": "forms",
+		"name": "Forms",
+		"hasScript": "yes",
+		"items": {
+			"disabled": "Disabled"
+		}
+	}
+}

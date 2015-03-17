@@ -1,0 +1,7 @@
+{
+    "clientName": "Huge",
+    "language": "en_US",
+    "logoImage": "logo_placeholder.gif",
+    "modules": ["introduction", "typography", "colors", "buttons", "tables", "forms", "lists", "templates"],
+    "_comment": "This is a comment. Remember to put the logo on the assets/images folder. You can change the modules order, add or remove them."
+}

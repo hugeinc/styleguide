@@ -12,31 +12,26 @@ installNode() {
 	brew install node
 }
 
-installDependencies() {
+run() {
 	cd "$PROJECT_PATH"
 	printf "\nChecking dependencies...\n\n"
-	printf "You might need to type your password\n"
-	printf "don't be afraid!\n"
 	type harp >/dev/null 2>&1
 	if [ $? -eq 1 ]
 	then
-	    sudo npm install harp -g
+		npm install harp -g
 	fi
 	cd ../../../styleguide/structure/node-files
-	sudo npm install
+	npm install
+	echo "PROGRESS:80"
+	printf "\nLet's start this thing...\n"
+	node watch.js
+	echo "PROGRESS:100"
 }
 
 createLockFile() {
 	cd "$PROJECT_PATH"
 	cd ../../..
 	touch .install.lock
-}
-
-run() {
-	cd "$PROJECT_PATH"
-	printf "\nLet's start this thing...\n"
-	cd ../../../styleguide/structure/node-files
-	node watch.js
 }
 echo "Huge Styleguide. Welcome!"
 cd ../../..                      
@@ -52,26 +47,20 @@ if [ ! -f .install.lock ]; then
 	        echo "PROGRESS:20"
 	        installNode
 	        echo "PROGRESS:50"
-	        installDependencies
-	        echo "PROGRESS:80"
-	        createLockFile
-	        echo "PROGRESS:90"
 	        run
+	        createLockFile
 	    else
 	        installNode
 	        echo "PROGRESS:50"
-	        installDependencies
-	        echo "PROGRESS:80"
-	        createLockFile
-	        echo "PROGRESS:90"
 	        run
+	        createLockFile
 	    fi
 	else
-	    installDependencies
-	    createLockFile
+			echo "PROGRESS:50"
 	    run
+	    createLockFile
 	fi
 else
-	echo "PROGRESS:70"
+	echo "PROGRESS:50"
 	run
 fi

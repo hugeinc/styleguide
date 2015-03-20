@@ -4,7 +4,6 @@
 
 This is a development branch of the Huge Styleguide. The following tasks are yet to be finished (by order of importance):  
 
-- Fix active link states on scroll
 - Fix sidebar toggle
 - Fix closed header behavior
 - Check bottlenecks of performance in the function sidebarLinksHighlight()

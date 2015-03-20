@@ -4,14 +4,12 @@
 
 This is a development branch of the Huge Styleguide. The following tasks are yet to be finished (by order of importance):  
 
-- Fix sidebar toggle
-- Fix closed header behavior
 - Dynamically write the date of the last change with Node.js
 - Reintegrate and test JSON lint
 - Reintegrate and test JSHint
 - Reintegrate and test JSCS
+- Change hamburguer icon
 - Write Code Standards document
-- Custom scrollbars
 - Better transitions
 - Open Source and happyness
   

@@ -6,7 +6,6 @@ This is a development branch of the Huge Styleguide. The following tasks are yet
 
 - Fix sidebar toggle
 - Fix closed header behavior
-- Check bottlenecks of performance in the function sidebarLinksHighlight()
 - Dynamically write the date of the last change with Node.js
 - Reintegrate and test JSON lint
 - Reintegrate and test JSHint

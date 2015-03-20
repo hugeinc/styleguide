@@ -6,7 +6,7 @@ var StyleguideIndex = {
 	  this.$breakpointsLinks = $('.huge-header__breakpoints__item__link');
 	  this.$sidebarContent = $('.huge-sidebar__content');
 	  this.$sidebarLinks = $('.huge-sidebar__nav__item__link');
-	  this.$sidebarToggle = $('[class*=".huge-sidebar__toggle"]');
+	  this.$sidebarToggle = $('[class*="huge-sidebar__toggle"]');
 	  this.$iframe = $('.huge-iframe-wrapper iframe');
 	  this.$iframeContent = $('.huge-iframe-wrapper iframe').contents();
 

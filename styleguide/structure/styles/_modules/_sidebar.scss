@@ -2,7 +2,7 @@
   overflow: hidden;
   cursor: pointer;
   text-align: center;
-  width: 60px;
+  width: 45px;
   position: absolute;
   right: 0;
   padding: 0;
@@ -16,7 +16,7 @@
     float: none;
     text-indent: -99999px;
     position: relative;
-    width: 22px;
+    width: 15px;
     height: 2px;
     background: #FFF;
     clear: both;
@@ -35,9 +35,9 @@
       height: 2px;
       top: -4px;
       left: 0;
-      background: #FFF;
-      -webkit-transition:all .15s ease-out;
-      transition:all .15s ease-out;
+      background: #777;
+      -webkit-transition: all 0.15s ease-out;
+      transition: all 0.15s ease-out;
     }
     &:after {
       display: block;
@@ -49,9 +49,9 @@
       height: 2px;
       bottom: -4px;
       left: 0;
-      background: #FFF;
-      -webkit-transition:all .15s ease-out;
-      transition:all .15s ease-out;
+      background: #777;
+      -webkit-transition: all 0.15s ease-out;
+      transition: all 0.15s ease-out;
     }
   }
 }
@@ -60,15 +60,14 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  height: 30px;
   cursor: pointer;
   text-align: center;
   width: 100%;
   text-align: center;
   height: 50px;
-  width: 50px;
-  background-color: $sidebarBackgroundColor;
-  padding: 15px 0 10px 0;
+  width: 63px;
+  background-color: #fff;
+  padding: 20px 0 10px 0;
   z-index: 10;
   position: absolute;
 
@@ -79,7 +78,7 @@
     position: relative;
     width: 22px;
     height: 2px;
-    background: #FFF;
+    background: #777;
     clear: both;
     margin: 0 auto;
     margin-top: 16px;
@@ -96,7 +95,7 @@
       height: 2px;
       top: -4px;
       left: 0;
-      background: #FFF;
+      background: #777;
       -webkit-transition:all .15s ease-out;
       transition:all .15s ease-out;
     }
@@ -110,7 +109,7 @@
       height: 2px;
       bottom: -4px;
       left: 0;
-      background: #FFF;
+      background: #777;
       -webkit-transition:all .15s ease-out;
       transition:all .15s ease-out;
     }
@@ -158,12 +157,13 @@
 
 body.opened {
   .huge-sidebar__toggle--in {
-    width: 60px;
+    width: 45px;
     position: fixed;
-    left: 150px;
     padding: 0;
     height: 35px;
     background: none;
+    left: 193px;
+    top: 6px;
 
     a {
       background: transparent;

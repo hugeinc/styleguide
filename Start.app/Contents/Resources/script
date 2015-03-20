@@ -23,6 +23,8 @@ run() {
 	cd ../../../styleguide/structure/node-files
 	npm install
 	echo "PROGRESS:80"
+	createLockFile
+	cd styleguide/structure/node-files
 	printf "\nLet's start this thing...\n"
 	node watch.js
 	echo "PROGRESS:100"
@@ -31,7 +33,9 @@ run() {
 createLockFile() {
 	cd "$PROJECT_PATH"
 	cd ../../..
-	touch .install.lock
+	if [ ! -f .install.lock ]; then
+		touch .install.lock
+	fi
 }
 echo "Huge Styleguide. Welcome!"
 cd ../../..                      
@@ -48,17 +52,14 @@ if [ ! -f .install.lock ]; then
 	        installNode
 	        echo "PROGRESS:50"
 	        run
-	        createLockFile
 	    else
 	        installNode
 	        echo "PROGRESS:50"
 	        run
-	        createLockFile
 	    fi
 	else
 			echo "PROGRESS:50"
 	    run
-	    createLockFile
 	fi
 else
 	echo "PROGRESS:50"

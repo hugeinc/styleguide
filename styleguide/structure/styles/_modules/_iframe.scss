@@ -28,8 +28,10 @@ body.opened {
   padding: 0;
   margin: 0;
   max-width: initial;
-  -webkit-transition: left .2s ease-in-out, width .2s ease-in-out;
-  transition: left .2s ease-in-out, width .2s ease-in-out;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transition: left $transitionLength cubic-bezier(.37,.62,.47,.72), width $transitionLength cubic-bezier(.37,.62,.47,.72);
+  transition: left $transitionLength cubic-bezier(.37,.62,.47,.72), width $transitionLength cubic-bezier(.37,.62,.47,.72);
   background-color: $structureBorderColor;
   position: relative;
 
@@ -48,8 +50,8 @@ body.opened {
     left:0px;
     right:0px;
     bottom:0px;
-    -webkit-transition: width .4s ease-in-out;
-    transition: width .4s ease-in-out;
+    -webkit-transition: width $transitionLength ease-in-out;
+    transition: width $transitionLength ease-in-out;
     margin: 0 auto;
   }
 }

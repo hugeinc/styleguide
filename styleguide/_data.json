@@ -2,7 +2,7 @@
   "clientName": "Huge",
   "version": "1",
   "language": "en_US",
-  "logoImage": "logo_placeholder.gif",
+  "logoImage": "logo_placeholder.png",
   "breakpoints": [
     {
       "id": "small",

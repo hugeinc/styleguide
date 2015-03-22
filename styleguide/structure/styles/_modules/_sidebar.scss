@@ -2,14 +2,17 @@
   overflow: hidden;
   cursor: pointer;
   text-align: center;
-  width: 45px;
-  position: absolute;
   right: 0;
-  padding: 0;
   height: 35px;
-  background-color: $sidebarBackgroundColor;
   padding: 15px 0 10px 0;
   z-index: 10;
+  width: 45px;
+  position: fixed;
+  padding: 0;
+  height: 35px;
+  background: none;
+  left: 187px;
+  top: 19px;
 
   a {
     display: inline-block;
@@ -22,8 +25,8 @@
     clear: both;
     margin: 0 auto;
     margin-top: 16px;
-    -webkit-transition:all .15s ease-out;
-    transition:all .15s ease-out;
+    // -webkit-transition:all .15s ease-out;
+    // transition:all .15s ease-out;
 
     &:before {
       display: block;
@@ -33,11 +36,14 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      top: -4px;
+      // top: -4px;
       left: 0;
       background: #777;
-      -webkit-transition: all 0.15s ease-out;
-      transition: all 0.15s ease-out;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 0;
+      // -webkit-transition: all 0.15s ease-out;
+      // transition: all 0.15s ease-out;
     }
     &:after {
       display: block;
@@ -50,8 +56,11 @@
       bottom: -4px;
       left: 0;
       background: #777;
-      -webkit-transition: all 0.15s ease-out;
-      transition: all 0.15s ease-out;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 0;
+      // -webkit-transition: all 0.15s ease-out;
+      // transition: all 0.15s ease-out;
     }
   }
 }
@@ -76,7 +85,7 @@
     float: none;
     text-indent: -99999px;
     position: relative;
-    width: 22px;
+    width: 16px;
     height: 2px;
     background: #777;
     clear: both;
@@ -117,20 +126,22 @@
 }
 
 .huge-sidebar__logo {
-  display: none;
+  display: block;
   width: 140px;
-  margin: 40px auto;
+  margin: 29px 0 40px 29px;
 }
 
 .huge-sidebar__content {
   z-index: 1;
-  -webkit-transition: width .2s ease-in-out;
-  transition: width .2s ease-in-out;
   position: fixed;
   background-color: $sidebarBackgroundColor;
   border-right: 1px solid $structureBorderColor;
-  width: 0;
+  -webkit-transition: -webkit-transform $transitionLength cubic-bezier(.37,.62,.47,.72);
+  -webkit-transform: translateX(-240px);
+  transition: transform $transitionLength cubic-bezier(.37,.62,.47,.72);
+  transform: translateX(-240px);
   height: 100%;
+  width: $sidebarOpenedWidth;
   z-index: 11;
   overflow: auto;
 }
@@ -141,7 +152,7 @@
 
 .huge-sidebar__nav__item__link {
   display: block;
-  padding: 12px 16px 12px 50px;
+  padding: 12px 16px 12px 29px;
   color: #777;
   font-weight: normal;
   text-decoration: none;
@@ -156,37 +167,8 @@
 }
 
 body.opened {
-  .huge-sidebar__toggle--in {
-    width: 45px;
-    position: fixed;
-    padding: 0;
-    height: 35px;
-    background: none;
-    left: 193px;
-    top: 6px;
-
-    a {
-      background: transparent;
-
-      &:before {
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        top: 0;
-      }
-      &:after {
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        top: 0;
-      }
-    }
-  }
-
   .huge-sidebar__content {
     position: fixed;
-    width: $sidebarOpenedWidth;
-  }
-
-  .huge-sidebar__logo {
-    display: block;
+    -webkit-transform: translateX(0px);
   }
 }

@@ -4,10 +4,9 @@
 
 This is a development branch of the Huge Styleguide. The following tasks are yet to be finished (by order of importance):  
 
-- Dynamically write the date of the last change with Node.js
-- Reintegrate and test JSON lint
-- Reintegrate and test JSHint
-- Reintegrate and test JSCS
+- Reintegrate and test JSON lint (in a node.js file for tests)
+- Reintegrate and test JSHint (in a node.js file for tests)
+- Reintegrate and test JSCS (in a node.js file for tests)
 - Change hamburguer icon
 - Write Code Standards document
 - Better transitions

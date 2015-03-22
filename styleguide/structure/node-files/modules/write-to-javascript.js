@@ -1,5 +1,4 @@
 var fs = require('fs'),
-	pathUtil = require('path'),
 	basePath = require('./utils').basePath;
 
 module.exports = function() {

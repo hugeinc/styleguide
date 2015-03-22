@@ -1,12 +1,14 @@
 var watch = require('watch'),
   utils = require('./utils'),
   writeToStylesheet = require('./write-to-stylesheet'),
-  writeToJavascript = require('./write-to-javascript');
+  writeToJavascript = require('./write-to-javascript'),
+  writeDate = require('./write-date');
 
 module.exports = {
   start: function() {
     writeToStylesheet();
     writeToJavascript();
+    writeDate();
 
     watch.createMonitor(utils.basePath, function (monitor) {
       monitor.on("created", function (f, stat) {

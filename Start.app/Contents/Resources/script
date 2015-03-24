@@ -20,11 +20,11 @@ run() {
 	then
 		npm install harp -g
 	fi
-	cd ../../../styleguide/structure/node-files
+	cd ../../../styleguide/structure/_node-files
 	npm install
 	echo "PROGRESS:80"
 	createLockFile
-	cd styleguide/structure/node-files
+	cd styleguide/structure/_node-files
 	printf "\nLet's start this thing...\n"
 	node watch.js
 	echo "PROGRESS:100"

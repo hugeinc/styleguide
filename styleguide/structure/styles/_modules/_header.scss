@@ -10,8 +10,10 @@
   top: 0;
   left: 0;
   z-index: 2;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transition: all $transitionLength cubic-bezier(.37,.62,.47,.72);
+  transition: all $transitionLength cubic-bezier(.37,.62,.47,.72);
   font-size: 14px;
   color: #666;
 }

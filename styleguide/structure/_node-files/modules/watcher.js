@@ -10,8 +10,8 @@ module.exports = {
     writeToJavascript();
     writeDate();
 
-    watch.createMonitor(utils.basePath, function (monitor) {
-      monitor.on("created", function (f, stat) {
+    watch.createMonitor(utils.basePath, function(monitor) {
+      monitor.on('created', function(f) {
         if (utils.wasDirectory(false, f) || utils.wasJavascriptOfModule(f) || utils.wasDataOfModule(f)) {
           writeToJavascript();
         }
@@ -19,7 +19,7 @@ module.exports = {
           writeToStylesheet();
         }
       });
-      monitor.on("changed", function (f, curr, prev) {
+      monitor.on('changed', function(f) {
         if (utils.wasDirectory(false, f) || utils.wasJavascriptOfModule(f) || utils.wasDataOfModule(f)) {
           writeToJavascript();
         }
@@ -27,7 +27,7 @@ module.exports = {
           writeToStylesheet();
         }
       });
-      monitor.on("removed", function (f, stat) {
+      monitor.on('removed', function(f) {
         if (utils.wasDirectory(true, f) || utils.wasJavascriptOfModule(f) || utils.wasDataOfModule(f)) {
           writeToJavascript();
         }
@@ -37,4 +37,4 @@ module.exports = {
       });
     });
   }
-}
+};

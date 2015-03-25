@@ -1,3 +1,6 @@
+/**
+ * Script used for the Iframe only
+ */
 var StyleguideIframe = {
   init: function() {
     if (!$('.huge-iframe-content').length) return false;
@@ -17,6 +20,11 @@ var StyleguideIframe = {
     this.codeSnippetsSetup();
     this.events();
   },
+
+  /**
+   * All events of the iframe
+   * should be registered here
+   */
   events: function() {
     var _this = this;
 
@@ -30,6 +38,11 @@ var StyleguideIframe = {
       _this.sidebarLinksHighlightSetup();
     });
   },
+
+  /**
+   * Setup markup code snippet.
+   * It gets the HTML of the element and creates the code area
+   */
   codeSnippetsSetup: function() {
     var _this = this;
 
@@ -42,11 +55,21 @@ var StyleguideIframe = {
 
     Prism.highlightAll();
   },
+
+  /**
+   * Function that shows or hide the code snippet area
+   */
   codeSnippetsToggle: function($elem) {
     var $code = $elem.next().next();
 
     $code.toggle();
   },
+
+  /**
+   * Records all module's offset top value for reference.
+   * Such values will be used later when trying to discover where the user is
+   * when scrolling the iframe.
+   */
   sidebarLinksHighlightSetup: function() {
     var _this = this;
 
@@ -60,6 +83,11 @@ var StyleguideIframe = {
       });
     });
   },
+
+  /**
+   * Highlight the current module's sidebar link
+   * based on scroll position
+   */
   sidebarLinksHighlight: function() {
     var _this = this,
       scrollTop = $(window).scrollTop(),
@@ -89,6 +117,7 @@ var StyleguideIframe = {
         $(this.sidebarMenuLinkClass + '[href="#' + actualActiveSectionId + '"]', window.parent.document).addClass(this.sidebarActiveLinkClass);
 
         // Why changing the hash is so slow and produces a lag?
+        // Use ! to prevent de default browser behavior of anchor navigation
         window.parent.location.hash = '!' + actualActiveSectionId;
       }
       $('body', window.parent.document).removeClass(this.sidebarLinkWasClickedClass);

@@ -1,3 +1,8 @@
+/**
+ * Watch changed fils
+ * and decides when to recompile
+ * main javascript or stylesheet files.
+ */
 var watch = require('watch'),
   utils = require('./utils'),
   writeToStylesheet = require('./write-to-stylesheet'),

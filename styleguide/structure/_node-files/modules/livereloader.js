@@ -1,5 +1,11 @@
+/**
+ * Livereload server
+ * It has its own watcher.
+ * Livereload connects with the livereload.js file
+ * in the Front-End.
+ */
 var livereload = require('livereload'),
-  basePath = __dirname + '/../../..';
+  basePath = require('./utils').basePath;
 
 module.exports = {
   start: function() {

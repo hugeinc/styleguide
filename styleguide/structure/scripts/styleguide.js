@@ -1,3 +1,6 @@
+/**
+ * Script used for the Styleguide structure only
+ */
 var StyleguideIndex = {
   init: function() {
     if ($('.huge-iframe-content').length) return false;
@@ -18,6 +21,11 @@ var StyleguideIndex = {
     this.checkHashOnLoad();
     this.events();
   },
+
+  /**
+   * All events of the structure
+   * should be registered here
+   */
   events: function() {
     var _this = this;
 
@@ -39,13 +47,24 @@ var StyleguideIndex = {
       _this.sidebarResizeHandler();
     });
   },
+
+  /**
+   * Resize iframe based on
+   * the breakpoint choice
+   */
   resizeContent: function($elem) {
     var sizeLabel = $elem.data('size-label'),
       size = sizeLabel === 'full' ? $elem.data('size') : parseInt($elem.data('size').replace('px', ''), 10);
 
     this.$iframe.width(size);
   },
+
+  /**
+   * Check URL hash and navigate
+   * to the respective module
+   */
   checkHashOnLoad: function() {
+
     // Shutdown this feature in Chrome.
     // Chrome have a know issue with file protocol and iframe comunication.
     // It is not supported so we should not raise errors.
@@ -63,7 +82,13 @@ var StyleguideIndex = {
       $iframeHtmlBody.animate({scrollTop: top}, 0);
     }
   },
+
+  /**
+   * Navigate to module on
+   * sidebar links click
+   */
   navigateToAnchor: function($elem) {
+
     // Shutdown this feature in Chrome.
     // Chrome have a know issue with file protocol and iframe comunication.
     // It is not supported so we should not raise errors.
@@ -71,6 +96,7 @@ var StyleguideIndex = {
 
     var top = this.$iframeContent.find('html, body').scrollTop() + this.$iframeContent.find('section' + $elem.attr('href')).offset().top;
 
+    // Use ! to prevent de default browser behavior of anchor navigation
     window.location.hash = '!' + $elem.attr('href').replace('#', '');
 
     this.$iframeContent.find('html, body').animate({scrollTop: top}, 800);
@@ -81,6 +107,11 @@ var StyleguideIndex = {
   sidebarClose: function() {
     this.$body.removeClass('opened');
   },
+
+  /**
+   * Leave or close the sidebar
+   * if the window is small
+   */
   sidebarResizeHandler: function() {
     if ($(window).width() <= 1220) {
       this.sidebarClose();
@@ -89,6 +120,7 @@ var StyleguideIndex = {
     }
   },
   sidebarSetup: function() {
+
     // Shutdown this feature in Chrome.
     // Chrome have a know issue with file protocol and iframe comunication.
     // It is not supported so we should not raise errors.

@@ -1,3 +1,10 @@
+/**
+ * Write last change date (current day)
+ * to the main _data.json file.
+ * It will appear in the header of the Styleguide.
+ *
+ * Additional date formats should be configured here.
+ */
 var fs = require('fs'),
   basePath = require('./utils').basePath;
 

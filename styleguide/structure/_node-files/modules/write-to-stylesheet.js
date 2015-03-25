@@ -1,3 +1,10 @@
+/**
+ * Concatenate all modules stylesheet
+ * files in one main file.
+ *
+ * This is useful if the user wants to import
+ * the complete module code for reuse in a project.
+ */
 var fs = require('fs'),
   basePath = require('./utils').basePath;
 

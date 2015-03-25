@@ -4,7 +4,7 @@
 
 This is a development branch of the Huge Styleguide. The following tasks are yet to be finished (by order of importance):  
 
-- Write Code Standards document
+- Write Contributing documentation
 - Open Source and happyness
   
 
@@ -14,7 +14,11 @@ This is a development branch of the Huge Styleguide. The following tasks are yet
 Double click Start.app
 
 ### Know issues
-If you are a Mac user and after running the Start.app you have this error:
+1. You should allow unregistered applications to run in order to use the Start.app file. You can do so in Settings > Security & Privacy
+
+2. The compiled offline version have a smaller issue on Chrome. Chrome have a security policy of not allowing communication with iframes under file:// protocol, so any interaction that needs such communication will be removed (basically the sidebar menu). This is only for the offline compiled version.
+
+3. If you are a Mac user and after running the Start.app you have this error:
 
 ```
 npm ERR! Please try running this command again as root/Administrator.

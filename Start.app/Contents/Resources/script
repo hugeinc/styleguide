@@ -1,18 +1,31 @@
 #!/bin/bash
 PROJECT_PATH=$(dirname "$0")
 
-installHomebrew() {
-	printf "\nInstalling Homebrew...\n"
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
-	brew update
-}
-
 installNode() {
+	xcode-select --install
+	xcode-select -p >/dev/null 2>&1
+	while [ ! $? -eq 0 ];
+	do
+		echo "Waiting for installing XCode"
+		sleep 1
+		xcode-select -p >/dev/null 2>&1
+	done
 	printf "\nInstalling Node.js...\n"
-	brew install node
+	cd ~
+	echo 'export PATH=$HOME/local/bin:$PATH' >> .bashrc
+	. .bashrc
+	mkdir local
+	mkdir node-latest-install
+	cd node-latest-install
+	curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
+	./configure --prefix=../local
+	make install
+	curl -L https://www.npmjs.org/install.sh | sh
 }
 
 run() {
+	cd ~
+	. .bashrc
 	cd "$PROJECT_PATH"
 	printf "\nChecking dependencies...\n\n"
 	type harp >/dev/null 2>&1
@@ -37,6 +50,7 @@ createLockFile() {
 		touch .install.lock
 	fi
 }
+
 echo "Huge Styleguide. Welcome!"
 cd ../../..                      
 if [ ! -f .install.lock ]; then
@@ -44,19 +58,9 @@ if [ ! -f .install.lock ]; then
 	type node >/dev/null 2>&1
 	if [ $? -eq 1 ]
 	then
-	    type brew >/dev/null 2>&1
-	    if [ $? -eq 1 ]
-	    then
-	        installHomebrew
-	        echo "PROGRESS:20"
-	        installNode
-	        echo "PROGRESS:50"
-	        run
-	    else
-	        installNode
-	        echo "PROGRESS:50"
-	        run
-	    fi
+      installNode
+      echo "PROGRESS:50"
+      run
 	else
 			echo "PROGRESS:50"
 	    run

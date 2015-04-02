@@ -16,7 +16,6 @@ var StyleguideIframe = {
     this.activeModule = null;
 
     this.sidebarLinksHighlightSetup();
-    this.sidebarLinksHighlight();
     this.codeSnippetsSetup();
     this.events();
   },

@@ -3,7 +3,7 @@
 	"name": "Introduction",
 	"scripts": ["introduction.js"],
 	"items" : [
-        "Hello! Welcome to the version 1.0 of the Styleguide Boilerplate project, made for Designers and Developers. Our goal is that you can create from useful and simple styleguides to very customized ones.",
-        "Please feel free to ask and collaborate with the project! <a href='http://hugeinc.com'>test</a>"
+        "Hello! Welcome to the Huge Styleguide project, made for Designers and Developers.",
+        "Please feel free to collaborate with the project <a href='http://github.com/hugeinc/styleguide'>on Github</a>. You can read the documentation <a href='#'>here</a>."
     ]
 }

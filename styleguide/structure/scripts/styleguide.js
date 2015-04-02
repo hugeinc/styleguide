@@ -79,7 +79,7 @@ var StyleguideIndex = {
         $iframeHtmlBody.animate({scrollTop: 0}, 500);
       });
     } else {
-      $iframeHtmlBody.animate({scrollTop: top}, 0);
+      $iframeHtmlBody.animate({scrollTop: top + 20}, 0);
     }
   },
 

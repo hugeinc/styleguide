@@ -2,7 +2,6 @@
 	"id": "buttons",
 	"name": "Buttons",
 	"hasScript": "yes",
-	"jsDependencies": ["vendor/test.js", "vendor/test2.js"],
 	"items": [
 	    {
 	        "buttonName" : "Load more",

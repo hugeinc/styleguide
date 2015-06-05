@@ -1,6 +1,6 @@
 {
   "clientName": "",
-  "version": "1",
+  "version": "2",
   "language": "en_US",
   "logoImage": "logo_placeholder.png",
   "breakpoints": [
@@ -35,5 +35,5 @@
       "styleguide": "Styleguide"
     }
   },
-  "date": "2015/4/2"
+  "date": "2015/6/5"
 }

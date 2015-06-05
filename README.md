@@ -1,8 +1,8 @@
-# Huge Styleguide
+# Styleguide
   
 ####v2.0.0
 
-For downloads, how to get started and detailed documentation please refer to the [Huge Styleguide Website](http://hugeinc.github.io/styleguide/)
+For downloads, how to get started and detailed documentation please refer to the [Styleguide Website](http://hugeinc.github.io/styleguide/)
 
 ### Know issues
 1 - You should allow unregistered applications to run in order to use the Start.app file. You can do so in Settings > Security & Privacy

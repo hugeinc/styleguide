@@ -1,6 +1,6 @@
 # Styleguide
-  
-####v2.0.0
+#### A tool to make creating and maintaining styleguides easy.
+#####v2.0.0
 
 For downloads, how to get started and detailed documentation please refer to the [Styleguide Website](http://hugeinc.github.io/styleguide/)
 

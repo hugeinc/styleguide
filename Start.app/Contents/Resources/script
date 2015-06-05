@@ -51,7 +51,7 @@ createLockFile() {
 	fi
 }
 
-echo "Huge Styleguide. Welcome!"
+echo "Styleguide. Welcome!"
 cd ../../..                      
 if [ ! -f .install.lock ]; then
 	echo "PROGRESS:0"

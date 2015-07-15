@@ -4,6 +4,12 @@
 
 For downloads, how to get started and detailed documentation please refer to the [Styleguide Website](http://hugeinc.github.io/styleguide/)
 
+#### Thanks to
+- [Node.js](http://nodejs.org)
+- [Harp.js](http://harpjs.com)
+- [Node Livereload](https://www.npmjs.com/package/livereload)
+- [Node Watch](https://www.npmjs.com/package/watch)
+
 ### Know issues
 1 - You should allow unregistered applications to run in order to use the Start.app file. You can do so in Settings > Security & Privacy
 

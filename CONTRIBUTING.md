@@ -4,7 +4,7 @@
 
 The good news is that whatever you create in the Styleguide will be treated as a module. This way we are able to add an awesome resource for the community.
 
-Don't forget to read about ["How modules work"](http://brasil.proto.hugeinc.com/styleguide/modules.html#how-they-work) and ["Module Structure"](http://brasil.proto.hugeinc.com/styleguide/modules.html#modules-structure) before you move forward.
+Don't forget to read about ["How modules work"](http://hugeinc.github.io/styleguide/modules.html#how-they-work) and ["Module Structure"](http://hugeinc.github.io/styleguide/modules.html#modules-structure) before you move forward.
 
 ###_data.json
 You can define a key-value in this file that will be used in your module.

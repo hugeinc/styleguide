@@ -1,4 +1,8 @@
 h2.huge-module__title=name
-.feedback
-	each paragraph in items
-		p.huge-module__paragraph!=paragraph
+div(id="#{id}-react")
+
+script(type="text/jsx").
+	React.render(
+		<IntroductionModule url="!{contentUrl}" />,
+		document.getElementById('!{id}-react')
+	);

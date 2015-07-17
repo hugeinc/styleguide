@@ -1,10 +1,8 @@
 h2.huge-module__title=name
-each paragraph in items.intro
-	p.huge-module__paragraph!=paragraph
+div(id="#{id}-react")
 
-ul.huge-list--unstyled.list-colors
-	each color, index in items.colors
-		- var last = index == items.colors.length - 1 ? 'end' : ''
-		li(class="small-12 medium-2 column #{last}")
-			div(class="color #{color.className}")
-				p .#{color.className}
+script(type="text/jsx").
+	React.render(
+		<ColorsModule url="!{contentUrl}" />,
+		document.getElementById('!{id}-react')
+	);

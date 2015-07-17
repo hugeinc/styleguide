@@ -6,6 +6,13 @@ block styles
 	each module in modulesData
 			- var stylesheet = 'modules/' + module.order + '_' + module.id + '/' + module.id + '.css'
 			link(href=stylesheet, rel='stylesheet')
+	script(src="assets/scripts/react.js")
+	script(src="assets/scripts/JSXTransformer.js")
+	each module in modulesData
+		if module.scripts
+			each script in module.scripts
+				- var folder = 'modules/' + module.order + '_' + module.id + '/'
+				script(type="text/jsx", src='#{folder}#{script}')
 
 block content
 	.huge-iframe-content

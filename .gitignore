@@ -3,4 +3,5 @@ node_modules
 .sass-cache
 .codekit-cache
 *.lock
+*.log
 .idea

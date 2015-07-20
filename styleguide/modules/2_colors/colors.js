@@ -34,7 +34,7 @@ var ColorsModule = React.createClass({
                     {this.state.data.colors.map(function(color, index) {
                         var last = index === that.state.data.colors.length - 1 ? 'end' : '';
                         return (
-                            <li className={"small-12 medium-2 " + last}>
+                            <li className={"small-12 medium-2 columns " + last}>
                                 <div className={"color " + color.className}>
                                     <p>.{color.className}</p>
                                 </div>

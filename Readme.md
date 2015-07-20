@@ -1,5 +1,5 @@
 # Huge Styleguide
-####v1.0.1 
+####v1.1.0
 
 Welcome to the Huge Styleguide project! There are several tools to help you create styleguides on the web, but all of them are directed to developers. And even for developers, it might not satisfy the case where you want a beautiful and functional styleguide published fast.
 

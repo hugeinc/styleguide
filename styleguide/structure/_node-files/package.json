@@ -8,8 +8,7 @@
     "watch": "^0.14.0"
   },
   "devDependencies": {
-    "livereload": "^0.3.6",
-    "watch": "^0.14.0"
+    "tape": "^4.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,3 +1,8 @@
 language: node_js
 node_js:
   - 0.12
+script:
+  - cd styleguide/structure/_node-files
+  - npm install
+  - cd _tests
+  - node dependencies.js

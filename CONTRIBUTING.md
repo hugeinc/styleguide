@@ -9,7 +9,7 @@ This repo branching model is **inspired by Git Flow**. Currently we have these t
 - example/ - Helpful examples
 - hotfix/ - Emergency fixes for latest release
 
-[Read the Git Flow reference](http://nvie.com/posts/a-successful-git-branching-model/).
+[Read the Git Flow reference](http://nvie.com/posts/a-successful-git-branching-model/).  
 This repo uses [Semantic Versioning](http://semver.org/).
 
 ## Creating Modules

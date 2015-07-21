@@ -1,4 +1,4 @@
-# Styleguide
+# Styleguide [![Build Status](https://travis-ci.org/hugeinc/styleguide.svg?branch=feature%2Ftests)](https://travis-ci.org/hugeinc/styleguide)
 #### A tool to make creating and maintaining styleguides easy.
 #####v2.0.0
 

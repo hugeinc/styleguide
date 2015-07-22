@@ -34,3 +34,26 @@ After that, try running the Start.app again.
 Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
 ```
 Open XCode and accept the license, then try running Start.app again.
+
+5 - If you get a **404 - No data received** error, you might have a port conflict, there are two ways you can change the port number:
+- Change the PORT variable inside styleguide/structure/_node-files/watch.js
+- Set an environment variable (PORT or STYLEGUIDE_PORT):  
+    
+    If you are running the Styleguide manually, in the last step you might do:
+      
+    ```
+    PORT=7000 node watch.js
+    ```
+    or
+    ```
+    STYLEGUIDE_PORT=7000 node watch.js
+    ```
+    If you are using the Start.app, you should export the variable and then run the .app:
+      
+    ```
+    export PORT=7000
+    ```
+    or
+    ```
+    export STYLEGUIDE_PORT=7000
+    ```

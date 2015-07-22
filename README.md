@@ -1,6 +1,6 @@
-# Styleguide 
+# Styleguide
 #### A tool to make creating and maintaining styleguides easy.
-#####v2.0.0
+#####v2.0.1
 
 For downloads, how to get started and detailed documentation please refer to the [Styleguide Website](http://hugeinc.github.io/styleguide/)
 
@@ -28,19 +28,19 @@ sudo chown -R $(whoami) /usr/local/lib/node_modules
 ```
 
 After that, try running the Start.app again.
- 
+
 4 - If you have XCode installed but have not agreed with the License you will get this error:
 ```
 Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
 ```
 Open XCode and accept the license, then try running Start.app again.
 
-5 - If you get a **404 - No data received** error, you might have a port conflict, there are two ways you can change the port number:
+5 - If you get a **404 - No data received** error, you might have a port conflict, there are two ways you can change the port number (default to **9241**):
 - Change the PORT variable inside styleguide/structure/_node-files/watch.js
-- Set an environment variable (PORT or STYLEGUIDE_PORT):  
-    
+- Set an environment variable (PORT or STYLEGUIDE_PORT):
+
     If you are running the Styleguide manually, in the last step you might do:
-      
+
     ```
     PORT=7000 node watch.js
     ```
@@ -48,12 +48,14 @@ Open XCode and accept the license, then try running Start.app again.
     ```
     STYLEGUIDE_PORT=7000 node watch.js
     ```
-    If you are using the Start.app, you should export the variable and then run the .app:
-      
+    The Start.app is self contained, and for security reasons it does not have access to external variables.  
+    If you want to change the port for the Start.app it is recommended to change the watch.js file.  
+    You can, if you want, add a variable to your .bashrc file and it will be available for the Start.app:
     ```
-    export PORT=7000
+    touch ~/.bashrc
+    echo 'export PORT=1234' >> ~/.bashrc
     ```
     or
     ```
-    export STYLEGUIDE_PORT=7000
+    echo 'export STYLEGUIDE_PORT=1234' >> ~/.bashrc
     ```

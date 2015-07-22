@@ -18,6 +18,7 @@ You have probably installed Node with sudo or root permission. You will need to 
 
 ```
 sudo chown -R $(whoami) ~/.npm
+sudo chown -R $(whoami) /usr/local/lib/node_modules
 ```
 
 After that, try running the Start.app again.

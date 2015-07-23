@@ -178,7 +178,6 @@ test('[Structure Modules] Utils wasDirectory should return true if the parameter
     t.equal(result, false);
 });
 
-
 test('[Structure Modules] Utils wasBaseDataFile should be a function', function(t) {
     t.plan(1);
     t.equal(typeof utils.wasBaseDataFile, 'function');
@@ -203,4 +202,22 @@ test('[Structure Modules] Utils wasBaseDataFile should return true if path conta
 
     t.plan(1);
     t.equal(result, true);
+});
+
+test('[Structure Modules] WriteDate should be a function', function(t) {
+    // WriteDate behavior should be tested in an integration test
+    t.plan(1);
+    t.equal(typeof writeDate, 'function');
+});
+
+test('[Structure Modules] WriteToJavascript should be a function', function(t) {
+    // WriteToJavascript behavior should be tested in an integration test
+    t.plan(1);
+    t.equal(typeof writeToJavascript, 'function');
+});
+
+test('[Structure Modules] WriteToStylesheet should be a function', function(t) {
+    // WriteToStylesheet behavior should be tested in an integration test
+    t.plan(1);
+    t.equal(typeof writeToStylesheet, 'function');
 });

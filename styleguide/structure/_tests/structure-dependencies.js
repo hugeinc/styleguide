@@ -5,27 +5,27 @@ var test = require('../_node-files/node_modules/tape'),
     path = require('path'),
     watch = require('../_node-files/node_modules/watch');
 
-test('[Dependencies] Child process exec should be a function', function(t) {
+test('[Structure Dependencies] Child process exec should be a function', function(t) {
     t.plan(1);
     t.equal(typeof exec, 'function');
 });
 
-test('[Dependencies] File System module should be an object', function(t) {
+test('[Structure Dependencies] File System module should be an object', function(t) {
     t.plan(1);
     t.equal(typeof fs, 'object');
 });
 
-test('[Dependencies] Livereload should be an object', function(t) {
+test('[Structure Dependencies] Livereload should be an object', function(t) {
     t.plan(1);
     t.equal(typeof livereload, 'object');
 });
 
-test('[Dependencies] Path utility should be an object', function(t) {
+test('[Structure Dependencies] Path utility should be an object', function(t) {
     t.plan(1);
     t.equal(typeof path, 'object');
 });
 
-test('[Dependencies] Watch utility should be an object', function(t) {
+test('[Structure Dependencies] Watch utility should be an object', function(t) {
     t.plan(1);
     t.equal(typeof watch, 'object');
 });

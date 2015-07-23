@@ -5,4 +5,5 @@ script:
   - cd styleguide/structure/_node-files
   - npm install
   - cd ../_tests
-  - node dependencies.js
+  - node structure-node-dependencies.js
+  - node structure-node-modules.js

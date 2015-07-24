@@ -7,7 +7,8 @@ var exec = require('child_process').exec,
 	utils = require('./modules/utils'),
 	http = require('http'),
 	waitingTheServer = true,
-	PORT = 9000;
+	PORT = normalizePort(process.env.STYLEGUIDE_PORT || process.env.PORT || '9241');
+
 
 function waitTheServer() {
 	if(waitingTheServer) {
@@ -32,10 +33,28 @@ function waitTheServer() {
 
 // Files watcher
 watcher.start();
+
 // Livereload server
 livereloader.start();
 
 // Initialize Harp
 exec('cd ' + utils.basePath + '&& harp server --port ' + PORT, utils.puts);
-exec('echo "Starting Server.." && echo "PROGRESS:94"', utils.puts);
+exec('echo "Starting Server on port ' + PORT + '.." && echo "PROGRESS:94"', utils.puts);
 waitTheServer();
+
+// From Express
+function normalizePort(val) {
+	var port = parseInt(val, 10);
+
+	if (isNaN(port)) {
+		// named pipe
+		return val;
+	}
+
+	if (port >= 0) {
+		// port number
+		return port;
+	}
+
+	return false;
+}

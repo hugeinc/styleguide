@@ -27,9 +27,9 @@ var TypographyModule = React.createClass({
     render: function() {
         return (
             <div>
-                {this.state.data.intro.map(function(paragraph) {
+                {this.state.data.intro ? this.state.data.intro.map(function(paragraph) {
                     return <p className="huge-module__paragraph" dangerouslySetInnerHTML={{ __html: paragraph }} />
-                })}
+                }) : ''}
                 <div className="titles">
                     {this.state.data.fonts.map(function(font) {
                         var heading = '<h' + font.heading + ' class="' + font.className + '">' + font.title + '</h' + font.heading + '>';
@@ -39,7 +39,7 @@ var TypographyModule = React.createClass({
                                 <h4 className="huge-module__title--light">{font.fontName} - {font.fontSize}</h4>
                                 <div dangerouslySetInnerHTML={{ __html: heading }} />
                             </div>
-                        )
+                        );
                     })}
                 </div>
                 <br />

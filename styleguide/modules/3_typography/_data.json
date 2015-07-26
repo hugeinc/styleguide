@@ -1,5 +1,6 @@
 {
     "id": "typography",
     "name": "Typography",
-    "scripts": ["typography.js"]
+    "scripts": ["typography.js"],
+    "contentUrl": "modules/3_typography/content.json"
 }

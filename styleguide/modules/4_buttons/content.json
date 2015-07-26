@@ -1,0 +1,8 @@
+{
+	"items": [
+	    {
+	        "buttonName" : "Load more",
+	        "className": "button black"
+	    }
+	]
+}

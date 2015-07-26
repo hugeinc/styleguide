@@ -1,11 +1,6 @@
 {
 	"id": "buttons",
 	"name": "Buttons",
-	"hasScript": "yes",
-	"items": [
-	    {
-	        "buttonName" : "Load more",
-	        "className": "button black"
-	    }
-	]
+	"scripts": ["buttons.js"],
+  "contentUrl": "modules/4_buttons/content.json"
 }

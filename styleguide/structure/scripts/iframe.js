@@ -19,7 +19,7 @@ var StyleguideIframe = {
     this.codeSnippetsSetup();
     this.events();
   },
-
+  npm install -g babel tape faucet browserify browser-run
   /**
    * All events of the iframe
    * should be registered here

@@ -8,6 +8,11 @@
     "watch": "^0.14.0"
   },
   "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "request": "^2.60.0",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0",
     "tape": "^4.0.1"
   },
   "scripts": {

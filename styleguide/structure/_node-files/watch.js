@@ -9,7 +9,6 @@ var exec = require('child_process').exec,
 	waitingTheServer = true,
 	PORT = normalizePort(process.env.STYLEGUIDE_PORT || process.env.PORT || '9241');
 
-
 function waitTheServer() {
 	if(waitingTheServer) {
 		http.get({
@@ -20,6 +19,11 @@ function waitTheServer() {
 			if(res.statusCode == 200) {
 				exec('echo "Done! Enjoy!" && echo "PROGRESS:100" && open "http://localhost:' + PORT + '"', utils.puts);
 				waitingTheServer = false;
+
+				if (INTEGRATION_TEST) INTEGRATION_TEST.run(PORT);
+
+				// Files watcher
+				watcher.start();
 			}
 			res.emit('end');
 			waitTheServer();
@@ -30,9 +34,6 @@ function waitTheServer() {
 		});
 	}
 }
-
-// Files watcher
-watcher.start();
 
 // Livereload server
 livereloader.start();

@@ -8,8 +8,6 @@ var test = require('../_node-files/node_modules/tape'),
     watch = require('../_node-files/watch'),
     basePath = require('../_node-files/modules/utils').basePath;
 
-chai.use(sinonChai);
-
 function globalAssetFileCheckModifiedTime(filePath, command, assertion) {
     var originalFileStats = fs.statSync(basePath + filePath),
         originalFileLastModifiedDate = originalFileStats.mtime.getTime(),

@@ -5,11 +5,7 @@ var test = require('../_node-files/node_modules/tape'),
     fs = require('fs'),
     exec = require('child_process').exec,
     request = require('../_node-files/node_modules/request'),
-    chai = require('../_node-files/node_modules/chai'),
-    sinon = require('../_node-files/node_modules/sinon'),
-    sinonChai = require('../_node-files/node_modules/sinon-chai'),
     watch = require('../_node-files/watch'),
-    expect = chai.expect,
     basePath = require('../_node-files/modules/utils').basePath;
 
 chai.use(sinonChai);
@@ -281,29 +277,29 @@ INTEGRATION_TEST.run = function(PORT) {
 
     // TODO: Not closing connection
     // livereloader.js
-    test('When a file change the browser should update and contain that change', function(t) {
-        var data;
-
-        t.plan(1);
-
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
-        setTimeout(function() {
-            data = JSON.parse(fs.readFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json'));
-            data.name = "Testing changing the file.";
-            fs.writeFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json', JSON.stringify(data, null, 2));
-
-            setTimeout(function() {
-                request.get('http://localhost:' + PORT, function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        t.equal(body.indexOf('Testing changing the file.') > -1, true);
-                        exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
-                    }
-                    t.end();
-                    console.log(request);
-                });
-            }, 6000);
-        }, 1000);
-    });
+    //test('When a file change the browser should update and contain that change', function(t) {
+    //    var data;
+    //
+    //    t.plan(1);
+    //
+    //    exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
+    //
+    //    setTimeout(function() {
+    //        data = JSON.parse(fs.readFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json'));
+    //        data.name = "Testing changing the file.";
+    //        fs.writeFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json', JSON.stringify(data, null, 2));
+    //
+    //        setTimeout(function() {
+    //            request.get('http://localhost:' + PORT, function (error, response, body) {
+    //                if (!error && response.statusCode == 200) {
+    //                    t.equal(body.indexOf('Testing changing the file.') > -1, true);
+    //                    exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
+    //                }
+    //                t.end();
+    //                console.log(request);
+    //            });
+    //        }, 6000);
+    //    }, 1000);
+    //});
 
 };

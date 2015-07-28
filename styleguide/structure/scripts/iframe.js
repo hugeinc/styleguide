@@ -1,9 +1,10 @@
 /**
  * Script used for the Iframe only
  */
+
 var StyleguideIframe = {
   init: function() {
-    if (!$('.huge-iframe-content').length) return false;
+    if (!$('.huge-iframe-content').length && !FRONT_END_TEST) return false;
 
     this.$sectionAnchors = $('.anchor');
 
@@ -15,11 +16,13 @@ var StyleguideIframe = {
     this.modulesOffsetTop = [];
     this.activeModule = null;
 
+    if (FRONT_END_TEST) return false;
+
     this.sidebarLinksHighlightSetup();
     this.codeSnippetsSetup();
     this.events();
   },
-  npm install -g babel tape faucet browserify browser-run
+
   /**
    * All events of the iframe
    * should be registered here
@@ -125,6 +128,10 @@ var StyleguideIframe = {
   }
 };
 
-$(window).load(function() {
-  StyleguideIframe.init();
-});
+if(!FRONT_END_TEST) {
+  $(window).load(function() {
+    StyleguideIframe.init();
+  });
+} else {
+  FRONT_END_TEST.StyleguideIframe = StyleguideIframe;
+}

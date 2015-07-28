@@ -1,9 +1,10 @@
 /**
  * Script used for the Styleguide structure only
  */
+
 var StyleguideIndex = {
   init: function() {
-    if ($('.huge-iframe-content').length) return false;
+    if ($('.huge-iframe-content').length && !FRONT_END_TEST) return false;
 
     this.$body = $('body');
     this.$breakpointsLinks = $('.huge-header__breakpoints__item__link');
@@ -11,11 +12,14 @@ var StyleguideIndex = {
     this.$sidebarLinks = $('.huge-sidebar__nav__item__link');
     this.$sidebarToggle = $('[class*="huge-sidebar__toggle"]');
     this.$iframe = $('.huge-iframe-wrapper iframe');
+    console.log($.toString());
     this.$iframeContent = $('.huge-iframe-wrapper iframe').contents();
 
     this.sidebarOpenedClass = 'opened';
     this.sidebarActiveLinkClass = 'active';
     this.sidebarLinkWasClickedClass = 'side-menu-clicked';
+
+    if (FRONT_END_TEST) return false;
 
     this.sidebarSetup();
     this.checkHashOnLoad();
@@ -141,6 +145,10 @@ var StyleguideIndex = {
   }
 };
 
-$(window).load(function() {
-  StyleguideIndex.init();
-});
+if(!FRONT_END_TEST) {
+  $(window).load(function() {
+    StyleguideIndex.init();
+  });
+} else {
+  FRONT_END_TEST.StyleguideIndex = StyleguideIndex;
+}

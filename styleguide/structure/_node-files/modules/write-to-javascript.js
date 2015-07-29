@@ -14,7 +14,7 @@ module.exports = function() {
     content = [],
     finalContent,
     list = fs.readdirSync(modulesDirectory);
-  console.log('writing javascript');
+
   list.forEach(function(file) {
     var path = modulesDirectory + '/' + file,
       hasData,

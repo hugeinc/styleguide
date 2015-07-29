@@ -26,7 +26,6 @@ module.exports = {
       });
       monitor.on('changed', function(f) {
         if (utils.wasDirectory(false, f) || utils.wasJavascriptOfModule(f) || utils.wasDataOfModule(f)) {
-          console.log('something changed');
           writeToJavascript();
         }
         if (utils.wasDirectory(false, f) || utils.wasStylesheetOfModule(f)) {

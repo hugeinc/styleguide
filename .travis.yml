@@ -3,7 +3,7 @@ node_js:
   - 0.12
 script:
   - cd styleguide/structure/_node-files
-  - npm install -g tape faucet browserify browser-run
+  - npm install -g tape faucet browserify browser-run nightwatch
   - npm install
   - cd ../_tests
   - node structure-node-dependencies.js

@@ -2,6 +2,8 @@
  * Script used for the Iframe only
  */
 
+var FRONT_END_TEST = FRONT_END_TEST || false;
+
 var StyleguideIframe = {
   init: function() {
     if (!$('.huge-iframe-content').length && !FRONT_END_TEST) return false;

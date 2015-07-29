@@ -2,6 +2,8 @@
  * Script used for the Styleguide structure only
  */
 
+var FRONT_END_TEST = FRONT_END_TEST || false;
+
 var StyleguideIndex = {
   init: function() {
     if ($('.huge-iframe-content').length && !FRONT_END_TEST) return false;
@@ -12,7 +14,6 @@ var StyleguideIndex = {
     this.$sidebarLinks = $('.huge-sidebar__nav__item__link');
     this.$sidebarToggle = $('[class*="huge-sidebar__toggle"]');
     this.$iframe = $('.huge-iframe-wrapper iframe');
-    console.log($.toString());
     this.$iframeContent = $('.huge-iframe-wrapper iframe').contents();
 
     this.sidebarOpenedClass = 'opened';
@@ -98,7 +99,7 @@ var StyleguideIndex = {
     // It is not supported so we should not raise errors.
     if (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
 
-    var top = this.$iframeContent.find('html, body').scrollTop() + this.$iframeContent.find('section' + $elem.attr('href')).offset().top;
+    var top = this.$iframeContent.find('section' + $elem.attr('href')).offset().top + 50;
 
     // Use ! to prevent de default browser behavior of anchor navigation
     window.location.hash = '!' + $elem.attr('href').replace('#', '');

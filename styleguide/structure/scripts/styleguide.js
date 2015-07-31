@@ -94,7 +94,7 @@ var StyleguideIndex = {
     // It is not supported so we should not raise errors.
     if (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
 
-    var top = this.$iframeContent.find('html, body').scrollTop() + this.$iframeContent.find('section' + $elem.attr('href')).offset().top;
+    var top = this.$iframeContent.find('section' + $elem.attr('href')).offset().top;
 
     // Use ! to prevent de default browser behavior of anchor navigation
     window.location.hash = '!' + $elem.attr('href').replace('#', '');

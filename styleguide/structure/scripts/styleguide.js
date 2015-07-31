@@ -2,8 +2,6 @@
  * Script used for the Styleguide structure only
  */
 
-var FRONT_END_TEST = FRONT_END_TEST || false;
-
 var StyleguideIndex = {
   init: function() {
     if ($('.huge-iframe-content').length && !FRONT_END_TEST) return false;
@@ -146,7 +144,7 @@ var StyleguideIndex = {
   }
 };
 
-if(!FRONT_END_TEST) {
+if(typeof FRONT_END_TEST === 'undefined') {
   $(window).load(function() {
     StyleguideIndex.init();
   });

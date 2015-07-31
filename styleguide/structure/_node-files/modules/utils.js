@@ -60,7 +60,7 @@ module.exports = {
     if (!removed) {
       return fs.lstatSync(f).isDirectory();
     } else {
-      return filename.indexOf('_') < 5 && filename.indexOf('.') === -1;
+      return filename.indexOf('_') < 5 && filename.indexOf('_') > -1 && filename.indexOf('.') === -1;
     }
   },
 

@@ -1,4 +1,3 @@
-// TODO: Front Scripts Tests
 var test = require('../_node-files/node_modules/tape');
 
 FRONT_END_TEST = {};

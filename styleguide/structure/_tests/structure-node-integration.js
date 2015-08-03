@@ -57,7 +57,7 @@ INTEGRATION_TEST.run = function(PORT) {
         var result = false;
 
         http.get({
-            host: 'localhost',
+            host: '127.0.0.1',
             port: PORT,
             path: '/'
         }, function (res) {

@@ -13,7 +13,7 @@ var exec = require('child_process').exec,
 function waitTheServer() {
 	if(waitingTheServer) {
 		http.get({
-			host: 'localhost',
+			host: '127.0.0.1',
 			port: PORT,
 			path: '/'
 		}, function(res) {

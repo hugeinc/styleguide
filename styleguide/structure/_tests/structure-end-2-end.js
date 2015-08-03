@@ -14,7 +14,7 @@ module.exports = {
     },
     "DOMelementsPresent": function (browser) {
         browser
-            .url('http://localhost:' + TEST_PORT)
+            .url('http://127.0.0.1:' + TEST_PORT)
             .waitForElementVisible('body', 2000)
             .pause(2000)
             .maximizeWindow()

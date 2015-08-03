@@ -11,7 +11,6 @@ var exec = require('child_process').exec,
 	PORT = normalizePort(process.env.STYLEGUIDE_PORT || process.env.PORT || '9241');
 
 function waitTheServer() {
-	console.log('Waiting the server on port ' + PORT);
 	if(waitingTheServer) {
 		http.get({
 			host: 'localhost',

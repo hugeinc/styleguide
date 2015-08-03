@@ -40,6 +40,8 @@ function globalAssetFileCheckModifiedTime(filePath, command, assertion) {
     }, 200);
 }
 
+console.log('Running integration tests...');
+
 INTEGRATION_TEST.run = function(PORT) {
 
     // Mock a fake data into main _data.json file in order to test update later

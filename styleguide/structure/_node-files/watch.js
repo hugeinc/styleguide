@@ -11,12 +11,14 @@ var exec = require('child_process').exec,
 	PORT = normalizePort(process.env.STYLEGUIDE_PORT || process.env.PORT || '9241');
 
 function waitTheServer() {
+	console.log('Waiting the server on port ' + PORT);
 	if(waitingTheServer) {
 		http.get({
 			host: 'localhost',
 			port: PORT,
 			path: '/'
 		}, function(res) {
+			console.log(res.statusCode);
 			if(res.statusCode == 200) {
 				if (!INTEGRATION_TEST) exec('echo "Done! Enjoy!" && echo "PROGRESS:100" && open "http://localhost:' + PORT + '"', utils.puts);
 				if (INTEGRATION_TEST) INTEGRATION_TEST.run(PORT);
@@ -34,6 +36,8 @@ function waitTheServer() {
 		});
 	}
 }
+
+console.log('Running watch.js');
 
 // Livereload server
 livereloader.start();

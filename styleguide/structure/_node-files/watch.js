@@ -7,6 +7,7 @@ var exec = require('child_process').exec,
 	utils = require('./modules/utils'),
 	http = require('http'),
 	waitingTheServer = true,
+	INTEGRATION_TEST = global.INTEGRATION_TEST || false,
 	PORT = normalizePort(process.env.STYLEGUIDE_PORT || process.env.PORT || '9241');
 
 function waitTheServer() {

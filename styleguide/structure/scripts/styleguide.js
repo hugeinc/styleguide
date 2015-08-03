@@ -2,6 +2,10 @@
  * Script used for the Styleguide structure only
  */
 
+if (typeof window !== 'undefined') global = window;
+
+var FRONT_END_TEST = global.FRONT_END_TEST || false;
+
 var StyleguideIndex = {
   init: function() {
     if ($('.huge-iframe-content').length && !FRONT_END_TEST) return false;
@@ -36,7 +40,8 @@ var StyleguideIndex = {
       _this.resizeContent($(this));
     });
 
-    this.$sidebarLinks.click(function() {
+    this.$sidebarLinks.click(function(e) {
+      e.preventDefault();
       _this.setActiveSidebarLinkOnClick($(this));
       _this.navigateToAnchor($(this));
     });
@@ -144,7 +149,7 @@ var StyleguideIndex = {
   }
 };
 
-if(typeof FRONT_END_TEST === 'undefined') {
+if(!FRONT_END_TEST) {
   $(window).load(function() {
     StyleguideIndex.init();
   });

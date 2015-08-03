@@ -1,4 +1,3 @@
-// TODO: E2E Tests
 INTEGRATION_TEST = {};
 
 var watch = require('../_node-files/watch'),

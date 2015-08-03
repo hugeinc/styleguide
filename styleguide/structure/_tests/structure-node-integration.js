@@ -8,11 +8,22 @@ var test = require('../_node-files/node_modules/tape'),
     watch = require('../_node-files/watch'),
     basePath = require('../_node-files/modules/utils').basePath;
 
+
+function createTestModule() {
+    exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
+}
+
+function removeTestModule() {
+    exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
+}
+
 function globalAssetFileCheckModifiedTime(filePath, command, assertion) {
     var originalFileStats = fs.statSync(basePath + filePath),
         originalFileLastModifiedDate = originalFileStats.mtime.getTime(),
         newFileStats,
         newFileLastModifiedDate;
+
+    createTestModule();
 
     setTimeout(function() {
         command();
@@ -23,6 +34,7 @@ function globalAssetFileCheckModifiedTime(filePath, command, assertion) {
 
             setTimeout(function() {
                 assertion(newFileLastModifiedDate.getTime() > originalFileLastModifiedDate);
+                removeTestModule();
             }, 500);
         }, 10000);
     }, 200);
@@ -75,7 +87,8 @@ INTEGRATION_TEST.run = function(PORT) {
     test('When a module directory is created, the javascript file should be updated', function (t) {
         globalAssetFileCheckModifiedTime('/styleguide/assets/scripts/styleguide.js',
            function () {
-            exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
+            removeTestModule();
+            createTestModule();
         }, function(fileWasUpdated) {
             t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
         });
@@ -100,7 +113,6 @@ INTEGRATION_TEST.run = function(PORT) {
             exec('rm ' + basePath + '/styleguide/modules/00_testmodule/_data.json && cp ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule/_data.json ' + basePath + '/styleguide/modules/00_testmodule/');
         }, function(fileWasUpdated) {
             t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-            exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
         });
 
         t.plan(1);
@@ -109,7 +121,8 @@ INTEGRATION_TEST.run = function(PORT) {
     test('When a module directory is created the stylesheet file should be updated', function(t) {
         globalAssetFileCheckModifiedTime('/styleguide/assets/styles/styleguide.scss',
             function () {
-                exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
+                removeTestModule();
+                createTestModule();
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
             });
@@ -151,13 +164,11 @@ INTEGRATION_TEST.run = function(PORT) {
         t.plan(1);
     });
 
-    // TODO: Not passing
     test('When a _data.json of module is changed, the javascript file should be updated', function(t) {
         globalAssetFileCheckModifiedTime('/styleguide/assets/scripts/styleguide.js',
             function () {
-                var data = JSON.parse(fs.readFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json'));
-                data.name = "Testing changing the file.";
-                fs.writeFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json', JSON.stringify(data, null, 2));
+                exec('mv ' + basePath + '/styleguide/modules/00_testmodule/_data.json ' + basePath + '/styleguide/modules/00_testmodule/_dataa.json');
+                exec('mv ' + basePath + '/styleguide/modules/00_testmodule/_dataa.json ' + basePath + '/styleguide/modules/00_testmodule/_data.json');
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
             });
@@ -183,121 +194,106 @@ INTEGRATION_TEST.run = function(PORT) {
                 exec('echo "body { background: red; }" >> ' + basePath + '/styleguide/modules/00_testmodule/testmodule.scss');
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
             });
 
         t.plan(1);
     });
 
     test('When a module directory of module is removed, the javascript file should be updated', function(t) {
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
         globalAssetFileCheckModifiedTime('/styleguide/assets/scripts/styleguide.js',
             function () {
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
+                removeTestModule();
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
+                createTestModule();
             });
 
         t.plan(1);
     });
 
     test('When a javascript of module is removed, the javascript file should be updated', function(t) {
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
         globalAssetFileCheckModifiedTime('/styleguide/assets/scripts/styleguide.js',
             function () {
                 exec('rm ' + basePath + '/styleguide/modules/00_testmodule/testmodule.js');
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
             });
 
         t.plan(1);
     });
 
     test('When a _data.json of module is removed, the javascript file should be updated', function(t) {
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
         globalAssetFileCheckModifiedTime('/styleguide/assets/scripts/styleguide.js',
             function () {
                 exec('rm ' + basePath + '/styleguide/modules/00_testmodule/_data.json');
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
             });
 
         t.plan(1);
     });
 
-    // TODO: Not passing
     test('When a module directory is removed, the stylesheet file should be updated', function(t) {
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
         globalAssetFileCheckModifiedTime('/styleguide/assets/styles/styleguide.scss',
             function () {
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
+                removeTestModule();
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
+                createTestModule();
             });
 
         t.plan(1);
     });
 
     test('When a javascript of module is removed, the stylesheet file should be updated', function(t) {
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
         globalAssetFileCheckModifiedTime('/styleguide/assets/styles/styleguide.scss',
             function () {
                 exec('rm ' + basePath + '/styleguide/modules/00_testmodule/testmodule.js');
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
             });
 
         t.plan(1);
     });
 
     test('When a _data.json of module is removed, the stylesheet file should be updated', function(t) {
-        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-
         globalAssetFileCheckModifiedTime('/styleguide/assets/styles/styleguide.scss',
             function () {
                 exec('rm ' + basePath + '/styleguide/modules/00_testmodule/_data.json');
             }, function(fileWasUpdated) {
                 t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
-                exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
             });
 
         t.plan(1);
     });
 
-    // TODO: Not closing connection
     // livereloader.js
-    //test('When a file change the browser should update and contain that change', function(t) {
-    //    var data;
-    //
-    //    t.plan(1);
-    //
-    //    exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
-    //
-    //    setTimeout(function() {
-    //        data = JSON.parse(fs.readFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json'));
-    //        data.name = "Testing changing the file.";
-    //        fs.writeFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json', JSON.stringify(data, null, 2));
-    //
-    //        setTimeout(function() {
-    //            request.get('http://localhost:' + PORT, function (error, response, body) {
-    //                if (!error && response.statusCode == 200) {
-    //                    t.equal(body.indexOf('Testing changing the file.') > -1, true);
-    //                    exec('rm -rf ' + basePath + '/styleguide/modules/00_testmodule');
-    //                }
-    //                t.end();
-    //                console.log(request);
-    //            });
-    //        }, 6000);
-    //    }, 1000);
-    //});
+    test('When a file change the browser should update and contain that change', function(t) {
+        var data;
+
+        t.plan(1);
+
+        function assertContains(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                t.equal(body.indexOf('Testing changing the file.') > -1, true);
+                removeTestModule();
+            }
+            t.end();
+        }
+
+        exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');
+
+        setTimeout(function() {
+            data = JSON.parse(fs.readFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json'));
+            data.name = "Testing changing the file.";
+            fs.writeFileSync(basePath + '/styleguide/modules/00_testmodule/_data.json', JSON.stringify(data, null, 2));
+
+            setTimeout(function() {
+                request('http://localhost:' + PORT, function (error, response, body) {
+                    assertContains(error, response, body);
+                });
+            }, 6000);
+        }, 1000);
+    });
 
 };

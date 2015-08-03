@@ -10,4 +10,3 @@ script:
   - node structure-node-modules.js
   - node structure-node-integration.js
   - node structure-front-scripts.js
-  - nightwatch --test structure-end-2-end.js

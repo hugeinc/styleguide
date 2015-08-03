@@ -2,6 +2,10 @@
  * Script used for the Iframe only
  */
 
+if (typeof window !== 'undefined') global = window;
+
+var FRONT_END_TEST = global.FRONT_END_TEST || false;
+
 var StyleguideIframe = {
   init: function() {
     if (!$('.huge-iframe-content').length && !FRONT_END_TEST) return false;
@@ -128,7 +132,7 @@ var StyleguideIframe = {
   }
 };
 
-if(typeof FRONT_END_TEST === 'undefined') {
+if(!FRONT_END_TEST) {
   $(window).load(function() {
     StyleguideIframe.init();
   });

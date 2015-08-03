@@ -6,7 +6,7 @@ script:
   - sh -e /etc/init.d/xvfb start
   - sleep 5
   - cd styleguide/structure/_node-files
-  - npm install -g tape faucet browserify nightwatch
+  - npm install -g harp tape faucet browserify nightwatch
   - npm install
   - cd ../_tests
   - node structure-node-dependencies.js

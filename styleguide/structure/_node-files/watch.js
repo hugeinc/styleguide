@@ -31,6 +31,7 @@ function waitTheServer() {
 		}).on('error', function(e) {
 			// Nothing
 			waitingTheServer = true;
+			console.log('problem with request: ' + e.message);
 			waitTheServer();
 		});
 	}

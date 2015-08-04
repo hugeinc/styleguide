@@ -26,6 +26,13 @@ module.exports = {
             .assert.elementPresent('.huge-sidebar__content')
             .assert.elementPresent('.huge-sidebar__nav')
             .pause(4000);
+            .perform(function(client, done) {
+                setTimeout(function() {
+                    client.end();
+                    done();
+                    process.exit();
+                }, 500);
+            });
     }
     //"BreakpointsControlsWorking": function (browser) {
     //    browser

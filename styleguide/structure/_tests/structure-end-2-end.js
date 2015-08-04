@@ -82,5 +82,12 @@ module.exports = {
             .resizeWindow(1200, 1000)
             .pause(1000)
             .assert.cssClassNotPresent('body', 'opened')
+            .perform(function(client, done) {
+                setTimeout(function() {
+                    client.end();
+                    done();
+                    process.exit();
+                }, 5000);
+            });
     }
 };

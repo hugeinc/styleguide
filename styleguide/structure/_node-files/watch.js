@@ -17,7 +17,6 @@ function waitTheServer() {
 			port: PORT,
 			path: '/'
 		}, function(res) {
-			console.log(res.statusCode);
 			if(res.statusCode == 200) {
 				if (!INTEGRATION_TEST) exec('echo "Done! Enjoy!" && echo "PROGRESS:100" && open "http://localhost:' + PORT + '"', utils.puts);
 				if (INTEGRATION_TEST) INTEGRATION_TEST.run(PORT);
@@ -31,21 +30,16 @@ function waitTheServer() {
 		}).on('error', function(e) {
 			// Nothing
 			waitingTheServer = true;
-			console.log('problem with request: ', JSON.stringify(e));
 			waitTheServer();
 		});
 	}
 }
 
-console.log('Running watch.js');
-
 // Livereload server
 livereloader.start();
 
 // Initialize Harp
-exec('cd ' + utils.basePath + '&& harp server --port ' + PORT, function(a,b) {
-	console.log(a, b);
-});
+exec('cd ' + utils.basePath + '&& harp server --port ' + PORT, utils.puts);
 if (!INTEGRATION_TEST) exec('echo "Starting Server on port ' + PORT + '.." && echo "PROGRESS:94"', utils.puts);
 waitTheServer();
 

@@ -40,8 +40,6 @@ function globalAssetFileCheckModifiedTime(filePath, command, assertion) {
     }, 200);
 }
 
-console.log('Running integration tests...');
-
 INTEGRATION_TEST.run = function(PORT) {
 
     // Mock a fake data into main _data.json file in order to test update later
@@ -77,10 +75,10 @@ INTEGRATION_TEST.run = function(PORT) {
 
     // write-date.js
     test('When the server starts, the "last updated date" must be updated', function (t) {
+        t.plan(1);
+
         setTimeout(function () {
             var data = JSON.parse(fs.readFileSync(basePath + '/styleguide/_data.json'));
-
-            t.plan(1);
             t.notEqual(data.date, '00/00/0000');
         }, 2000);
     });
@@ -89,8 +87,7 @@ INTEGRATION_TEST.run = function(PORT) {
     test('When a module directory is created, the javascript file should be updated', function (t) {
         globalAssetFileCheckModifiedTime('/styleguide/assets/scripts/styleguide.js',
            function () {
-            removeTestModule();
-            createTestModule();
+            // Module folder created in the globalAssetFileCheckModifiedTime function
         }, function(fileWasUpdated) {
             t.equal(fileWasUpdated, true, 'Actual modified time is bigger than the original modified time.');
         });
@@ -277,10 +274,11 @@ INTEGRATION_TEST.run = function(PORT) {
 
         function assertContains(error, response, body) {
             if (!error && response.statusCode == 200) {
-                t.equal(body.indexOf('Testing changing the file.') > -1, true);
+                t.equal(body.indexOf('Testing changing the file.') !== -1, true);
                 removeTestModule();
             }
             t.end();
+            process.exit();
         }
 
         exec('cp -R ' + basePath + '/styleguide/structure/_tests/mocks/00_testmodule ' + basePath + '/styleguide/modules/00_testmodule');

@@ -26,7 +26,7 @@ module.exports = {
             .assert.elementPresent('.huge-sidebar__content')
             .assert.elementPresent('.huge-sidebar__nav')
             .pause(4000);
-    },
+    }
     //"BreakpointsControlsWorking": function (browser) {
     //    browser
     //        .click('#small')
@@ -50,44 +50,44 @@ module.exports = {
     //            browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
     //        });
     //},
-    "SidebarActiveLinksWorking": function (browser) {
-        browser
-            .click('a[href="#colors"]')
-            .pause(3000)
-            .assert.cssClassPresent('a[href="#colors"]', 'active')
-            .click('a[href="#buttons"]')
-            .pause(3000)
-            .assert.cssClassPresent('a[href="#buttons"]', 'active');
-    },
-    "SidebarLinksTriggerHashChange": function (browser) {
-        browser
-            .click('a[href="#colors"]')
-            .pause(2000)
-            .assert.urlContains('#!colors')
-            .click('a[href="#buttons"]')
-            .pause(2000)
-            .assert.urlContains('#!buttons')
-    },
-    "SidebarToggleIsWorking": function (browser) {
-        browser
-            .click('.huge-sidebar__toggle--in')
-            .pause(3000)
-            .assert.cssClassNotPresent('body', 'opened')
-            .click('.huge-sidebar__toggle--out')
-            .pause(3000)
-            .assert.cssClassPresent('body', 'opened')
-    },
-    "SidebarGetsHiddenOnSmallerViewport": function (browser) {
-        browser
-            .resizeWindow(1200, 1000)
-            .pause(1000)
-            .assert.cssClassNotPresent('body', 'opened')
-            .perform(function(client, done) {
-                setTimeout(function() {
-                    client.end();
-                    done();
-                    process.exit();
-                }, 5000);
-            });
-    }
+    //"SidebarActiveLinksWorking": function (browser) {
+    //    browser
+    //        .click('a[href="#colors"]')
+    //        .pause(3000)
+    //        .assert.cssClassPresent('a[href="#colors"]', 'active')
+    //        .click('a[href="#buttons"]')
+    //        .pause(3000)
+    //        .assert.cssClassPresent('a[href="#buttons"]', 'active');
+    //},
+    //"SidebarLinksTriggerHashChange": function (browser) {
+    //    browser
+    //        .click('a[href="#colors"]')
+    //        .pause(2000)
+    //        .assert.urlContains('#!colors')
+    //        .click('a[href="#buttons"]')
+    //        .pause(2000)
+    //        .assert.urlContains('#!buttons')
+    //},
+    //"SidebarToggleIsWorking": function (browser) {
+    //    browser
+    //        .click('.huge-sidebar__toggle--in')
+    //        .pause(3000)
+    //        .assert.cssClassNotPresent('body', 'opened')
+    //        .click('.huge-sidebar__toggle--out')
+    //        .pause(3000)
+    //        .assert.cssClassPresent('body', 'opened')
+    //},
+    //"SidebarGetsHiddenOnSmallerViewport": function (browser) {
+    //    browser
+    //        .resizeWindow(1200, 1000)
+    //        .pause(1000)
+    //        .assert.cssClassNotPresent('body', 'opened')
+    //        .perform(function(client, done) {
+    //            setTimeout(function() {
+    //                client.end();
+    //                done();
+    //                process.exit();
+    //            }, 5000);
+    //        });
+    //}
 };

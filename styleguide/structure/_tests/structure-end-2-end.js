@@ -25,7 +25,7 @@ module.exports = {
             .assert.elementPresent('.huge-iframe-wrapper')
             .assert.elementPresent('.huge-sidebar__content')
             .assert.elementPresent('.huge-sidebar__nav')
-            .pause(4000);
+            .pause(4000)
             .perform(function(client, done) {
                 setTimeout(function() {
                     client.end();

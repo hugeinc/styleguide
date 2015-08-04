@@ -27,29 +27,29 @@ module.exports = {
             .assert.elementPresent('.huge-sidebar__nav')
             .pause(4000);
     },
-    "BreakpointsControlsWorking": function (browser) {
-        browser
-            .click('#small')
-            .pause(3000)
-            .getAttribute('#small', 'data-size', function(result) {
-                browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
-            })
-            .click('#medium')
-            .pause(3000)
-            .getAttribute('#medium', 'data-size', function(result) {
-                browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
-            })
-            .click('#large')
-            .pause(3000)
-            .getAttribute('#large', 'data-size', function(result) {
-                browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
-            })
-            .click('#full')
-            .pause(3000)
-            .getAttribute('#full', 'data-size', function(result) {
-                browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
-            });
-    },
+    //"BreakpointsControlsWorking": function (browser) {
+    //    browser
+    //        .click('#small')
+    //        .pause(3000)
+    //        .getAttribute('#small', 'data-size', function(result) {
+    //            browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
+    //        })
+    //        .click('#medium')
+    //        .pause(3000)
+    //        .getAttribute('#medium', 'data-size', function(result) {
+    //            browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
+    //        })
+    //        .click('#large')
+    //        .pause(3000)
+    //        .getAttribute('#large', 'data-size', function(result) {
+    //            browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
+    //        })
+    //        .click('#full')
+    //        .pause(3000)
+    //        .getAttribute('#full', 'data-size', function(result) {
+    //            browser.assert.attributeEquals('.huge-iframe-wrapper iframe', 'style', 'width: ' + result.value + ';')
+    //        });
+    //},
     "SidebarActiveLinksWorking": function (browser) {
         browser
             .click('a[href="#colors"]')

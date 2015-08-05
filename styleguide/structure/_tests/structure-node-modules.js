@@ -143,7 +143,6 @@ test('[Structure Modules] Utils wasDirectory should return false if not all para
     t.equal(result, false);
 });
 
-// TODO: Not passing on Travis CI
 test('[Structure Modules] Utils wasDirectory should return false if the parameter "removed" is true and path does not follows the module folder pattern (N_name)', function(t) {
     var result = utils.wasDirectory(true, 'a/simple/test-like/path/to/a/regular/folder');
 

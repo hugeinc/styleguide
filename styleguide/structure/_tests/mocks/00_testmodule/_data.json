@@ -1,0 +1,8 @@
+{
+  "id": "testmodule",
+  "name": "Test Module",
+  "scripts": ["testmodule.js"],
+  "items" : [
+    "Test module"
+  ]
+}

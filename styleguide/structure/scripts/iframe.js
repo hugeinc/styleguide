@@ -1,9 +1,14 @@
 /**
  * Script used for the Iframe only
  */
+
+if (typeof window !== 'undefined') global = window;
+
+var FRONT_END_TEST = global.FRONT_END_TEST || false;
+
 var StyleguideIframe = {
   init: function() {
-    if (!$('.huge-iframe-content').length) return false;
+    if (!$('.huge-iframe-content').length && !FRONT_END_TEST) return false;
 
     this.$sectionAnchors = $('.anchor');
 
@@ -14,6 +19,8 @@ var StyleguideIframe = {
     this.sidebarActiveLinkClass = 'active';
     this.modulesOffsetTop = [];
     this.activeModule = null;
+
+    if (FRONT_END_TEST) return false;
 
     this.sidebarLinksHighlightSetup();
     this.codeSnippetsSetup();
@@ -125,6 +132,10 @@ var StyleguideIframe = {
   }
 };
 
-$(window).load(function() {
-  StyleguideIframe.init();
-});
+if(!FRONT_END_TEST) {
+  $(window).load(function() {
+    StyleguideIframe.init();
+  });
+} else {
+  FRONT_END_TEST.StyleguideIframe = StyleguideIframe;
+}

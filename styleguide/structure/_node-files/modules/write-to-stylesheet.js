@@ -9,6 +9,7 @@ var fs = require('fs'),
   basePath = require('./utils').basePath;
 
 module.exports = function() {
+  // TODO: Identify stylesheet extension
   // Do I need to worry about the file extension? what if it is sass or less or stylus?
   var stream = fs.createWriteStream(basePath + '/styleguide/assets/styles/styleguide.scss'),
     modulesDirectory = basePath + '/styleguide/modules',

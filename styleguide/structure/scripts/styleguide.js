@@ -30,6 +30,7 @@ var StyleguideIndex = {
   },
 
   isChromeAndFileProtocol: function() {
+    if (FRONT_END_TEST) return false;
     return (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1);
   },
 

@@ -7,7 +7,7 @@ compile() {
 	cd styleguide/structure/_node-files
 	node write-date-exec.js
 	cd ../../..
-	harp compile
+	STYLEGUIDE_COMPILE=1; harp compile
 	cd www
 	find . -type f -name "*.html" -exec js-beautify -r {} \;
 	find . -type f -name "*.js" -exec js-beautify -r {} \;

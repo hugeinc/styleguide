@@ -50,13 +50,32 @@ var StyleguideIframe = {
    * It gets the HTML of the element and creates the code area
    */
   codeSnippetsSetup: function() {
-    var _this = this;
+    var _this = this,
+      options = {
+        "indent":"auto",
+        "indent-spaces":2,
+        "wrap":80,
+        "markup":true,
+        "output-xml":false,
+        "numeric-entities":true,
+        "quote-marks":true,
+        "quote-nbsp":false,
+        "show-body-only":true,
+        "quote-ampersand":false,
+        "break-before-br":true,
+        "uppercase-tags":false,
+        "uppercase-attributes":false,
+        "drop-font-tags":true,
+        "tidy-mark":false,
+        "quiet":"yes",
+        "show-warnings":"no"
+      };
 
     $(this.codeToCreateSnippetClass).each(function(i, obj) {
-      var $snippet = $(obj).get(0).outerHTML.replace(' ' + this.codeToCreateSnippetClass, '').replace(this.codeToCreateSnippetClass, '');
+      var snippet = tidy_html5($(obj).get(0).outerHTML.replace(' ' + this.codeToCreateSnippetClass, '').replace(this.codeToCreateSnippetClass, ''), options);
 
       $(obj).before('<a href="#" class="' + _this.codeSnippetsClass.replace('.', '') + '"></a>');
-      $(obj).after('<pre class="language-markup"><code>' + $('<p/>').text($snippet).html() + '</code></pre>').next().hide();
+      $(obj).after('<pre class="language-markup"><code>' + $('<p/>').text(snippet).html() + '</code></pre>').next().hide();
     });
 
     Prism.highlightAll();

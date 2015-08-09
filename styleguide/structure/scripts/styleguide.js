@@ -16,7 +16,7 @@ var StyleguideIndex = {
     this.$sidebarLinks = $('.huge-sidebar__nav__item__link');
     this.$sidebarToggle = $('[class*="huge-sidebar__toggle"]');
     this.$iframe = $('.huge-iframe-wrapper iframe');
-    this.$iframeContent = $('.huge-iframe-wrapper iframe').contents();
+    this.$iframeContent = this.isChromeAndFileProtocol() ? null : $('.huge-iframe-wrapper iframe').contents();
 
     this.sidebarOpenedClass = 'opened';
     this.sidebarActiveLinkClass = 'active';
@@ -27,6 +27,10 @@ var StyleguideIndex = {
     this.sidebarSetup();
     this.checkHashOnLoad();
     this.events();
+  },
+
+  isChromeAndFileProtocol: function() {
+    return (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1);
   },
 
   /**
@@ -76,7 +80,7 @@ var StyleguideIndex = {
     // Shutdown this feature in Chrome.
     // Chrome have a know issue with file protocol and iframe comunication.
     // It is not supported so we should not raise errors.
-    if (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
+    if(this.isChromeAndFileProtocol()) return false;
     if (window.location.hash === '#' || window.location.hash === '') return false;
 
     var top = this.$iframeContent.find('section' + window.location.hash.replace('!', '')).offset().top,
@@ -100,7 +104,7 @@ var StyleguideIndex = {
     // Shutdown this feature in Chrome.
     // Chrome have a know issue with file protocol and iframe comunication.
     // It is not supported so we should not raise errors.
-    if (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) return false;
+    if(this.isChromeAndFileProtocol()) return false;
 
     var top = this.$iframeContent.find('section' + $elem.attr('href')).offset().top + 50;
 
@@ -132,7 +136,7 @@ var StyleguideIndex = {
     // Shutdown this feature in Chrome.
     // Chrome have a know issue with file protocol and iframe comunication.
     // It is not supported so we should not raise errors.
-    if (window.location.protocol === 'file:' && navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+    if(this.isChromeAndFileProtocol()) {
       this.$sidebarContent.remove();
       this.$sidebarToggle.remove();
       return false;

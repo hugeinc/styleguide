@@ -4,7 +4,7 @@ block meta
 block styles
 	link(href='assets/styles/structure.css', rel='stylesheet')
 	each module in modulesData
-			- var stylesheet = 'modules/' + module.order + '_' + module.id + '/' + module.id + '.css'
+			- var stylesheet = 'modules/' + module.order + '_' + module.id + '/style.css'
 			link(href=stylesheet, rel='stylesheet')
 
 block content

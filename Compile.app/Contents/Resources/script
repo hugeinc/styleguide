@@ -8,6 +8,10 @@ compile() {
 	node write-date-exec.js
 	cd ../../..
 	STYLEGUIDE_COMPILE=1; harp compile
+	cd www
+	find . -type f -name "*.html" -exec js-beautify -r {} \;
+	find . -type f -name "*.js" -exec js-beautify -r {} \;
+	find . -type f -name "*.css" -exec js-beautify -r {} \;
 	echo "Done! Compiled HTML in the www folder."
 	echo "PROGRESS:100"
 }

@@ -2,5 +2,5 @@ include ../_includes/modulesData
 each module in modulesData
 	section(id=module.id, class="huge-module anchor clearfix")
 		- var folder = module.order + '_' + module.id
-		- var content = 'modules/' + folder + '/_' + module.id
+		- var content = 'modules/' + folder + '/_html'
 		!=partial(content, public.styleguide.modules[folder]._data)

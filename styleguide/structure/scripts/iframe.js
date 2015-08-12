@@ -72,7 +72,8 @@ var StyleguideIframe = {
       };
 
     $(this.codeToCreateSnippetClass).each(function(i, obj) {
-      var snippet = tidy_html5($(obj).get(0).outerHTML.replace(' ' + this.codeToCreateSnippetClass, '').replace(this.codeToCreateSnippetClass, ''), options);
+      var snippetClassName = _this.codeToCreateSnippetClass.replace(/\./g, '');
+      var snippet = tidy_html5($(obj).get(0).outerHTML.replace(' ' + snippetClassName, '').replace(snippetClassName, ''), options);
 
       $(obj).before('<a href="#" class="' + _this.codeSnippetsClass.replace('.', '') + '"></a>');
       $(obj).after('<pre class="language-markup"><code>' + $('<p/>').text(snippet).html() + '</code></pre>').next().hide();

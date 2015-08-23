@@ -1,3 +1,13 @@
+// Module title placeholder
+%module__title {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 45px;
+  font-weight: normal;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: #333;
 }
@@ -10,27 +20,22 @@ p.huge-module__paragraph {
 }
 
 .huge-module__title {
-  font-size: 30px;
-  line-height: 30px;
-  margin: 0 0 45px;
-  font-weight: normal;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
+  @extend %module__title;
 
-.huge-module__title--small {
-  @extend .huge-module__title;
-  font-size: 20px;
-  line-height: 20px;
-  margin-bottom: 25px;
-}
+  &--small {
+    @extend %module__title;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
 
-.huge-module__title--light {
-  color: #bbb;
-  text-transform: none;
-  margin: 0;
-  font-size: 12px;
-  line-height: 12px;
-  margin-bottom: 25px;
-  font-weight: normal;
+  &--light {
+    color: #bbb;
+    text-transform: none;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 25px;
+    font-weight: normal;
+  }
 }

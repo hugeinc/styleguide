@@ -33,6 +33,11 @@ run() {
 	then
 		npm install harp -g
 	fi
+	type js-beautify >/dev/null 2>&1
+	if [ $? -eq 1 ]
+	then
+		npm install js-beautify -g
+	fi
 	cd ../../../styleguide/structure/_node-files
 	npm install
 	echo "PROGRESS:80"

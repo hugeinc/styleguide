@@ -33,7 +33,11 @@
     "en_US": {
       "begining": "Beginning",
       "styleguide": "Styleguide"
+    },
+    "es_CO": {
+      "begining": "Inicio",
+      "styleguide": "Styleguide"
     }
   },
-  "date": "2015/8/5"
+  "date": "2015/8/9"
 }

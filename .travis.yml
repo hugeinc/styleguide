@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 0.12
+script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 5
+  - cd styleguide/structure/_node-files
+  - npm install -g harp tape faucet browserify nightwatch
+  - npm install
+  - cd ../_tests
+  - node structure-node-dependencies.js
+  - node structure-node-modules.js
+  - node structure-node-integration.js
+  - node structure-front-scripts.js
+  - nightwatch --test structure-end-2-end.js

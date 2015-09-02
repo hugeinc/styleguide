@@ -1,4 +1,6 @@
 extends structure/_includes/_layout
+block meta
+	base(target="_blank")
 block styles
 	link(href='assets/styles/structure.css', rel='stylesheet')
 	each module in modulesData
@@ -13,6 +15,7 @@ block content
 block scripts
 	script(src="structure/scripts/vendor/jquery-1.11.1.min.js")
 	script(src="structure/scripts/vendor/prism.js")
+	script(src="structure/scripts/vendor/tidy.js")
 	script(src="structure/scripts/iframe.js")
 	each module in modulesData
 		if module.scripts

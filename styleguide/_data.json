@@ -1,6 +1,6 @@
 {
-  "clientName": "Huge",
-  "version": "1",
+  "clientName": "",
+  "version": "2",
   "language": "en_US",
   "logoImage": "logo_placeholder.png",
   "breakpoints": [
@@ -33,7 +33,11 @@
     "en_US": {
       "begining": "Beginning",
       "styleguide": "Styleguide"
+    },
+    "es_CO": {
+      "begining": "Inicio",
+      "styleguide": "Styleguide"
     }
   },
-  "date": "2015/4/2"
+  "date": "2015/8/9"
 }

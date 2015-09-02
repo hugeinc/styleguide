@@ -170,5 +170,6 @@ body.opened {
   .huge-sidebar__content {
     position: fixed;
     -webkit-transform: translateX(0px);
+    transform: translateX(0px);
   }
 }

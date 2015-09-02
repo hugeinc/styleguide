@@ -1,9 +1,14 @@
 /**
  * Script used for the Iframe only
  */
+
+if (typeof window !== 'undefined') global = window;
+
+var FRONT_END_TEST = global.FRONT_END_TEST || false;
+
 var StyleguideIframe = {
   init: function() {
-    if (!$('.huge-iframe-content').length) return false;
+    if (!$('.huge-iframe-content').length && !FRONT_END_TEST) return false;
 
     this.$sectionAnchors = $('.anchor');
 
@@ -14,6 +19,8 @@ var StyleguideIframe = {
     this.sidebarActiveLinkClass = 'active';
     this.modulesOffsetTop = [];
     this.activeModule = null;
+
+    if (FRONT_END_TEST) return false;
 
     this.sidebarLinksHighlightSetup();
     this.codeSnippetsSetup();
@@ -43,13 +50,33 @@ var StyleguideIframe = {
    * It gets the HTML of the element and creates the code area
    */
   codeSnippetsSetup: function() {
-    var _this = this;
+    var _this = this,
+      options = {
+        "indent":"auto",
+        "indent-spaces":2,
+        "wrap":80,
+        "markup":true,
+        "output-xml":false,
+        "numeric-entities":true,
+        "quote-marks":true,
+        "quote-nbsp":false,
+        "show-body-only":true,
+        "quote-ampersand":false,
+        "break-before-br":true,
+        "uppercase-tags":false,
+        "uppercase-attributes":false,
+        "drop-font-tags":true,
+        "tidy-mark":false,
+        "quiet":"yes",
+        "show-warnings":"no"
+      };
 
     $(this.codeToCreateSnippetClass).each(function(i, obj) {
-      var $snippet = $(obj).get(0).outerHTML.replace(' ' + this.codeToCreateSnippetClass, '').replace(this.codeToCreateSnippetClass, '');
+      var snippetClassName = _this.codeToCreateSnippetClass.replace(/\./g, '');
+      var snippet = tidy_html5($(obj).get(0).outerHTML.replace(' ' + snippetClassName, '').replace(snippetClassName, ''), options);
 
       $(obj).before('<a href="#" class="' + _this.codeSnippetsClass.replace('.', '') + '"></a>');
-      $(obj).after('<pre class="language-markup"><code>' + $('<p/>').text($snippet).html() + '</code></pre>').next().hide();
+      $(obj).after('<pre class="language-markup"><code>' + $('<p/>').text(snippet).html() + '</code></pre>').next().hide();
     });
 
     Prism.highlightAll();
@@ -125,6 +152,10 @@ var StyleguideIframe = {
   }
 };
 
-$(window).load(function() {
-  StyleguideIframe.init();
-});
+if(!FRONT_END_TEST) {
+  $(window).load(function() {
+    StyleguideIframe.init();
+  });
+} else {
+  FRONT_END_TEST.StyleguideIframe = StyleguideIframe;
+}

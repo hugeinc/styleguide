@@ -10,6 +10,7 @@ var livereload = require('livereload'),
 module.exports = {
   start: function() {
     server = livereload.createServer({
+      port: 8374,
       exts: ['js', 'jade', 'json', 'css', 'less', 'sass', 'scss', 'styl', 'svg', 'png', 'jpg', 'gif']
     });
     server.watch(basePath);

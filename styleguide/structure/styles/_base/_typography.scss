@@ -25,7 +25,6 @@ p.huge-module__paragraph {
 
 .huge-module__title {
   @extend %module__title;
-
   &--small {
     @extend %module__title;
     font-size: 20px;

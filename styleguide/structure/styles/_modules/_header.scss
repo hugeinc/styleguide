@@ -16,6 +16,12 @@
   transition: all $transitionLength cubic-bezier(.37,.62,.47,.72);
   font-size: 14px;
   color: #666;
+  .huge-header__welcome {
+      font-family: Arial, sans-serif;
+  }
+  .huge-header__breakpoints__item__link {
+      font-family: Arial, sans-serif;
+  }
 }
 
 .huge-header__breakpoints {

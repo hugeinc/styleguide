@@ -72,6 +72,8 @@ body.opened {
   margin-bottom: 15px;
   position: relative;
   z-index: 9;
+  float: right;
+  min-width: 30px;
 }
 
 pre[class*='language-'] > code[data-language] {

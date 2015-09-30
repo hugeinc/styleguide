@@ -12,7 +12,7 @@
   height: 35px;
   background: none;
   left: 187px;
-  top: 19px;
+  top: 15px;
 
   a {
     display: inline-block;
@@ -162,6 +162,7 @@
   padding: 12px 16px 12px 29px;
   color: #777;
   font-family: HUGEAvantGardeBold, sans-serif;
+  letter-spacing: -1px;
   font-weight: normal;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
@@ -187,10 +188,10 @@ body.opened {
 }
 .huge-sidebar__content {
   svg {
-    margin: 80px auto 12px;
-    width: 100%;
+    margin: 90px 0 12px;
+    width: 140px;
   }
 }
 #huge-logo {
-  fill: $magenta
+  fill: #000;
 }

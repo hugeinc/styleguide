@@ -1,10 +1,11 @@
 // Module title placeholder
 %module__title {
-  font-size: 30px;
+  font-size: 2.2em;
   line-height: 30px;
   margin: 0 0 45px;
   font-weight: normal;
-  color: #555;
+  font-family: HUGEAvantGardeBold, sans-serif;
+  color: #000;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -15,13 +16,15 @@ a {
 p.huge-module__paragraph {
   margin: 0;
   margin-bottom: 25px;
-  color: #666;
+  color: #333;
   -webkit-font-smoothing: antialiased;
+  a {
+    color: $magenta
+  }
 }
 
 .huge-module__title {
   @extend %module__title;
-
   &--small {
     @extend %module__title;
     font-size: 20px;

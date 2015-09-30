@@ -3,7 +3,7 @@
   background: #fff;
   border-bottom: 1px solid $structureBorderColor;
   width: 100%;
-  padding: 24px 30px 24px 70px;
+  padding: 17px 30px 21px 70px;
   position: fixed;
   height: $headerHeight;
   width: 100%;
@@ -16,6 +16,12 @@
   transition: all $transitionLength cubic-bezier(.37,.62,.47,.72);
   font-size: 14px;
   color: #666;
+  .huge-header__welcome {
+      font-family: Arial, sans-serif;
+  }
+  .huge-header__breakpoints__item__link {
+      font-family: Arial, sans-serif;
+  }
 }
 
 .huge-header__breakpoints {
@@ -88,6 +94,6 @@ body.opened {
   .huge-header {
     left: 240px;
     width: calc(100% - 240px);
-    padding: 24px 30px 24px;
+    padding: 17px 30px 21px;
   }
 }

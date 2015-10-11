@@ -6,9 +6,17 @@ var exec = require('child_process').exec,
 	livereloader = require('./modules/livereloader'),
 	utils = require('./modules/utils'),
 	http = require('http'),
+	commandExists = require('command-exists'),
 	waitingTheServer = true,
 	INTEGRATION_TEST = global.INTEGRATION_TEST || false,
 	PORT = normalizePort(process.env.STYLEGUIDE_PORT || process.env.PORT || '9241');
+
+commandExists('harp', function(err, commandExists) {
+    if(!commandExists) {
+        console.log('Harp is not installed, please run npm install harp -g');
+        process.exit(1);
+    }
+});
 
 function waitTheServer() {
 	if(waitingTheServer) {

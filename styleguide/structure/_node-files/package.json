@@ -4,6 +4,7 @@
   "description": "",
   "main": "watch.js",
   "dependencies": {
+    "command-exists": "^0.1.0",
     "livereload": "^0.3.6",
     "watch": "^0.14.0"
   },

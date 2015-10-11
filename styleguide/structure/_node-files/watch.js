@@ -23,6 +23,13 @@ portfinder.getPort(function (err, port) {
     waitTheServer();
 });
 
+commandExists('harp', function(err, commandExists) {
+    if(!commandExists) {
+        console.log('Harp is not installed, please run npm install harp -g');
+        process.exit(1);
+    }
+});
+
 function waitTheServer() {
     if(waitingTheServer) {
         http.get({

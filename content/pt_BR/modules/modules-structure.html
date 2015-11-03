@@ -1,0 +1,42 @@
+<h3>Pastas e arquivos</h3><p>A regra de nomenclatura é: ordem + traço baixo + id do módulo
+Exemplo: 1_introduction</p>
+<p>A ordem do menu e dos módulos vem daí.</p>
+<p>Os arquivos .jade e css devem seguir o mesmo identificador da pasta:</p>
+<pre><code class="language-markup">Pasta: 1_introduction  
+       1_introduction/_introduction.jade  
+       1_introduction/_introduction.sass
+</code></pre>
+<h3>_data.json</h3><p>Nesse arquivo você pode configurar o módulo e seu conteúdo. A regra é:</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;id único do módulo, igual o nome da pasta sem a ordem&quot;,
+    &quot;name&quot;: &quot;Nome do módulo, aparece no menu e no título&quot;,
+    &quot;scripts&quot;: [&quot;caminho do(s) arquivos de javascript opcionais&quot;],
+    &quot;items&quot;: &quot;objeto, array, ou qualquer tipo de dados que abriga o conteúdo do módulo&quot;
+}
+</code></pre>
+<p>Exemplo:</p>
+<pre><code class="language-json">// Pasta: 2_colors
+{
+    &quot;id&quot;: &quot;colors&quot;,
+    &quot;name&quot;: &quot;Colors&quot;,
+    &quot;items&quot;: {
+        &quot;intro&quot;: [&quot;Huge tem duas cores primárias: Magenta e Preto. Adicionalmente Azul pode ser achado nos slides ou em t-shirts.&quot;],
+        &quot;colors&quot;: [
+            {
+                &quot;className&quot;: &quot;bg-magenta&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-black&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-grey&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-blue&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3>Jade</h3><p>Jade é uma forma mais simples e rápida de escrever HTML. Com ele é possível usar estruturas lógicas de programação para escrever HTML de uma forma mais inteligente. Para saber mais clique aqui.</p>
+<h3>Estilos CSS</h3><p>Esse projeto suporta Sass, Less e Stylus. Escolha um e use o arquivo com a extensão correspondente.</p>

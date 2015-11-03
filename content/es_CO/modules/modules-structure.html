@@ -1,0 +1,44 @@
+<h3>Directorios &amp; Archivos</h3><p>La regla para los nombres es: order + _ + module-id  </p>
+<p>Ejemplo: <code>1_introduction</code></p>
+<p>Los módulos y el orden del menú derivan de esta regla de denominación.</p>
+<p>Los archivos <code>.jade</code> y <code>css</code> deben seguir la misma identificación de directorios:</p>
+<pre><code class="language-markup">Folder: 1_introduction  
+        /_introduction.jade
+        /_introduction.sass
+</code></pre>
+<h3>_data.json</h3><p>In this file you can set the module and it&#39;s content. The rule is:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;Unique module id, same name as folder but without the order numbers&quot;,
+  &quot;name&quot;: &quot;Module name, shown in menu and module title&quot;,
+  &quot;scripts&quot;: [&quot;Javascript file(s) path is optional&quot;],
+  &quot;items&quot;: &quot;object, array, ou any type of data that will be held as the modules contents&quot;
+}
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-json">// Folder: 2_colors
+{
+    &quot;id&quot;: &quot;colors&quot;,
+    &quot;name&quot;: &quot;Colors&quot;,
+    &quot;items&quot;: {
+        &quot;intro&quot;: [&quot;Huge have two main colors: Magenta and Black.&quot;],
+        &quot;colors&quot;: [
+            {
+                &quot;className&quot;: &quot;bg-magenta&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-black&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-grey&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-blue&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3>Jade</h3><p>Jade es una de las formas más simples de escribir HTML. Permite utilizar lógica de programación para escribir HTML de una forma inteligente. Para aprender más haz <a href="http://jade-lang.com" target="_blank">click aquí</a>.</p>
+<p>Toda la información del archivo <code>_data.json</code> estará disponible para el archivo <code>.jade</code> como variables.</p>
+<h3>Estilos CSS</h3><p>Este proyecto soporta SASS, LESS, y Stylus. Escoje uno y usa los archivos con la extensión correspondiente.</p>
+<p>La hoja de estilo del módulo será cargada automáticamente.</p>

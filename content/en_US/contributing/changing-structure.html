@@ -1,0 +1,20 @@
+<h3>Dependencies</h3><ul>
+<li><a href="http://nodejs.org" target="_blank">Node.js</a></li>
+<li><a href="http://harpjs.com" target="_blank">Harp.js</a></li>
+<li><a href="https://www.npmjs.com/package/livereload" target="_blank">Node Livereload</a></li>
+<li><a href="https://www.npmjs.com/package/watch" target="_blank">Node Watch</a></li>
+</ul>
+<h3>Harp</h3><p>Harp is used for both serving files and compiling, such actions are done through the Start.app and Compile.app. The Start.app uses a Node.js file in order to configure Livereload and Harp together.</p>
+<h3>Scripts</h3><p>The source of the Start.app and Compile.app are inside of each app content: Contents/Resources/script</p>
+<h3>Node Files</h3><p>In the styleguide/structure/_node-files folder you will find the code that:  </p>
+<ul>
+<li>Start Harp</li>
+<li>Start Livereload</li>
+<li>Writes the current date to styleguide/_data.json file (on start and compile)</li>
+<li>Concatenate all modules javascript code into one file in styleguide/assets/scripts/styleguide.js</li>
+<li>Concatenate all modules stylesheet code into one file in styleguide/assets/styles/styleguide.js</li>
+</ul>
+<h3>Structure CSS</h3><p>In the folder styleguide/structure/styles is the stylesheet of the structure (header, sidebar and basic components), without any module specific code.</p>
+<h3>Structure Javascript</h3><p>In the folder styleguide/structure/scripts is the javascript of the structure (header, sidebar and basic components), without any module specific code.</p>
+<h3>Modules Data</h3><p>The styleguide/structure/_includes/modulesData.jade is responsible for collecting all necessary data of all modules into one object that will be used by all structure files.</p>
+<h3>Pull Request</h3><p>In order to do a Pull Request, you should first lint your code with styleguide/structure/_tests/_lint.sh (execute in the command line). Code with lint errors will not be accepted.</p>

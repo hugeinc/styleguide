@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head><title>Styleguide</title><link rel="icon" type="image/png" href="/styleguide/favicon.png"><link rel="stylesheet" href="/styleguide/fonts/Huge/stylesheet.css"><link rel="stylesheet" href="/styleguide/style/vendor/normalize.css"><link rel="stylesheet" href="/styleguide/style/vendor/skeleton.css"><link rel="stylesheet" href="/styleguide/style/main.css"></head><body></body></html><header class="u-cf inner"><div class="bg"></div><div class="wrap"><div class="top"><div class="container"><div class="row"><div class="two columns"><a href="index.html"><img src="/styleguide/images/huge-logo.svg"/></a></div><div class="eight columns u-pull-right"><ul class="menu list-horz list-plain"><li><a href="download.html">Decargar</a></li><li><a href="start.html">Comenzando</a></li><li><a href="modules.html">Módulos</a></li><li><a href="contributing.html">Contribuciones</a></li><li class="language_link first"><a href="/styleguide">EN</a></li><li class="language_link undefined"><a href="/styleguide/pt">PT</a></li><li class="language_link undefined"><a href="/styleguide/es">ES</a></li><li class="language_link last"><a href="/styleguide/fr">FR</a></li><li class="styleguide-github-star"><iframe src="https://ghbtns.com/github-btn.html?user=hugeinc&amp;repo=styleguide&amp;type=watch&amp;count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li></ul></div></div></div></div><div class="container hero"><div class="row"><div class="ten columns center"><h1 class="main-title">Módulos</h1></div></div></div></div></header><main class="inner"><div class="image no-margin inner"><div class="container"><img src="/styleguide/images/gif5.gif"></div></div><div id="how-they-work" class="section u-cf inner no-border"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Como funcionan</h2><p>La funcionalidad de los módulos es una combinación de:</p>
+<ul>
+<li>Configuración y contenido dentro del archivo <code>_data.json</code></li>
+<li>HTML de los archivos <code>.jade</code></li>
+<li>CSS de los archivos <code>.scss</code> (o el preprocesador elegido)</li>
+<li>La estructura de directorios</li>
+<li>JavaScript (opcional)</li>
+</ul>
+</div></div></div></div><div class="image no-margin"><div class="container"><img src="/styleguide/images/gif3.gif"></div></div><div id="modules-structure" class="section u-cf inner no-border"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Estructura</h2><h3>Directorios &amp; Archivos</h3><p>La regla para los nombres es: order + _ + module-id  </p>
+<p>Ejemplo: <code>1_introduction</code></p>
+<p>Los módulos y el orden del menú derivan de esta regla de denominación.</p>
+<p>Los archivos <code>.jade</code> y <code>css</code> deben seguir la misma identificación de directorios:</p>
+<pre><code class="language-markup">Folder: 1_introduction  
+        /_introduction.jade
+        /_introduction.sass
+</code></pre>
+<h3>_data.json</h3><p>In this file you can set the module and it&#39;s content. The rule is:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;Unique module id, same name as folder but without the order numbers&quot;,
+  &quot;name&quot;: &quot;Module name, shown in menu and module title&quot;,
+  &quot;scripts&quot;: [&quot;Javascript file(s) path is optional&quot;],
+  &quot;items&quot;: &quot;object, array, ou any type of data that will be held as the modules contents&quot;
+}
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-json">// Folder: 2_colors
+{
+    &quot;id&quot;: &quot;colors&quot;,
+    &quot;name&quot;: &quot;Colors&quot;,
+    &quot;items&quot;: {
+        &quot;intro&quot;: [&quot;Huge have two main colors: Magenta and Black.&quot;],
+        &quot;colors&quot;: [
+            {
+                &quot;className&quot;: &quot;bg-magenta&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-black&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-grey&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-blue&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3>Jade</h3><p>Jade es una de las formas más simples de escribir HTML. Permite utilizar lógica de programación para escribir HTML de una forma inteligente. Para aprender más haz <a href="http://jade-lang.com" target="_blank">click aquí</a>.</p>
+<p>Toda la información del archivo <code>_data.json</code> estará disponible para el archivo <code>.jade</code> como variables.</p>
+<h3>Estilos CSS</h3><p>Este proyecto soporta SASS, LESS, y Stylus. Escoje uno y usa los archivos con la extensión correspondiente.</p>
+<p>La hoja de estilo del módulo será cargada automáticamente.</p>
+</div></div></div></div></main><footer><a href="http://hugeinc.com" target="_blank" class="h"></a><p>Make something you love.<sup>TM</sup></p></footer><!--script(src="jspm_packages/system.js")--><!--script(src="config.js")--><!--script.--><!--	System.baseURL = '/';--><!--	System.import('HugeStyleguide/main');--><script src="/styleguide/bundle.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-64834074-1', 'auto');
+ga('send', 'pageview');</script>

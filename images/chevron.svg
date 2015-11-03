@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="39px" viewBox="0 0 40 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-right + Oval 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home-fold-1" sketch:type="MSArtboardGroup" transform="translate(-700.000000, -640.000000)">
+            <g id="chevron-right-+-Oval-1" sketch:type="MSLayerGroup" transform="translate(702.000000, 642.000000)">
+                <g id="chevron-right" transform="translate(18.000000, 18.641304) rotate(-270.000000) translate(-18.000000, -18.641304) translate(11.513027, 8.935661)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                    <g id="layer1" transform="translate(0.030382, 0.028838)">
+                        <g id="text10546">
+                            <path d="M12.9096785,9.67680522 L9.94760519,6.79701176 L2.96557934,0.00892669912 L0.00350413098,2.88872 L6.98553308,9.67680446 L0.00350685007,16.4648859 L2.96557973,19.3446824 L9.94760441,12.5565964 L12.9096788,9.67680522 L12.9096785,9.67680522 Z" id="rect3006"></path>
+                        </g>
+                    </g>
+                </g>
+                <ellipse id="Oval-1" stroke="#FFFFFF" stroke-width="3" sketch:type="MSShapeGroup" cx="18" cy="17.5" rx="18" ry="17.5"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

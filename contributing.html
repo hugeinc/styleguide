@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><title>Styleguide</title><link rel="icon" type="image/png" href="/styleguide/favicon.png"><link rel="stylesheet" href="/styleguide/fonts/Huge/stylesheet.css"><link rel="stylesheet" href="/styleguide/style/vendor/normalize.css"><link rel="stylesheet" href="/styleguide/style/vendor/skeleton.css"><link rel="stylesheet" href="/styleguide/style/main.css"></head><body></body></html><header class="u-cf inner"><div class="bg"></div><div class="wrap"><div class="top"><div class="container"><div class="row"><div class="two columns"><a href="index.html"><img src="/styleguide/images/huge-logo.svg"/></a></div><div class="eight columns u-pull-right"><ul class="menu list-horz list-plain"><li><a href="download.html">Download</a></li><li><a href="start.html">Getting Started</a></li><li><a href="modules.html">Modules</a></li><li><a href="contributing.html">Contributing</a></li><li class="language_link first"><a href="/styleguide">EN</a></li><li class="language_link undefined"><a href="/styleguide/pt">PT</a></li><li class="language_link undefined"><a href="/styleguide/es">ES</a></li><li class="language_link last"><a href="/styleguide/fr">FR</a></li><li class="styleguide-github-star"><iframe src="https://ghbtns.com/github-btn.html?user=hugeinc&amp;repo=styleguide&amp;type=watch&amp;count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li></ul></div></div></div></div><div class="container hero"><div class="row"><div class="ten columns center"><h1 class="main-title">Contributing</h1></div></div></div></div></header><main class="inner"><div class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Git branching model</h2><p>This repo branching model is <strong>inspired by Git Flow</strong>. Currently we have these types of branches:</p>
+<ul>
+<li>master - Latest release, stable</li>
+<li>develop - Main development, unstable</li>
+<li>release/ - Release archive</li>
+<li>feature/ - Specific features development</li>
+<li>example/ - Helpful examples</li>
+<li>hotfix/ - Emergency fixes for latest release</li>
+</ul>
+<p><a href="http://nvie.com/posts/a-successful-git-branching-model/">Read the Git Flow reference</a>.
+This repo uses <a href="http://semver.org/">Semantic Versioning</a>.</p>
+</div></div></div></div><div class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Creating modules</h2><p>The good news is that whatever you create in the Styleguide will be treated as a module. This way we are able to add an awesome resource for the community.</p>
+<p>Don&#39;t forget to read about <a href="modules.html#how-they-work">&quot;How modules work&quot;</a> and <a href="modules.html#modules-structure">&quot;Module Structure&quot;</a> before you move forward.</p>
+<p>###_data.json
+You can define a key-value in this file that will be used in your module.</p>
+<p>Examples:</p>
+<pre><code class="language-json">&quot;items&quot;: {
+    &quot;people&quot;: [
+        {
+            &quot;name&quot;: &quot;John&quot;,
+            &quot;age&quot;: &quot;32&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Kirsten&quot;,
+            &quot;age&quot;: &quot;28&quot;
+        }
+    ]
+}
+</code></pre>
+<h3>Jade</h3><p>You can use all the info of _data.json inside the .jade file:</p>
+<pre><code class="language-html">table
+    each folk in people
+        tr
+            td=folk.name
+            td=folk.age
+</code></pre>
+<h3>Javascript</h3><p>In case you need Javascript for your module, use the key scripts e and add the file path:</p>
+<pre><code class="language-json">&quot;scripts&quot;: [&quot;vendor/foundation.equalizer.js&quot;, &quot;pricing-tables.js&quot;]
+</code></pre>
+</div></div></div></div><div class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Changing the structure</h2><h3>Dependencies</h3><ul>
+<li><a href="http://nodejs.org" target="_blank">Node.js</a></li>
+<li><a href="http://harpjs.com" target="_blank">Harp.js</a></li>
+<li><a href="https://www.npmjs.com/package/livereload" target="_blank">Node Livereload</a></li>
+<li><a href="https://www.npmjs.com/package/watch" target="_blank">Node Watch</a></li>
+</ul>
+<h3>Harp</h3><p>Harp is used for both serving files and compiling, such actions are done through the Start.app and Compile.app. The Start.app uses a Node.js file in order to configure Livereload and Harp together.</p>
+<h3>Scripts</h3><p>The source of the Start.app and Compile.app are inside of each app content: Contents/Resources/script</p>
+<h3>Node Files</h3><p>In the styleguide/structure/_node-files folder you will find the code that:  </p>
+<ul>
+<li>Start Harp</li>
+<li>Start Livereload</li>
+<li>Writes the current date to styleguide/_data.json file (on start and compile)</li>
+<li>Concatenate all modules javascript code into one file in styleguide/assets/scripts/styleguide.js</li>
+<li>Concatenate all modules stylesheet code into one file in styleguide/assets/styles/styleguide.js</li>
+</ul>
+<h3>Structure CSS</h3><p>In the folder styleguide/structure/styles is the stylesheet of the structure (header, sidebar and basic components), without any module specific code.</p>
+<h3>Structure Javascript</h3><p>In the folder styleguide/structure/scripts is the javascript of the structure (header, sidebar and basic components), without any module specific code.</p>
+<h3>Modules Data</h3><p>The styleguide/structure/_includes/modulesData.jade is responsible for collecting all necessary data of all modules into one object that will be used by all structure files.</p>
+<h3>Pull Request</h3><p>In order to do a Pull Request, you should first lint your code with styleguide/structure/_tests/_lint.sh (execute in the command line). Code with lint errors will not be accepted.</p>
+</div></div></div></div><div class="section u-cf inner no-border"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Reporting Issues</h2><p>Please use our <a href="http://github.com/hugeinc/styleguide" target="_blank">Github repository</a> to report issues. All issues must have:</p>
+<ul>
+<li>Your operating system (name and version)</li>
+<li>The browser you are using (name and version)</li>
+<li>The full copy of any error messages available</li>
+<li>A full description of how to reproduce the issue you have found</li>
+</ul>
+</div></div></div></div></main><footer><a href="http://hugeinc.com" target="_blank" class="h"></a><p>Make something you love.<sup>TM</sup></p></footer><!--script(src="jspm_packages/system.js")--><!--script(src="config.js")--><!--script.--><!--	System.baseURL = '/';--><!--	System.import('HugeStyleguide/main');--><script src="/styleguide/bundle.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-64834074-1', 'auto');
+ga('send', 'pageview');</script>

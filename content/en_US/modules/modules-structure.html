@@ -1,0 +1,43 @@
+<h3>Folders &amp; Files</h3><p>The naming rule is: order + _ + module-id<br>example: 1_introduction</p>
+<p>The modules and menu order derive from this naming rule.</p>
+<p>The .jade and css files must follow the same folder identification:</p>
+<pre><code class="language-markup">Folder: 1_introduction  
+        /_introduction.jade  
+        /_introduction.sass
+</code></pre>
+<h3>_data.json</h3><p>In this file you can set the module and it&#39;s content. The rule is:</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;Unique module id, same name as folder but without the order numbers&quot;,
+    &quot;name&quot;: &quot;Module name, shown in menu and module title&quot;,
+    &quot;scripts&quot;: [&quot;Javascript file(s) path is optional&quot;],
+    &quot;items&quot;: &quot;object, array, ou any type of data that will be held as the modules contents&quot;
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-json">// Folder: 2_colors
+{
+    &quot;id&quot;: &quot;colors&quot;,
+    &quot;name&quot;: &quot;Colors&quot;,
+    &quot;items&quot;: {
+        &quot;intro&quot;: [&quot;Huge have two main colors: Magenta and Black.&quot;],
+        &quot;colors&quot;: [
+            {
+                &quot;className&quot;: &quot;bg-magenta&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-black&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-grey&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-blue&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3>Jade</h3><p>Jade is one of the most simple ways for writing HTML. It allows to use programming logic to write HTML in a smarter way. To learn more, <a href="http://jade-lang.com" target="_blank">click here</a>.</p>
+<p>All data from the _data.json file will be available to the .jade file as variables.</p>
+<h3>CSS Styles</h3><p>This projects supports SASS, LESS and Stylus. Choose one and use the file with the matching extension.</p>
+<p>The stylesheet of the module will be automatically loaded.</p>

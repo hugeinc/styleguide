@@ -1,0 +1,28 @@
+<p>The good news is that whatever you create in the Styleguide will be treated as a module. This way we are able to add an awesome resource for the community.</p>
+<p>Don&#39;t forget to read about <a href="modules.html#how-they-work">&quot;How modules work&quot;</a> and <a href="modules.html#modules-structure">&quot;Module Structure&quot;</a> before you move forward.</p>
+<p>###_data.json
+You can define a key-value in this file that will be used in your module.</p>
+<p>Examples:</p>
+<pre><code class="language-json">&quot;items&quot;: {
+    &quot;people&quot;: [
+        {
+            &quot;name&quot;: &quot;John&quot;,
+            &quot;age&quot;: &quot;32&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Kirsten&quot;,
+            &quot;age&quot;: &quot;28&quot;
+        }
+    ]
+}
+</code></pre>
+<h3>Jade</h3><p>You can use all the info of _data.json inside the .jade file:</p>
+<pre><code class="language-html">table
+    each folk in people
+        tr
+            td=folk.name
+            td=folk.age
+</code></pre>
+<h3>Javascript</h3><p>In case you need Javascript for your module, use the key scripts e and add the file path:</p>
+<pre><code class="language-json">&quot;scripts&quot;: [&quot;vendor/foundation.equalizer.js&quot;, &quot;pricing-tables.js&quot;]
+</code></pre>

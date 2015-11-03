@@ -1,0 +1,11 @@
+{
+  "jspm": {
+    "name": "HugeStyleguideWebsite",
+    "directories": {
+      "lib": "scripts"
+    },
+    "dependencies": {
+      "jquery": "^2.1.4"
+    }
+  }
+}

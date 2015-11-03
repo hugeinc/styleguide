@@ -1,0 +1,20 @@
+<h3>Dependencias</h3><ul>
+<li><a href="http://nodejs.org" target="_blank">Node.js</a></li>
+<li><a href="http://harpjs.com" target="_blank">Harp.js</a></li>
+<li><a href="https://www.npmjs.com/package/livereload" target="_blank">Node Livereload</a></li>
+<li><a href="https://www.npmjs.com/package/watch" target="_blank">Node Watch</a></li>
+</ul>
+<h3>Harp</h3><p>Harp es usado para compilar y servir archivos, dichas acciones son realizadas a través de Start.app y Compile.app. Start.app usa un archivo de Nodejs para configurar Livereload y Harp al mismo tiempo.</p>
+<h3>Scripts</h3><p>El código fuente de Start.app y Compile.app están dentro de cada uno de los contenidos de la aplicación: <code>Contents/Resources/script</code></p>
+<h3>Archivos Node</h3><p>En el directorio <code>styleguide/structure/_node-files</code> encontrarás el código que:</p>
+<ul>
+<li>Inicia Harp</li>
+<li>Inicia Livereload</li>
+<li>Escribe la fecha actual en el archivo <code>styleguide/_data.json</code> (en start y compile)</li>
+<li>Concatena todos los módulos JavaScript en un solo archivo <code>styleguide/assets/scripts/styleguide.js</code></li>
+<li>Concatena todos los módulos de estilos en un solo archivo <code>styleguide/assets/styles/styleguide.js</code></li>
+</ul>
+<h3>Estructura CSS</h3><p>En el directorio <code>styleguide/structure/styles</code> está la hoja de estilo de la estructura (header, sidebar y componentes básicos), sin código específico de algún módulo.</p>
+<h3>Estructura JavaScript</h3><p>En el directorio <code>styleguide/structure/scripts</code> está el JavaScript de la estructura (header, sidebar y componentes básicos), sin código específico de algún módulo.</p>
+<h3>Información de módulos</h3><p>El archivo <code>styleguide/structure/_includes/modulesData.jade</code> es responsable de recolectar toda la información necesaria de todos los módulos en un solo objeto que será usado por todos los archivos de la estructura.</p>
+<h3>Pull Request</h3><p>Para realizar un Pull Request, debes primero verificar tu código con <code>styleguide/structure/_tests/_lint.sh</code> (ejecutar en la línea de comandos). Código con errores de estilo no será aceptado.</p>

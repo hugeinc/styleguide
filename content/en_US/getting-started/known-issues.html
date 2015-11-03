@@ -1,0 +1,28 @@
+<p>1 - You should allow unregistered applications to run in order to use the Start.app file. You can do so in Settings &gt; Security &amp; Privacy</p>
+<p>2 - The compiled offline version have a smaller issue on Chrome. Chrome have a security policy of not allowing communication with iframes under file:// protocol, so any interaction that needs such communication will be removed (basically the sidebar menu). This is only for the offline compiled version.</p>
+<p>3 - If you are a Mac user and after running the Start.app you have this error:</p>
+<pre><code>npm ERR! Please try running this command again as root/Administrator.
+</code></pre><p>You have probably installed Node with sudo or root permission. You will need to fix permissions to the .npm folder with the following command:</p>
+<pre><code>sudo chown -R $(whoami) ~/.npm
+sudo chown -R $(whoami) /usr/local/lib/node_modules
+</code></pre><p>After that, try running the Start.app again.</p>
+<p>4 - If you have XCode installed but have not agreed with the License you will get this error:</p>
+<pre><code>Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+</code></pre><p>Open XCode and accept the license, then try running Start.app again.</p>
+<p>5 - If you get a <strong>404 - No data received</strong> error, you might have a port conflict, there are two ways you can change the port number (default to <strong>9241</strong>):</p>
+<ul>
+<li>Change the PORT variable inside styleguide/structure/_node-files/watch.js</li>
+<li><p>Set an environment variable (PORT or STYLEGUIDE_PORT):</p>
+<p>  If you are running the Styleguide manually, in the last step you might do:</p>
+<pre><code>  PORT=7000 node watch.js
+</code></pre><p>  or</p>
+<pre><code>  STYLEGUIDE_PORT=7000 node watch.js
+</code></pre><p>  The Start.app is self contained, and for security reasons it does not have access to external variables.
+  If you want to change the port for the Start.app it is recommended to change the watch.js file.
+  You can, if you want, add a variable to your .bashrc file and it will be available for the Start.app:</p>
+<pre><code>  touch ~/.bashrc
+  echo &#39;export PORT=1234&#39; &gt;&gt; ~/.bashrc
+</code></pre><p>  or</p>
+<pre><code>  echo &#39;export STYLEGUIDE_PORT=1234&#39; &gt;&gt; ~/.bashrc
+</code></pre></li>
+</ul>

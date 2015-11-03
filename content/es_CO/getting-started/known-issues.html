@@ -1,0 +1,26 @@
+<p>1 - Debes permitir que aplicaciones sin registrar corran en tu sistema para poder usar el archivo Start.app. Puedes hacerlo en Preferencias &gt; Seguridad &amp; Privacidad</p>
+<p>2 - La versión offline compilada tiene un pequeño problema en Chrome. Chrome tiene una política de seguridad de no permitir la comunicación con iframes bajo el protocolo <code>file://</code>, así que cualquier interacción que requiera este tipo de comunicación será eliminada (básicamente el menú lateral). Esto solo aplica para la versión offline compilada.</p>
+<p>3 - Si eres un usuario de OS X y después de correr Start.app obtienes este error:</p>
+<pre><code>npm ERR! Please try running this command again as root/Administrator.
+</code></pre><p>Probablemente hayas instalado Nodejs como sudo o con permisos de root. Debes cambiar los permisos del directorio <code>.npm</code> ejecutando los siguientes comandos:</p>
+<pre><code>sudo chown -R $(whoami) ~/.npm
+sudo chown -R $(whoami) /usr/local/lib/node_modules
+</code></pre><p>Después de esto, trata de correr Start.app de nuevo.</p>
+<p>4 - Si tienes Xcode instalado pero no has aceptado los términos de la licencia obtendrás este error:</p>
+<pre><code>Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+</code></pre><p>Abre Xcode y acepta los terminos de la licencia, luego trata de correr Start.app de nuevo.</p>
+<p>5 - Si obtienes un error <code>404 - No data received</code>, es posible que tengas un conflicto de puertos. Existen dos formas en las que puedes cambiar el número del puerto (predeterminado a <code>9241</code>):</p>
+<ul>
+<li>Cambia la variable <code>PORT</code> dentro del archivo <code>styleguide/structure/_node-files/watch.js</code></li>
+<li><p>Establece una variable de ambiente (<code>PORT</code> o <code>STYLEGUIDE_PORT</code>):</p>
+<p>  Si estás corriendo la guía de estilo manualmente, en el último paso puedes:</p>
+<pre><code>  PORT=7000 node watch.js
+</code></pre><p>  o</p>
+<pre><code>  STYLEGUIDE_PORT=7000 node watch.js
+</code></pre><p>  Start.app es autónomo, y por razones de seguridad no tiene acceso a las variables externas. Si quieres cambiar el puerto para Start.app es recomendado cambiar el archivo <code>watch.js</code>. Tambien puedes agregar una variable a tu archivo .bashrc y estará disponible para Start.app:</p>
+<pre><code>  touch ~/.bashrc
+  echo &#39;export PORT=1234&#39; &gt;&gt; ~/.bashrc
+</code></pre><p>  o</p>
+<pre><code>  echo &#39;export STYLEGUIDE_PORT=1234&#39; &gt;&gt; ~/.bashrc
+</code></pre></li>
+</ul>

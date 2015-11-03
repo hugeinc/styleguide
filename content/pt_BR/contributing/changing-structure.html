@@ -1,0 +1,20 @@
+<h3>Dependências</h3><ul>
+<li><a href="http://nodejs.org" target="_blank">Node.js</a></li>
+<li><a href="http://harpjs.com" target="_blank">Harp.js</a></li>
+<li><a href="https://www.npmjs.com/package/livereload" target="_blank">Node Livereload</a></li>
+<li><a href="https://www.npmjs.com/package/watch" target="_blank">Node Watch</a></li>
+</ul>
+<h3>Harp</h3><p>Harp é usado por ambos, servir e compilar aquivos, tais ações são feitas através do Start.app e Compile.app. O Start.app usa o arquivo de Node.js para configurar o Livereload e o Harp juntos.</p>
+<h3>Scripts</h3><p>O código fonte do Start.app e Compile.app estão dentro de cada conteúdo interno do app: Contents/Resources/script</p>
+<h3>Arquivos Node</h3><p>Na pasta styleguide/structure/_node-files você achará o código para:</p>
+<ul>
+<li>Iniciar o Harp</li>
+<li>Iniciar Livereload</li>
+<li>Escrever a data atual para o arquivo styleguide/_data.json (no start and compile)</li>
+<li>Concatenar todos os códigos dos módulos javascript em um arquivo em styleguide/assets/scripts/styleguide.js</li>
+<li>Concatenar todos os códigos de estilo em um arquivo em styleguide/assets/styles/styleguide.js</li>
+</ul>
+<h3>Estrutura CSS</h3><p>No diretório styleguide/structure/styles está presente a o estilo da estrutura (header, sidebar e componentes básicos), sem qualquer código de módulo específico.</p>
+<h3>Estrutura Javascript</h3><p>No diretório styleguide/structure/scripts está presente o javascript da estrutura (header, sidebar e componentes básicos), sem qualquer código de módulo específico.</p>
+<h3>Dados de módulos</h3><p>A styleguide/structure/_includes/modulesData.jade é responsável por coletar todos os dados necessários para todos os módulos em um único objeto que será usado por toda a estrutura de arquivos.</p>
+<h3>Pull Request</h3><p>A fim de realizar o Pull Request, você deverá primeiramente realizar a validação do seu código utilizando styleguide/structure/_tests/_lint.sh (executar como linha de comando). Códigos com erros de validação não serão aceitos.</p>

@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - 0.12
+env:
+  global:
+  - GH_REF: github.com/hugeinc/styleguide.git
+script:
+  - chmod +x deploy.sh build.sh
+  - npm install harp -g
+  - npm install jspm -g
+  - npm install -g postcss-cli autoprefixer
+  - bash ./deploy.sh

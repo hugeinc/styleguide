@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><title>Styleguide</title><link rel="icon" type="image/png" href="/styleguide/favicon.png"><link rel="stylesheet" href="/styleguide/fonts/Huge/stylesheet.css"><link rel="stylesheet" href="/styleguide/style/vendor/normalize.css"><link rel="stylesheet" href="/styleguide/style/vendor/skeleton.css"><link rel="stylesheet" href="/styleguide/style/main.css"></head><body></body></html><header class="u-cf inner"><div class="bg"></div><div class="wrap"><div class="top"><div class="container"><div class="row"><div class="two columns"><a href="index.html"><img src="/styleguide/images/huge-logo.svg"/></a></div><div class="eight columns u-pull-right"><ul class="menu list-horz list-plain"><li><a href="download.html">Download</a></li><li><a href="start.html">Começando</a></li><li><a href="modules.html">Módulos</a></li><li><a href="contributing.html">Contribuindo</a></li><li class="language_link first"><a href="/styleguide">EN</a></li><li class="language_link undefined"><a href="/styleguide/pt">PT</a></li><li class="language_link undefined"><a href="/styleguide/es">ES</a></li><li class="language_link last"><a href="/styleguide/fr">FR</a></li><li class="styleguide-github-star"><iframe src="https://ghbtns.com/github-btn.html?user=hugeinc&amp;repo=styleguide&amp;type=watch&amp;count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li></ul></div></div></div></div><div class="container hero"><div class="row"><div class="ten columns center"><h1 class="main-title">Começando</h1></div></div></div></div></header><main class="inner"><div class="image no-margin inner"><div class="container"><img src="/styleguide/images/gif1.gif"></div></div><div id="how-t-use" class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Como usar</h2><p>O Styleguide é totalmente modular. Isso significa duas coisas:</p>
+<ul>
+<li>O conteúdo é separado do código</li>
+<li>O código é separado em módulos isolados</li>
+</ul>
+<p>Com isso em mente, é valido saber onde você precisa mexer em um uso comum.</p>
+<h5>arquivos _data.json</h5><ul>
+<li>Nesses arquivos estão todos os conteúdos textuais e de configuração</li>
+<li>Existe um no diretório do Styleguide e um dentro de cada módulo.</li>
+</ul>
+<h5>Arquivos gerados</h5><ul>
+<li>No diretório assets/scripts um arquivo será gerado se você quiser importar todos os seus módulos Javascript para o seu projeto.</li>
+<li>No diretório assets/styles um arquivo será gerado se você quiser importar todos os seus módulos de estilo para o seu projeto.</li>
+</ul>
+<h3>Módulos</h3><p><a href="modules.html">Clique aqui</a> para aprender mais sobre módulos.</p>
+</div></div></div></div><div id="mac" class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Mac</h2><p>Para usuários Mac nós temos um instalador com todas as dependências necessárias para rodar o Styleguide.</p>
+<ul>
+<li><p>O &#39;Start&#39; app, irá instalar tudo que precisa. Por favor confira a seção <a href="#know-issues">Issues conhecidos</a> antes de rodar o app. Quandos finalizar a instalação do Styleguide, ele irá abrir automaticamente no seu navegador. Se você tiver alguma dependência instalada no seu computador, o Styleguide irá abrir.</p>
+</li>
+<li><p>O &#39;Compile&#39; app cria uma versão estática do Styleguide em um diretório &#39;www&#39;.</p>
+</li>
+</ul>
+<p>*Problemas? <a href="#know-issues">Clique aqui</a>.</p>
+<a href="https://github.com/hugeinc/styleguide/archive/master.zip" class="button primary">Download para Mac</a></div></div></div></div><div id="windows-linux" class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Windows/Linux</h2><p>Atualmente não temos um arquivo mágico para essas plataformas, desculpe! Estamos trabalhando nisso.</p>
+<p>Para usar o Styleguide você vai precisar executar uma ou duas ações na linha de comando.</p>
+<p>*Veja a seção de &quot;Instalando as dependências manualmente&quot;</p>
+<a href="https://github.com/hugeinc/styleguide/archive/windows-linux.zip" class="button primary">Download para Windows/Linux</a></div></div></div></div><div id="manual-install" class="section u-cf inner"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Instalação manual</h2><p>Este projeto possui as seguintes dependências (clique para instalar cada uma):</p>
+<ul>
+<li><a href="http://nodejs.org" target="_blank">Node.js</a></li>
+<li><a href="http://harpjs.com" target="_blank">Harp.js</a></li>
+</ul>
+<p>Você também precisa ir em styleguide/structure/_node-files e rodar:</p>
+<pre><code>npm install
+</code></pre><p>Para iniciar o Styleguide, vá pra o diretório raiz e execute no terminal:</p>
+<h5>Harp server</h5><pre><code>cd styleguide/structure/_node-files &amp;&amp; node watch.js
+</code></pre><p>Aguarde que o navegador irá abrir quando o Styleguide estiver rodando.</p>
+<h5>Harp compile</h5><p>Para compilar manualmente o projeto, vá para o diretório raiz e execure (ainda no terminal):</p>
+<pre><code>cd styleguide/structure/_node-files &amp;&amp; node write-date-exec.js
+cd ../../.. &amp;&amp; harp compile
+</code></pre><p>Um diretório chamado &#39;www&#39; conterá todos os arquivos compilados.</p>
+</div></div></div></div><div id="know-issues" class="section u-cf inner no-border"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Problemas conhecidos</h2><p>1 - Você deve permitir aplicativos de desenvolvedores não identificados serem executados para conseguir executar o arquivo Start.app. Você pode fazer isso em Preferências de sistema &gt; Segurança e Privacidade.</p>
+<p>2 - A versão offline tem um pequeno problema no Chrome. Ele tem uma política de segurança de não permitir comunicação entre iframes no formato file:// protocolo, portanto qualquer interação que necessite tal comunicacão será removidas (basicamente o menu da barra lateral). Isto é apenas para versão offile compilada.</p>
+<p>3 - Se você é um usuário Mac e depois de executar o Start.app tiver o erro:</p>
+<pre><code>npm ERR! Please try running this command again as root/Administrator.
+</code></pre><p>Você provavelmente instalou Node com sudo ou permissão de super usuário. Você precisará corrigir as permissões no diretório .npm com o seguinte comando:</p>
+<pre><code>sudo chown -R $(whoami) ~/.npm
+sudo chown -R $(whoami) /usr/local/lib/node_modules
+</code></pre><p>Depois disso, tente rodar o Start.app de novo.</p>
+<p>4 - Se você tiver XCode instalado mas não tiver aceitado a Licença, você terá este erro:</p>
+<pre><code>Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+</code></pre><p>Abra o XCode e aceite a licença, então tente rodar o Start.app de novo.</p>
+<p>5 - Se você tiver um erro <strong>404 - No data received</strong>, você provavelmente tem um conflito de porta, existem dois caminhos para mudar o número da porta (padrão para <strong>9241</strong>):</p>
+<ul>
+<li>Mude a variável PORT dentro de styleguide/structure/_node-files/watch.js</li>
+<li><p>Sete a variável de ambiente (PORT or STYLEGUIDE_PORT):</p>
+<p>  Se você estiver rodando Styleguide manualmente, no seu último passo, você pode fazer:</p>
+<pre><code>  PORT=7000 node watch.js
+</code></pre><p>  ou</p>
+<pre><code>  STYLEGUIDE_PORT=7000 node watch.js
+</code></pre><p>  O Start.app é independente, e por motivos de segurança não tem acesso à variáveis externas.
+  Se você quer alterar a porta do Start.app é recomendado que altere o arquivo watch.js.
+  Você pode, se você quiser, adicionar a variável para seu arquivo .bashrc ou será disponível para o Start.app:</p>
+<pre><code>  touch ~/.bashrc
+  echo &#39;export PORT=1234&#39; &gt;&gt; ~/.bashrc
+</code></pre><p>  ou</p>
+<pre><code>  echo &#39;export STYLEGUIDE_PORT=1234&#39; &gt;&gt; ~/.bashrc
+</code></pre></li>
+</ul>
+</div></div></div></div></main><footer><a href="http://hugeinc.com" target="_blank" class="h"></a><p>Make something you love.<sup>TM</sup></p></footer><!--script(src="jspm_packages/system.js")--><!--script(src="config.js")--><!--script.--><!--	System.baseURL = '/';--><!--	System.import('HugeStyleguide/main');--><script src="/styleguide/bundle.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-64834074-1', 'auto');
+ga('send', 'pageview');</script>

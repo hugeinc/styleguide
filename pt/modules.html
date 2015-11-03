@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>Styleguide</title><link rel="icon" type="image/png" href="/styleguide/favicon.png"><link rel="stylesheet" href="/styleguide/fonts/Huge/stylesheet.css"><link rel="stylesheet" href="/styleguide/style/vendor/normalize.css"><link rel="stylesheet" href="/styleguide/style/vendor/skeleton.css"><link rel="stylesheet" href="/styleguide/style/main.css"></head><body></body></html><header class="u-cf inner"><div class="bg"></div><div class="wrap"><div class="top"><div class="container"><div class="row"><div class="two columns"><a href="index.html"><img src="/styleguide/images/huge-logo.svg"/></a></div><div class="eight columns u-pull-right"><ul class="menu list-horz list-plain"><li><a href="download.html">Download</a></li><li><a href="start.html">Começando</a></li><li><a href="modules.html">Módulos</a></li><li><a href="contributing.html">Contribuindo</a></li><li class="language_link first"><a href="/styleguide">EN</a></li><li class="language_link undefined"><a href="/styleguide/pt">PT</a></li><li class="language_link undefined"><a href="/styleguide/es">ES</a></li><li class="language_link last"><a href="/styleguide/fr">FR</a></li><li class="styleguide-github-star"><iframe src="https://ghbtns.com/github-btn.html?user=hugeinc&amp;repo=styleguide&amp;type=watch&amp;count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li></ul></div></div></div></div><div class="container hero"><div class="row"><div class="ten columns center"><h1 class="main-title">Módulos</h1></div></div></div></div></header><main class="inner"><div class="image no-margin inner"><div class="container"><img src="/styleguide/images/gif5.gif"></div></div><div id="how-they-work" class="section u-cf inner no-border"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Como funcionam</h2><p>A funcionalidade dos módulos é uma combinação de:</p>
+<ul>
+<li>Configuração e conteúdo dentro do _data.json;</li>
+<li>HTML dos arquivos .jade;</li>
+<li>CSS do .sass (ou o pre-processor de sua escolha);</li>
+<li>Estrutura de diretórios;</li>
+<li>Javascript (opcional).</li>
+</ul>
+</div></div></div></div><div class="image no-margin"><div class="container"><img src="/styleguide/images/gif3.gif"></div></div><div id="modules-structure" class="section u-cf inner no-border"><div class="container"><div class="row"><div class="ten columns center"><h2 class="title">Estrutura</h2><h3>Pastas e arquivos</h3><p>A regra de nomenclatura é: ordem + traço baixo + id do módulo
+Exemplo: 1_introduction</p>
+<p>A ordem do menu e dos módulos vem daí.</p>
+<p>Os arquivos .jade e css devem seguir o mesmo identificador da pasta:</p>
+<pre><code class="language-markup">Pasta: 1_introduction  
+       1_introduction/_introduction.jade  
+       1_introduction/_introduction.sass
+</code></pre>
+<h3>_data.json</h3><p>Nesse arquivo você pode configurar o módulo e seu conteúdo. A regra é:</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;id único do módulo, igual o nome da pasta sem a ordem&quot;,
+    &quot;name&quot;: &quot;Nome do módulo, aparece no menu e no título&quot;,
+    &quot;scripts&quot;: [&quot;caminho do(s) arquivos de javascript opcionais&quot;],
+    &quot;items&quot;: &quot;objeto, array, ou qualquer tipo de dados que abriga o conteúdo do módulo&quot;
+}
+</code></pre>
+<p>Exemplo:</p>
+<pre><code class="language-json">// Pasta: 2_colors
+{
+    &quot;id&quot;: &quot;colors&quot;,
+    &quot;name&quot;: &quot;Colors&quot;,
+    &quot;items&quot;: {
+        &quot;intro&quot;: [&quot;Huge tem duas cores primárias: Magenta e Preto. Adicionalmente Azul pode ser achado nos slides ou em t-shirts.&quot;],
+        &quot;colors&quot;: [
+            {
+                &quot;className&quot;: &quot;bg-magenta&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-black&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-grey&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-blue&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3>Jade</h3><p>Jade é uma forma mais simples e rápida de escrever HTML. Com ele é possível usar estruturas lógicas de programação para escrever HTML de uma forma mais inteligente. Para saber mais clique aqui.</p>
+<h3>Estilos CSS</h3><p>Esse projeto suporta Sass, Less e Stylus. Escolha um e use o arquivo com a extensão correspondente.</p>
+</div></div></div></div></main><footer><a href="http://hugeinc.com" target="_blank" class="h"></a><p>Make something you love.<sup>TM</sup></p></footer><!--script(src="jspm_packages/system.js")--><!--script(src="config.js")--><!--script.--><!--	System.baseURL = '/';--><!--	System.import('HugeStyleguide/main');--><script src="/styleguide/bundle.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-64834074-1', 'auto');
+ga('send', 'pageview');</script>

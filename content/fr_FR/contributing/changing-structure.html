@@ -1,0 +1,20 @@
+<h3>Dépendances</h3><ul>
+<li><a href="http://nodejs.org" target="_blank">Node.js</a></li>
+<li><a href="http://harpjs.com" target="_blank">Harp.js</a></li>
+<li><a href="https://www.npmjs.com/package/livereload" target="_blank">Node Livereload</a></li>
+<li><a href="https://www.npmjs.com/package/watch" target="_blank">Node Watch</a></li>
+</ul>
+<h3>Harp</h3><p>Harp est utilisé en tant que serveur local et pour la compilation. Ces actions s&#39;effectuent avec Start.app et Compile.app. Start.app utilise un fichier Node.js pour configurer Livereload et Harp conjointement.</p>
+<h3>Scripts</h3><p>Les sources de Start.app et Compile.app se trouvent dans chaque contenu d&#39;application respectif: Contents/Resources/script</p>
+<h3>Fichiers Node</h3><p>Dans dossier styleguide/structure/_node-files vous trouverez le code qui:</p>
+<ul>
+<li>Lance Harp</li>
+<li>Lance Livereload</li>
+<li>Inscrit la date du jour dans le fichier styleguide/_data.json (avec start et compile)</li>
+<li>Concatène tous les modules javascript en un fichier dans styleguide/assets/scripts/styleguide.js</li>
+<li>Concatène tous les fichiers css en un fichier dans styleguide/assets/styles/styleguide.js</li>
+</ul>
+<h3>Structure CSS</h3><p>Dans le dossier styleguide/structure/styles se trouve la feuille de style de la structure (header, sidebar et composants basiques), sans code de module spécifique.</p>
+<h3>Structure Javascript</h3><p>Dans le dossier styleguide/structure/scripts se trouve le javascript de la structure (header, sidebar et composants basiques), sans code de module spécifique.</p>
+<h3>Modules Data</h3><p>Le ficher styleguide/structure/_includes/modulesData.jade est responsable de la collecte de toutes les informations et modules en un seul objet qui sera utilisé par tous les fichiers de structure.</p>
+<h3>Pull Request</h3><p>Pour effectuer une Pull Request, il vous faut d&#39;abord nettoyer votre code avec styleguide/structure/_tests/_lint.sh (à executer en ligne de commande). Un code avec erreurs ne sera pas accepté.</p>

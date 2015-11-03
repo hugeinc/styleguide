@@ -1,0 +1,43 @@
+<h3>Dossier &amp; Fichiers</h3><p>La règle de nommage est la suivante: ordre + _ + module-id<br>example: 1_introduction</p>
+<p>Les modules et l&#39;ordre des menus découlent de cette règle de nommage.</p>
+<p>Les fichiers .jade et css doivent suivrent la même identification que les dossiers:</p>
+<pre><code class="language-markup">Dossier: 1_introduction
+         /_introduction.jade
+         /_introduction.sass
+</code></pre>
+<h3>_data.json</h3><p>Dans ce fichier, vous pouvez définier le module et son contenu. La règle est la suivante:</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;Id unique de module, même nom que le dossier mais sans les numéros de commande&quot;,
+    &quot;name&quot;: &quot;Nom du module, comme montré dans le menu et titre&quot;,
+    &quot;scripts&quot;: [&quot;Chemin de fichier(s) Javascript optionnel&quot;],
+    &quot;items&quot;: &quot;objet, array, ou tout type de donnée qui servira de contenu pour les modules&quot;
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-json">// Dossier: 2_couleurs
+{
+    &quot;id&quot;: &quot;couleurs&quot;,
+    &quot;name&quot;: &quot;Couleurs&quot;,
+    &quot;items&quot;: {
+        &quot;intro&quot;: [&quot;Huge possède deux couleurs principales: magenta et noir.&quot;],
+        &quot;couleurs&quot;: [
+            {
+                &quot;className&quot;: &quot;bg-magenta&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-noir&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-gris&quot;
+            },
+            {
+                &quot;className&quot;: &quot;bg-bleu&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3>Jade</h3><p>Jade est l&#39;un des moyens les plus simples pour écriture du HTML. Il permet d&#39;utiliser une logique de programmation pour écrire du HTML d&#39;une façon plus intelligente. En apprendre plus, <a href="http://jade-lang.com" target="_blank">sur Jade</a>.</p>
+<p>Toutes les données des fichiers _data.json seront disponibles dans les fichiers .jade comme variables.</p>
+<h3>Styles CSS</h3><p>Ce projet utilise SASS, LESS et Stylus. Choisissez en un et utilisez l&#39;extension correspondante pour les fichiers.</p>
+<p>La feuille de style du module sera automatiquement chargé.</p>

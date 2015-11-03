@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <base target="_blank">
+    <title> Styleguide</title>
+    <link rel="icon" type="image/png" href="styleguide/structure/images/favicon.png">
+    <link href="assets/styles/structure.css" rel="stylesheet">
+    <link href="modules/1_introduction/introduction.css" rel="stylesheet">
+    <link href="modules/2_colors/colors.css" rel="stylesheet">
+    <link href="modules/3_typography/typography.css" rel="stylesheet">
+    <link href="modules/4_buttons/buttons.css" rel="stylesheet">
+    <link href="modules/5_lists/lists.css" rel="stylesheet">
+    <link href="modules/6_forms/forms.css" rel="stylesheet">
+    <link href="modules/7_tables/tables.css" rel="stylesheet">
+    <link href="modules/8_templates/templates.css" rel="stylesheet">
+</head>
+<body>
+<main class="container">
+    <div class="huge-iframe-content">
+        <section id="introduction" class="huge-module anchor clearfix"><h2 class="huge-module__title">Introduction</h2>
+
+            <div class="feedback"><p class="huge-module__paragraph">Hello! Welcome to the Styleguide, A tool to make
+                creating and maintaining styleguides easy.</p>
+
+                <p class="huge-module__paragraph">Please feel free to collaborate with the project <a
+                        href='http://github.com/hugeinc/styleguide'>on Github</a>. You can read the documentation <a
+                        href='http://hugeinc.github.io/styleguide/'>here</a>.</p></div>
+        </section>
+        <section id="colors" class="huge-module anchor clearfix"><h2 class="huge-module__title">Colors</h2>
+
+            <p class="huge-module__paragraph">Huge have two main colors: Magenta and Black. Additional Blue might be
+                found on slides or t-shirts.</p>
+            <ul class="huge-list--unstyled list-colors">
+                <li class="small-12 medium-2 column ">
+                    <div class="color bg-magenta"><p>.bg-magenta</p></div>
+                </li>
+                <li class="small-12 medium-2 column ">
+                    <div class="color bg-black"><p>.bg-black</p></div>
+                </li>
+                <li class="small-12 medium-2 column ">
+                    <div class="color bg-grey"><p>.bg-grey</p></div>
+                </li>
+                <li class="small-12 medium-2 column end">
+                    <div class="color bg-blue"><p>.bg-blue</p></div>
+                </li>
+            </ul>
+        </section>
+        <section id="typography" class="huge-module anchor clearfix"><h2 class="huge-module__title">Typography</h2>
+
+            <div class="titles">
+                <h4 class="huge-module__title--light">HUGE Avant Garde Bold - 100px <h1 class="font-huge">Hello.</h1>
+                </h4>
+                <h4 class="huge-module__title--light">Galaxie Copernicus Book Italic - 80px <h2
+                        class="font-galaxie italic">Thursday</h2></h4>
+                <h4 class="huge-module__title--light">HUGE Avant Garde Bold - 38px <h3 class="font-huge small-3">Born
+                    Hackers: Digital Kids Revisited.</h3></h4>
+            </div>
+            <br/><h5 class="huge-module__title--small">Paragraphs</h5>
+
+            <p class="p1">SEO is a marketing tactic that costs five percent of overall budget but brings in more than 20
+                percent of revenue for many Fortune 500 companies, and yet very few of them prioritize it. Instead,
+                while slowly changing, too many CMOS still favor paid search, which costs 20 percent and brings in… 20
+                percent. In search, businesses need to shift priorities. Now.</p>
+
+            <p class="p2">Link volume is one of the most powerful signals search engines use to rank websites. There’s a
+                way to use links to generate better search results, but too many marketers rely on traditional (or even
+                black hat) tactics that just don’t work anymore.</p>
+
+            <p class="p3 small-3">Huge to be recognized at the 2014 “Made in NY” Awards for the company’s contribution
+                to New York’s creative economy.</p></section>
+        <section id="buttons" class="huge-module anchor clearfix"><h2 class="huge-module__title">Buttons</h2>
+            <ul class="huge-list--unstyled">
+                <li><a href="#" class="snippet button black">Load more</a></li>
+            </ul>
+        </section>
+        <section id="lists" class="huge-module anchor clearfix"><h2 class="huge-module__title">Lists</h2><h5
+                class="huge-module__title--small">Unordered</h5>
+            <ul class="snippet list_huge">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <h5 class="huge-module__title--small">Ordered</h5>
+            <ol class="snippet list_huge">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+        </section>
+        <section id="forms" class="huge-module anchor clearfix"><h2 class="huge-module__title">Forms</h2>
+
+            <form class="snippet">
+                <fieldset>
+                    <div class="row">
+                        <div class="medium-6 column"><input type="text" placeholder="Placeholder" class="g-wide--full"/>
+                        </div>
+                        <div class="medium-6 column"><input type="text" value="Disabled" disabled=""
+                                                            class="g-wide--full"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="medium-6 column"><label>Email input</label><input type="email"/></div>
+                        <div class="medium-6 column"><label>Password input</label><input type="password"
+                                                                                         value="password"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="medium-6 column"><label>Textarea</label><textarea cols="30"
+                                                                                      rows="5">Textarea text</textarea>
+                        </div>
+                        <div class="medium-6 column"><label>Select field</label><select>
+                            <option>Option 01</option>
+                            <option>Option 02</option>
+                        </select></div>
+                        <div class="medium-6 column"><label>File input</label><input type="file"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="medium-6 column"><label><input type="radio" name="rad"/>Radio
+                            input</label><label><input type="checkbox"/>Checkbox input</label></div>
+                        <div class="medium-6 column"><label>Number input</label><input type="number" value="5" min="0"
+                                                                                       max="10"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="medium-6 column"><label>Date input</label><input type="date"/></div>
+                        <div class="medium-6 column"><label>Time input</label><input type="time"/></div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section id="tables" class="huge-module anchor clearfix"><h2 class="huge-module__title">Tables</h2>
+            <table class="snippet">
+                <thead>
+                <tr>
+                    <th>Offices</th>
+                    <th>Job Openings in Technology</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Atlanta</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Brooklyn</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>London</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Rio de Janeiro</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>San Francisco</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Singapore</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Washington DC</td>
+                    <td>2</td>
+                </tr>
+                </tbody>
+                <tfooter>
+                    <tr></tr>
+                </tfooter>
+            </table>
+        </section>
+        <section id="templates" class="huge-module anchor clearfix"><h2 class="huge-module__title">Templates</h2>
+            <ul class="huge-list--unstyled templates-group">
+                <li><img src="assets/images/template01.svg" width="200" alt="Home"/>
+
+                    <div class="template-name">Home</div>
+                </li>
+            </ul>
+        </section>
+        <div class="huge-footer"><a href="http://hugeinc.com" target="_blank" class="h"></a>
+
+            <p>Make something you love.<sup>TM</sup></p></div>
+    </div>
+</main>
+<script src="structure/scripts/vendor/jquery-1.11.1.min.js"></script>
+<script src="structure/scripts/vendor/prism.js"></script>
+<script src="structure/scripts/vendor/tidy.js"></script>
+<script src="structure/scripts/iframe.js"></script>
+<script src="modules/1_introduction/introduction.js"></script>
+</body>
+</html>

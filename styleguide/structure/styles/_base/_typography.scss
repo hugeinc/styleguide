@@ -1,3 +1,15 @@
+// Module title placeholder
+%module__title {
+  font-size: 2em;
+  line-height: 30px;
+  margin: 0 0 45px;
+  font-weight: normal;
+  font-family: HUGEAvantGardeBold, sans-serif;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -1px;
+}
+
 a {
   color: #333;
 }
@@ -5,32 +17,29 @@ a {
 p.huge-module__paragraph {
   margin: 0;
   margin-bottom: 25px;
-  color: #666;
+  color: #333;
   -webkit-font-smoothing: antialiased;
+  a {
+    color: $magenta
+  }
 }
 
 .huge-module__title {
-  font-size: 30px;
-  line-height: 30px;
-  margin: 0 0 45px;
-  font-weight: normal;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-}
+  @extend %module__title;
+  &--small {
+    @extend %module__title;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
 
-.huge-module__title--small {
-  @extend .huge-module__title;
-  font-size: 20px;
-  line-height: 20px;
-  margin-bottom: 25px;
-}
-
-.huge-module__title--light {
-  color: #bbb;
-  text-transform: none;
-  margin: 0;
-  font-size: 12px;
-  line-height: 12px;
-  margin-bottom: 25px;
-  font-weight: normal;
+  &--light {
+    color: #bbb;
+    text-transform: none;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 25px;
+    font-weight: normal;
+  }
 }

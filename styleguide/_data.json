@@ -2,7 +2,7 @@
   "clientName": "",
   "version": "2",
   "language": "en_US",
-  "logoImage": "logo_placeholder.png",
+  "logoImage": "huge-logo.svg",
   "breakpoints": [
     {
       "id": "small",
@@ -32,6 +32,10 @@
     },
     "en_US": {
       "begining": "Beginning",
+      "styleguide": "Styleguide"
+    },
+    "es_CO": {
+      "begining": "Inicio",
       "styleguide": "Styleguide"
     }
   },

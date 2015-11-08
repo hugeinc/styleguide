@@ -12,7 +12,7 @@
   height: 35px;
   background: none;
   left: 187px;
-  top: 19px;
+  top: 15px;
 
   a {
     display: inline-block;
@@ -73,27 +73,33 @@
   text-align: center;
   width: 100%;
   text-align: center;
-  height: 50px;
+  height: 63px;
   width: 63px;
-  background-color: #fff;
+  background-color: $magenta;
   padding: 20px 0 10px 0;
   z-index: 10;
   position: absolute;
-
+  &:hover a {
+    &:before {
+      top: -8px;
+    }
+    &:after {
+      bottom: -8px;
+    }
+  }
   a {
     display: inline-block;
     float: none;
     text-indent: -99999px;
     position: relative;
-    width: 16px;
+    width: 23px;
     height: 2px;
-    background: #777;
+    background: #fff;
     clear: both;
     margin: 0 auto;
-    margin-top: 16px;
+    margin-top: 10px;
     -webkit-transition:all .15s ease-out;
     transition:all .15s ease-out;
-
     &:before {
       display: block;
       float: left;
@@ -104,7 +110,7 @@
       height: 2px;
       top: -4px;
       left: 0;
-      background: #777;
+      background: #fff;
       -webkit-transition:all .15s ease-out;
       transition:all .15s ease-out;
     }
@@ -118,10 +124,11 @@
       height: 2px;
       bottom: -4px;
       left: 0;
-      background: #777;
+      background: #fff;
       -webkit-transition:all .15s ease-out;
       transition:all .15s ease-out;
     }
+
   }
 }
 
@@ -154,15 +161,21 @@
   display: block;
   padding: 12px 16px 12px 29px;
   color: #777;
+  font-family: HUGEAvantGardeBold, sans-serif;
+  letter-spacing: -1px;
   font-weight: normal;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
+  border-left: 0 solid $magenta;
   outline: none;
+  transition: all 0.4s ease;
 
   &:hover, &.active {
-    color: #222;
+    color: $magenta;
+    transition: all 0.4s ease;
+    border-left: 4px solid $magenta
   }
 }
 
@@ -172,4 +185,13 @@ body.opened {
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
   }
+}
+.huge-sidebar__content {
+  svg {
+    margin: 90px 0 12px;
+    width: 140px;
+  }
+}
+#huge-logo {
+  fill: #000;
 }

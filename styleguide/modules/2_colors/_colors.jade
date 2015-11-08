@@ -1,7 +1,6 @@
 h2.huge-module__title=name
 each paragraph in items.intro
 	p.huge-module__paragraph!=paragraph
-
 ul.huge-list--unstyled.list-colors
 	each color, index in items.colors
 		- var last = index == items.colors.length - 1 ? 'end' : ''

@@ -1,5 +1,10 @@
 # Contributing
 
+## 3.0
+We are now developing the 3rd major version of Styleguide. The only branch type allowed to serve 2.x are hotfixes and master (until we achieve 3.0). Branch develop and feature/ should relate to 3.x development.
+
+After 3.0 we will continue to release patches for 2.x, but no additional features.
+
 ## Git branching model
 This repo branching model is **inspired by Git Flow**. Currently we have these types of branches:
 - master - Latest release, stable

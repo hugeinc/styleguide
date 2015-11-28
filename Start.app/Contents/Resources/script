@@ -55,7 +55,7 @@ createLockFile() {
 		touch .install.lock
 	fi
 }
-. .bashrc
+. ~/.bashrc
 echo "Styleguide. Welcome!"
 cd ../../..                      
 if [ ! -f .install.lock ]; then
@@ -63,11 +63,15 @@ if [ ! -f .install.lock ]; then
 	type node >/dev/null 2>&1
 	if [ $? -eq 1 ]
 	then
-      installNode
-      echo "PROGRESS:50"
-      run
+		type nvm >/dev/null 2>&1
+		if [ $? -eq 1 ]
+		then
+      		installNode
+      		echo "PROGRESS:50"
+      		run
+	    fi
 	else
-			echo "PROGRESS:50"
+	    echo "PROGRESS:50"
 	    run
 	fi
 else

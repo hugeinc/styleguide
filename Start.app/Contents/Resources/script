@@ -55,7 +55,7 @@ createLockFile() {
 		touch .install.lock
 	fi
 }
-
+. .bashrc
 echo "Styleguide. Welcome!"
 cd ../../..                      
 if [ ! -f .install.lock ]; then

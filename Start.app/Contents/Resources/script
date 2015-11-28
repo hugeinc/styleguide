@@ -66,10 +66,10 @@ if [ ! -f .install.lock ]; then
 		type nvm >/dev/null 2>&1
 		if [ $? -eq 1 ]
 		then
-      		installNode
-      		echo "PROGRESS:50"
-      		run
-	    fi
+      			installNode
+      			echo "PROGRESS:50"
+      			run
+	    	fi
 	else
 	    echo "PROGRESS:50"
 	    run

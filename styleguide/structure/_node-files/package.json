@@ -1,6 +1,6 @@
 {
   "name": "HugeStyleguideNodeRunner",
-  "version": "2.0.0",
+  "version": "2.0.6",
   "description": "",
   "main": "watch.js",
   "dependencies": {
@@ -10,6 +10,7 @@
   "devDependencies": {
     "blue-tape": "^0.1.10",
     "nightwatch": "^0.7.9",
+    "portfinder": "^1.0.2",
     "request": "^2.60.0",
     "tape": "^4.0.1"
   },

@@ -4,6 +4,9 @@
 
 For downloads, how to get started and detailed documentation please refer to the [Styleguide Website](http://hugeinc.github.io/styleguide/)
 
+### Installing instruction
+go to styleguide/structure/_node-files and run: npm run-script build
+
 #### Thanks to
 - [Node.js](http://nodejs.org)
 - [Harp.js](http://harpjs.com)

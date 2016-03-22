@@ -10,6 +10,7 @@
   "devDependencies": {
     "blue-tape": "^0.1.10",
     "nightwatch": "^0.7.9",
+    "portfinder": "^1.0.2",
     "request": "^2.60.0",
     "tape": "^4.0.1"
   },

@@ -1,18 +1,18 @@
 {
   "name": "HugeStyleguideNodeRunner",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "",
   "main": "watch.js",
   "dependencies": {
-    "livereload": "^0.3.6",
-    "watch": "^0.14.0"
+    "livereload": "0.4.1",
+    "watch": "1.0.0"
   },
   "devDependencies": {
-    "blue-tape": "^0.1.10",
-    "nightwatch": "^0.7.9",
-    "portfinder": "^1.0.2",
-    "request": "^2.60.0",
-    "tape": "^4.0.1"
+    "blue-tape": "0.2.0",
+    "nightwatch": "0.9.1",
+    "portfinder": "1.0.3",
+    "request": "2.72.0",
+    "tape": "4.5.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

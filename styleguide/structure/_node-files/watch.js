@@ -18,7 +18,7 @@ portfinder.getPort(function (err, port) {
     livereloader.start();
 
     // Initialize Harp
-    exec('cd ' + utils.basePath + '&& harp server --port ' + PORT, utils.puts);
+    exec('cd ' + utils.basePath + '&& ./styleguide/structure/_node-files/node_modules/.bin/harp server --port ' + PORT, utils.puts);
     if (!INTEGRATION_TEST) exec('echo "Starting Server on port ' + PORT + '.." && echo "PROGRESS:94"', utils.puts);
     waitTheServer();
 });

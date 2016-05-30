@@ -5,7 +5,9 @@
   "main": "watch.js",
   "dependencies": {
     "livereload": "^0.3.6",
-    "watch": "^0.14.0"
+    "watch": "^0.14.0",
+    "harp": "0.20.3",
+    "js-beautify": "1.6.2"
   },
   "devDependencies": {
     "blue-tape": "^0.1.10",
@@ -15,7 +17,7 @@
     "tape": "^4.0.1"
   },
   "scripts": {
-    "build": "npm install | npm install -g harp", 
+    "compile": "./node_modules/.bin/harp compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Huge",

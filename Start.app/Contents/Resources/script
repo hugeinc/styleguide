@@ -17,7 +17,7 @@ installNode() {
 	mkdir local
 	mkdir node-latest-install
 	cd node-latest-install
-	curl https://nodejs.org/download/release/v0.12.7/node-v0.12.7.tar.gz | tar xz --strip-components=1
+	curl https://nodejs.org/dist/v6.2.0/node-v6.2.0.tar.gz | tar xz --strip-components=1
 	./configure --prefix=../local
 	make install
 	curl -L https://www.npmjs.org/install.sh | sh

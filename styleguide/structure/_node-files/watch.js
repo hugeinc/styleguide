@@ -18,9 +18,16 @@ portfinder.getPort(function (err, port) {
     livereloader.start();
 
     // Initialize Harp
-    exec('cd ' + utils.basePath + '&& harp server --port ' + PORT, utils.puts);
+    exec('cd ' + utils.basePath + '&& ./styleguide/structure/_node-files/node_modules/.bin/harp server --port ' + PORT, utils.puts);
     if (!INTEGRATION_TEST) exec('echo "Starting Server on port ' + PORT + '.." && echo "PROGRESS:94"', utils.puts);
     waitTheServer();
+});
+
+commandExists('harp', function(err, commandExists) {
+    if(!commandExists) {
+        console.log('Harp is not installed, please run npm install harp -g');
+        process.exit(1);
+    }
 });
 
 function waitTheServer() {

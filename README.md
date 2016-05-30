@@ -1,6 +1,6 @@
 # Styleguide [![Build Status](https://travis-ci.org/hugeinc/styleguide.svg?branch=master)](https://travis-ci.org/hugeinc/styleguide)
 #### A tool to make creating and maintaining styleguides easy.
-#####v2.0.6
+#####v2.0.7
 
 For downloads, how to get started and detailed documentation please refer to the [Styleguide Website](http://hugeinc.github.io/styleguide/)
 

@@ -7,11 +7,12 @@ compile() {
 	cd styleguide/structure/_node-files
 	node write-date-exec.js
 	cd ../../..
-	STYLEGUIDE_COMPILE=1 harp compile
+	STYLEGUIDE_COMPILE=1 ./styleguide/structure/_node-files/node_modules/.bin/harp compile
 	cd www
-	find . -type f -name "*.html" -exec js-beautify -r {} \;
-	find . -type f -name "*.js" -exec js-beautify -r {} \;
-	find . -type f -name "*.css" -exec js-beautify -r {} \;
+	find . -type f -name "*.html" -exec ../styleguide/structure/_node-files/node_modules/.bin/js-beautify -r {} \;
+	find . -type f -name "*.js" -exec ../styleguide/structure/_node-files/node_modules/.bin/js-beautify -r {} \;
+	find . -type f -name "*.css" -exec ../styleguide/structure/_node-files/node_modules/.bin/js-beautify -r {} \;
+	rm -rf AUTHORS.html Compile.app/ README.html CONTRIBUTING.html LICENSE.html Start.app/ livereload.js
 	echo "Done! Compiled HTML in the www folder."
 	echo "PROGRESS:100"
 }
@@ -19,11 +20,9 @@ compile() {
 echo "Compiling Styleguide..."
 echo ""
 echo "PROGRESS:0"
-type harp >/dev/null 2>&1
-if [ $? -eq 1 ]
+if [ ! -f ../../../styleguide/structure/_node-files/node_modules/.bin/harp ]
 then
     echo "Harp wasn't found, please run the Start file."
 else
 	compile
 fi
-

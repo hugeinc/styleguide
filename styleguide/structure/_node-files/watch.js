@@ -8,6 +8,7 @@ var exec = require('child_process').exec,
     http = require('http'),
     waitingTheServer = true,
     INTEGRATION_TEST = global.INTEGRATION_TEST || false,
+    commandExists = require('command-exists'),
     portfinder = require('portfinder'),
     PORT;
 

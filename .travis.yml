@@ -7,7 +7,7 @@ before_install:
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 80 --slave /usr/bin/g++ g++ /usr/bin/g++-5
   - sudo update-alternatives --set gcc /usr/bin/gcc-5
 node_js:
-  - 6.2.0
+  - 5.1.0
 script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start

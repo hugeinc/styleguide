@@ -21,4 +21,3 @@ script:
   - node structure-node-modules.js
   - node structure-node-integration.js
   - node structure-front-scripts.js
-  - ../_node-files/node_modules/.bin/nightwatch --test structure-end-2-end.js

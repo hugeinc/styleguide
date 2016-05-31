@@ -24,12 +24,14 @@ portfinder.getPort(function (err, port) {
     waitTheServer();
 });
 
-commandExists('./node_modules/.bin/harp', function(err, commandExists) {
+if (!INTEGRATION_TEST) {
+  commandExists('./node_modules/.bin/harp', function(err, commandExists) {
     if(!commandExists) {
         console.log('Harp is not installed, please run npm install on styleguide/styleguide/structure/_node-files/');
         process.exit(1);
     }
-});
+  }); 
+}
 
 function waitTheServer() {
     if(waitingTheServer) {

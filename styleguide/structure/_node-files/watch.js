@@ -24,9 +24,9 @@ portfinder.getPort(function (err, port) {
     waitTheServer();
 });
 
-commandExists('harp', function(err, commandExists) {
+commandExists('./node_modules/.bin/harp', function(err, commandExists) {
     if(!commandExists) {
-        console.log('Harp is not installed, please run npm install harp -g');
+        console.log('Harp is not installed, please run npm install on styleguide/styleguide/structure/_node-files/');
         process.exit(1);
     }
 });

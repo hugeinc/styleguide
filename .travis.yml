@@ -6,6 +6,14 @@ before_install:
   - sudo apt-get install gcc-5 g++-5
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 80 --slave /usr/bin/g++ g++ /usr/bin/g++-5
   - sudo update-alternatives --set gcc /usr/bin/gcc-5
+env:
+  - CXX=g++-5.3
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-5.3
 node_js:
   - 5.1.0
 script:

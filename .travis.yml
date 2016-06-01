@@ -19,5 +19,4 @@ script:
   - cd ../_tests
   - node structure-node-dependencies.js
   - node structure-node-modules.js
-  - node structure-node-integration.js
   - node structure-front-scripts.js

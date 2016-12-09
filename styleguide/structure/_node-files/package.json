@@ -6,7 +6,7 @@
   "dependencies": {
     "livereload": "0.4.1",
     "watch": "0.18.0",
-    "command-exists": "0.1.0",
+    "command-exists": "1.0.2",
     "harp": "0.20.3",
     "js-beautify": "1.6.2"
   },

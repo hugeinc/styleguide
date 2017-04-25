@@ -4,11 +4,11 @@
   "description": "",
   "main": "watch.js",
   "dependencies": {
-    "livereload": "0.4.1",
-    "watch": "1.0.0",
-    "command-exists": "0.1.0",
-    "harp": "0.20.3",
-    "js-beautify": "1.6.2"
+    "livereload": "0.6.2",
+    "watch": "1.0.2",
+    "command-exists": "1.2.2",
+    "harp": "0.23.0",
+    "js-beautify": "1.6.12"
   },
   "devDependencies": {
     "blue-tape": "0.2.0",

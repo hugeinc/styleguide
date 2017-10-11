@@ -6,10 +6,11 @@ var exec = require('child_process').exec,
     livereloader = require('./modules/livereloader'),
     utils = require('./modules/utils'),
     http = require('http'),
+    commandExists = require('command-exists');
     waitingTheServer = true,
     INTEGRATION_TEST = global.INTEGRATION_TEST || false,
     portfinder = require('portfinder'),
-    PORT;
+    PORT = "";
 
 portfinder.getPort(function (err, port) {
     PORT = port;

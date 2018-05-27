@@ -80,7 +80,7 @@ In the styleguide/structure/_node-files folder you will find the code that:
 
 - Start Harp
 - Start Livereload
-- Writes the current date to styleguide/_data.json file (on start and compile)
+- Write the current date to styleguide/_data.json file (on start and compile)
 - Concatenate all modules javascript code into one file in styleguide/assets/scripts/styleguide.js
 - Concatenate all modules stylesheet code into one file in styleguide/assets/styles/styleguide.js
 

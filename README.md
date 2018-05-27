@@ -59,5 +59,7 @@ Open XCode and accept the license, then try running Start.app again.
     ```
     echo 'export STYLEGUIDE_PORT=1234' >> ~/.bashrc
     ```
-    If you want to see the translated document in Korean, you can look through this link.
+
+    If you want to see the translated document in Korean, you can see it through this link.
+    
     https://github.com/Leeyuryeon/translation/blob/master/hugeinc%20README
